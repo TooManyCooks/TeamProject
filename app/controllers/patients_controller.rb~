@@ -15,7 +15,7 @@ class PatientsController < ApplicationController
   # GET /patients/new
   def new
     @patient = Patient.new
-    @patient.doctor_id = params[:id]
+    @doctor = Doctor.find(params[:doctor])
   end
 
   # GET /patients/1/edit
