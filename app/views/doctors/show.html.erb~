@@ -17,6 +17,6 @@
   <% end %>
 </p>
 
-<%= link_to 'Create Patient', new_patient_path(:doctor_id => @doctor.id) %>
+<%= link_to 'Create Patient', new_patient_path(:doctor => @doctor.id) %>
 <%= link_to 'Edit', edit_doctor_path(@doctor) %> |
 <%= link_to 'Back', doctors_path %>

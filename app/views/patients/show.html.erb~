@@ -2,7 +2,7 @@
 
 <p>
   <strong>Doctor:</strong>
-  <%= Doctor.find(@patient.doctor_id).name %>
+  <%= @patient.doctor_id %>
 </p>
 
 <p>

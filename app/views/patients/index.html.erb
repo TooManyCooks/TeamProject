@@ -16,7 +16,7 @@
   <tbody>
     <% @patients.each do |patient| %>
       <tr>
-        <td><%= patient.doctor_id %></td>
+        <td><%= Doctor.find(patient.doctor_id).name %></td>
         <td><%= patient.name %></td>
         <td><%= patient.email %></td>
         <td><%= patient.content %></td>
