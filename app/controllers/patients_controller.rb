@@ -1,4 +1,5 @@
 class PatientsController < ApplicationController
+  before_action :confirm_logged_in #add to all controllers
   before_action :set_patient, only: [:show, :edit, :update, :destroy]
 
   # GET /patients

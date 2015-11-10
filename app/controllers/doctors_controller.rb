@@ -1,4 +1,6 @@
 class DoctorsController < ApplicationController
+  #
+  before_action :confirm_logged_in #add to all controllers
   before_action :set_doctor, only: [:show, :edit, :update, :destroy]
 
   # GET /doctors
@@ -31,8 +33,8 @@ class DoctorsController < ApplicationController
         format.html { redirect_to @doctor, notice: 'Doctor was successfully created.' }
         format.json { render :show, status: :created, location: @doctor }
       else
-        format.html { render :new }
-        format.json { render json: @doctor.errors, status: :unprocessable_entity }
+        #format.html { render :new }
+        #format.json { render json: @doctor.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -69,6 +71,7 @@ class DoctorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def doctor_params
-      params.require(:doctor).permit(:name, :email)
+      #params.require(:doctor).permit(:name, :password)
+       params.require(:doctor).permit(:name, :password)
     end
 end
