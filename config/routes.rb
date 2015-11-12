@@ -3,10 +3,16 @@ Rails.application.routes.draw do
 
   get 'access/login'
 
+  get 'doctors/new'
+
   resources :patients
 
   resources :doctors
-  root 'doctors#index'
+  #root 'doctors#index'
+
+  root 'access#login'
+
+
 
 
   match ':controller(/:action(/:id))', :via => [:get,:post]

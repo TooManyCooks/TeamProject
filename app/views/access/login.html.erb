@@ -2,6 +2,7 @@
 
 <div class="login">
 <%= flash[:notice]%>
+
   <%= form_tag(:action => 'attempt_login') do %>
   <table>
     <tr>
@@ -16,6 +17,17 @@
       <td>&nbsp;</td>
       <td><%= submit_tag("Log In") %></td>
     </tr>
+    <tr>
+    <td>
+  
+    </td>
+    </tr>
   </table>
-  <% end %>
+
+  <%# link to doctors creation page#%>
+  <%= link_to("Register new Doctor", {:controller => 'doctors', :action => 'new'} ) %>
+
+  
+  
+     <% end %>
 </div>

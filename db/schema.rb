@@ -11,24 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20151103215503) do
-=======
-ActiveRecord::Schema.define(version: 20151030154614) do
->>>>>>> 6b3fb8f5a097e9889422614e3c25f882482d16b9
 
   create_table "doctors", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-<<<<<<< HEAD
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
-=======
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string   "password"
->>>>>>> 6b3fb8f5a097e9889422614e3c25f882482d16b9
   end
 
   create_table "patients", force: :cascade do |t|

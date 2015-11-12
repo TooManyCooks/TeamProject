@@ -1,8 +1,9 @@
 class DoctorsController < ApplicationController
   #
-  before_action :confirm_logged_in #add to all controllers
+  
+#allow new and create so we can sign up new docs
+  before_action :confirm_logged_in, :except => [:new,:create]
   before_action :set_doctor, only: [:show, :edit, :update, :destroy]
-
   # GET /doctors
   # GET /doctors.json
   def index
@@ -33,8 +34,8 @@ class DoctorsController < ApplicationController
         format.html { redirect_to @doctor, notice: 'Doctor was successfully created.' }
         format.json { render :show, status: :created, location: @doctor }
       else
-        #format.html { render :new }
-        #format.json { render json: @doctor.errors, status: :unprocessable_entity }
+        format.html { render :new }
+        format.json { render json: @doctor.errors, status: :unprocessable_entity }
       end
     end
   end
