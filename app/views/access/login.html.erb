@@ -1,6 +1,6 @@
 <% @page_title = "Doctor Login" %>
 
-<div class="login">
+<!--<div class="login">
 <%= flash[:notice]%>
 
   <%= form_tag(:action => 'attempt_login') do %>
@@ -19,7 +19,7 @@
     </tr>
     <tr>
     <td>
-  
+
     </td>
     </tr>
   </table>
@@ -27,7 +27,58 @@
   <%# link to doctors creation page#%>
   <%= link_to("Register new Doctor", {:controller => 'doctors', :action => 'new'} ) %>
 
-  
-  
+
+
      <% end %>
-</div>
+</div>-->
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="animate.css" rel="stylesheet">
+    <link href="stylesheet.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+
+    <div class="middle-box text-center loginscreen animated fadeInDown">
+        <div>
+            <div>
+                <h1 class="logo-name">PMP</h1>
+            </div>
+
+            <center><h3>Welcome to PMP</h3>
+
+            <p>Patient Monitoring Platform</p>
+
+            <%= form_tag(:action => 'attempt_login', :class => "m-t") do %>
+                <div class="form-group">
+                    <td><%= text_field_tag(:name, nil, :class => "form-control", :placeholder => 'Username', :onclick => 'if($(this).val()=="Username"){$(this).val("");};') %></td>
+                </div>
+                <br>
+                <div class="form-group">
+                    <td><%= password_field_tag(:password, nil, :class => "form-control", :placeholder => 'Password', :onclick => 'if($(this).val()=="Username"){$(this).val("");};') %></td>
+                </div>
+                <br>
+                <center><%= submit_tag("Log In", :class => "btn btn-primary block full-width m-b") %>
+
+                <a href="#"><small>Forgot password?</small></a>
+                <p class="text-muted text-center"><small>Do not have an account?</small></p>
+                <%= link_to("Create an account", {:controller => 'doctors', :action => 'new'} ) %>
+            </form>
+            <% end %>
+            <p class="m-t"> <small>Patient Monitoring Platform &copy; 2015</small> </p></center>
+        </div>
+    </div>
+
+</body>
+
+</html>
