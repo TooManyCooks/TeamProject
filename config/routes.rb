@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   root 'access#login'
 
-
+  mount Rapidfire::Engine => "/rapidfire"
 
 
   match ':controller(/:action(/:id))', :via => [:get,:post]
