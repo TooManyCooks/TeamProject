@@ -84,6 +84,24 @@ img {
   left: 48%;
   position: absolute;
 }
+.question_box{
+	width: 24em;
+	margin: 0 auto;
+	border: 0.125em solid #DDD;
+	-webkit-border-radius: 0.5em;
+	-moz-border-radius: 0.5em;
+	border-radius: 0.5em;
+	background-color: #EEF;
+}
+.question_box li{
+	display: inline-block;
+	margin: 10px;
+	vertical-align: middle;
+}
+.question_box li ul, .question_box li ul li{
+	display: initial;
+	text-align: left;
+}
 .wide{
 	width: 18em;
 }

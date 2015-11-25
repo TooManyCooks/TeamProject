@@ -34268,3 +34268,2459 @@ Processing by PatientsController#index as HTML
   [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 2]]
   Rendered patients/index.html.erb within layouts/application (2.0ms)
 Completed 200 OK in 62ms (Views: 61.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rapidfire/" for 127.0.0.1 at 2015-11-25 15:10:14 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.2ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (2.8ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (29.3ms)
+Completed 200 OK in 308ms (Views: 270.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:10:15 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:10:15 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:10:15 +0000
+
+
+Started GET "/assets/stylesheet.self-f8736e8362f8297f086b723f631c053b7fefcad13dceef056d50e80cd2349e1b.css?body=1" for 127.0.0.1 at 2015-11-25 15:10:15 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:10:15 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:10:15 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:10:15 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:10:15 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:10:15 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:10:15 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:10:15 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:10:15 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:10:15 +0000
+
+
+Started GET "/rapidfire/new" for 127.0.0.1 at 2015-11-25 15:11:21 +0000
+
+ActionController::RoutingError (No route matches [GET] "/rapidfire/new"):
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (52.5ms)
+
+
+Started GET "/rapidfire/" for 127.0.0.1 at 2015-11-25 15:11:25 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.2ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (5.4ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 108ms (Views: 107.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rapidfire/" for 127.0.0.1 at 2015-11-25 15:15:21 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (2.2ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.6ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 121ms (Views: 118.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:15:21 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:15:21 +0000
+
+
+Started GET "/assets/stylesheet.self-f8736e8362f8297f086b723f631c053b7fefcad13dceef056d50e80cd2349e1b.css?body=1" for 127.0.0.1 at 2015-11-25 15:15:21 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:15:21 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:15:21 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:15:21 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:15:21 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:15:21 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:15:21 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:15:21 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:15:21 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:15:21 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:15:21 +0000
+
+
+Started GET "/rapidfire/" for 127.0.0.1 at 2015-11-25 15:15:24 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.3ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.6ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 84ms (Views: 83.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:15:24 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:15:24 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:15:24 +0000
+
+
+Started GET "/assets/stylesheet.self-f8736e8362f8297f086b723f631c053b7fefcad13dceef056d50e80cd2349e1b.css?body=1" for 127.0.0.1 at 2015-11-25 15:15:24 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:15:24 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:15:24 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:15:24 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:15:24 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:15:24 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:15:24 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:15:24 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:15:24 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:15:24 +0000
+
+
+Started GET "/rapidfire/" for 127.0.0.1 at 2015-11-25 15:18:39 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.2ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.8ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 86ms (Views: 84.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:18:39 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:18:39 +0000
+
+
+Started GET "/assets/stylesheet.self-f8736e8362f8297f086b723f631c053b7fefcad13dceef056d50e80cd2349e1b.css?body=1" for 127.0.0.1 at 2015-11-25 15:18:40 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:18:40 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:18:40 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:18:40 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:18:40 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:18:40 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:18:40 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:18:40 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:18:40 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:18:40 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:18:40 +0000
+
+
+Started GET "/rapidfire/" for 127.0.0.1 at 2015-11-25 15:19:08 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.1ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.7ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 86ms (Views: 85.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:19:08 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:19:08 +0000
+
+
+Started GET "/assets/stylesheet.self-f8736e8362f8297f086b723f631c053b7fefcad13dceef056d50e80cd2349e1b.css?body=1" for 127.0.0.1 at 2015-11-25 15:19:08 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:19:08 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:19:08 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:19:08 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:19:08 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:19:08 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:19:08 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:19:08 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:19:08 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:19:08 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:19:08 +0000
+
+
+Started GET "/rapidfire/" for 127.0.0.1 at 2015-11-25 15:19:49 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.2ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.7ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 89ms (Views: 87.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:19:50 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:19:50 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:19:50 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:19:50 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:19:50 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:19:50 +0000
+
+
+Started GET "/assets/stylesheet.self-f8736e8362f8297f086b723f631c053b7fefcad13dceef056d50e80cd2349e1b.css?body=1" for 127.0.0.1 at 2015-11-25 15:19:50 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:19:50 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:19:50 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:19:50 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:19:50 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:19:50 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:19:50 +0000
+
+
+Started GET "/rapidfire/" for 127.0.0.1 at 2015-11-25 15:21:47 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.2ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.7ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 87ms (Views: 86.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:21:47 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:21:47 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:21:47 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:21:47 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:21:47 +0000
+
+
+Started GET "/assets/stylesheet.self-f8736e8362f8297f086b723f631c053b7fefcad13dceef056d50e80cd2349e1b.css?body=1" for 127.0.0.1 at 2015-11-25 15:21:47 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:21:47 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:21:47 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:21:47 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:21:47 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:21:47 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:21:47 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:21:47 +0000
+
+
+Started GET "/rapidfire/" for 127.0.0.1 at 2015-11-25 15:22:12 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (1.4ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (3.4ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 90ms (Views: 88.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:22:13 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:22:13 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:22:13 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:22:13 +0000
+
+
+Started GET "/assets/stylesheet.self-f8736e8362f8297f086b723f631c053b7fefcad13dceef056d50e80cd2349e1b.css?body=1" for 127.0.0.1 at 2015-11-25 15:22:13 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:22:13 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:22:13 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:22:13 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:22:13 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:22:13 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:22:13 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:22:13 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:22:13 +0000
+
+
+Started GET "/rapidfire/" for 127.0.0.1 at 2015-11-25 15:23:17 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.2ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.6ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 89ms (Views: 88.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:23:18 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:23:18 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:23:18 +0000
+
+
+Started GET "/assets/stylesheet.self-f8736e8362f8297f086b723f631c053b7fefcad13dceef056d50e80cd2349e1b.css?body=1" for 127.0.0.1 at 2015-11-25 15:23:18 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:23:18 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:23:18 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:23:18 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:23:18 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:23:18 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:23:18 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:23:18 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:23:18 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:23:18 +0000
+
+
+Started GET "/rapidfire/" for 127.0.0.1 at 2015-11-25 15:23:45 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.2ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.7ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 101ms (Views: 99.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:23:45 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:23:45 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:23:45 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:23:45 +0000
+
+
+Started GET "/assets/stylesheet.self-f8736e8362f8297f086b723f631c053b7fefcad13dceef056d50e80cd2349e1b.css?body=1" for 127.0.0.1 at 2015-11-25 15:23:45 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:23:45 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:23:45 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:23:45 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:23:45 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:23:45 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:23:45 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:23:45 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:23:45 +0000
+
+
+Started GET "/rapidfire/" for 127.0.0.1 at 2015-11-25 15:25:51 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.2ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.8ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 120ms (Views: 119.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:25:52 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:25:52 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:25:52 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:25:52 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:25:52 +0000
+
+
+Started GET "/assets/stylesheet.self-5b0d187cfd1c8d14657a9a8affbbda63b56f46eaf7c9ec67bc39a3e865678014.css?body=1" for 127.0.0.1 at 2015-11-25 15:25:52 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:25:52 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:25:52 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:25:52 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:25:52 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:25:52 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:25:52 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:25:52 +0000
+
+
+Started GET "/rapidfire/" for 127.0.0.1 at 2015-11-25 15:29:44 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.3ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.8ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 147ms (Views: 146.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:29:44 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:29:44 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:29:44 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:29:44 +0000
+
+
+Started GET "/assets/stylesheet.self-27a1fec08fab6aff274cf7eebf255431c468bfc9b54f3cb0872e40ef6feca1df.css?body=1" for 127.0.0.1 at 2015-11-25 15:29:44 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:29:44 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:29:44 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:29:44 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:29:44 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:29:44 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:29:44 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:29:44 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:29:44 +0000
+
+
+Started GET "/rapidfire/" for 127.0.0.1 at 2015-11-25 15:30:41 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.1ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.8ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 120ms (Views: 119.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:30:41 +0000
+
+
+Started GET "/assets/stylesheet.self-27a1fec08fab6aff274cf7eebf255431c468bfc9b54f3cb0872e40ef6feca1df.css?body=1" for 127.0.0.1 at 2015-11-25 15:30:41 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:30:41 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:30:41 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:30:41 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:30:41 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:30:41 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:30:41 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:30:41 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:30:41 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:30:41 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:30:41 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:30:41 +0000
+
+
+Started GET "/rapidfire/" for 127.0.0.1 at 2015-11-25 15:32:16 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.2ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (1.8ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 124ms (Views: 123.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:32:17 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:32:17 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:32:17 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:32:17 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:32:17 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:32:17 +0000
+
+
+Started GET "/assets/stylesheet.self-27a1fec08fab6aff274cf7eebf255431c468bfc9b54f3cb0872e40ef6feca1df.css?body=1" for 127.0.0.1 at 2015-11-25 15:32:17 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:32:17 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:32:17 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:32:17 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:32:17 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:32:17 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:32:17 +0000
+
+
+Started GET "/rapidfire/" for 127.0.0.1 at 2015-11-25 15:32:50 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.1ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.7ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 151ms (Views: 150.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:32:50 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:32:50 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:32:50 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:32:50 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:32:50 +0000
+
+
+Started GET "/assets/stylesheet.self-27a1fec08fab6aff274cf7eebf255431c468bfc9b54f3cb0872e40ef6feca1df.css?body=1" for 127.0.0.1 at 2015-11-25 15:32:51 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:32:51 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:32:51 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:32:51 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:32:51 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:32:51 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:32:51 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:32:51 +0000
+
+
+Started GET "/rapidfire/" for 127.0.0.1 at 2015-11-25 15:33:58 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.2ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.6ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 161ms (Views: 160.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:33:58 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:33:58 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:33:58 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:33:58 +0000
+
+
+Started GET "/assets/stylesheet.self-2e06fff86c88d460b44019e390c47228f85a9d76c0b4c403301e7bcbe797be85.css?body=1" for 127.0.0.1 at 2015-11-25 15:33:58 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:33:58 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:33:58 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:33:58 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:33:58 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:33:58 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:33:58 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:33:58 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:33:58 +0000
+
+
+Started GET "/rapidfire/" for 127.0.0.1 at 2015-11-25 15:34:30 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.2ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.6ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 151ms (Views: 150.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:34:30 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:34:30 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:34:30 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:34:30 +0000
+
+
+Started GET "/assets/stylesheet.self-cff0b4ec8be306a11df0a25228b104044a40306e95c67d7266173602fb8cbb64.css?body=1" for 127.0.0.1 at 2015-11-25 15:34:30 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:34:30 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:34:30 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:34:30 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:34:30 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:34:30 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:34:30 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:34:30 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:34:30 +0000
+
+
+Started GET "/rapidfire/" for 127.0.0.1 at 2015-11-25 15:36:19 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (3.1ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (1.4ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 136ms (Views: 132.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:36:19 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:36:19 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:36:19 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:36:19 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:36:19 +0000
+
+
+Started GET "/assets/stylesheet.self-f8736e8362f8297f086b723f631c053b7fefcad13dceef056d50e80cd2349e1b.css?body=1" for 127.0.0.1 at 2015-11-25 15:36:19 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:36:19 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:36:19 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:36:19 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:36:19 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:36:19 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:36:19 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:36:19 +0000
+
+
+Started GET "/rapidfire/" for 127.0.0.1 at 2015-11-25 15:36:47 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.2ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.9ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 131ms (Views: 130.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:36:47 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:36:47 +0000
+
+
+Started GET "/assets/stylesheet.self-f8736e8362f8297f086b723f631c053b7fefcad13dceef056d50e80cd2349e1b.css?body=1" for 127.0.0.1 at 2015-11-25 15:36:47 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:36:47 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:36:47 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:36:47 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:36:47 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:36:47 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:36:47 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:36:47 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:36:47 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:36:47 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:36:47 +0000
+
+
+Started GET "/rapidfire/" for 127.0.0.1 at 2015-11-25 15:37:51 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.2ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.6ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 153ms (Views: 151.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:37:51 +0000
+
+
+Started GET "/assets/stylesheet.self-f8736e8362f8297f086b723f631c053b7fefcad13dceef056d50e80cd2349e1b.css?body=1" for 127.0.0.1 at 2015-11-25 15:37:52 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:37:52 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:37:52 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:37:52 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:37:52 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:37:52 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:37:52 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:37:52 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:37:52 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:37:52 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:37:52 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:37:52 +0000
+
+
+Started GET "/rapidfire/" for 127.0.0.1 at 2015-11-25 15:41:58 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.3ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (4.6ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 164ms (Views: 162.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:41:58 +0000
+
+
+Started GET "/assets/stylesheet.self-f8736e8362f8297f086b723f631c053b7fefcad13dceef056d50e80cd2349e1b.css?body=1" for 127.0.0.1 at 2015-11-25 15:41:58 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:41:58 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:41:58 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:41:58 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:41:58 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:41:58 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:41:58 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:41:58 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:41:58 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:41:58 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:41:58 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:41:58 +0000
+
+
+Started GET "/rapidfire/" for 127.0.0.1 at 2015-11-25 15:43:47 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.7ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.7ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 133ms (Views: 131.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:43:47 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:43:47 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:43:47 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:43:47 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:43:47 +0000
+
+
+Started GET "/assets/stylesheet.self-f8736e8362f8297f086b723f631c053b7fefcad13dceef056d50e80cd2349e1b.css?body=1" for 127.0.0.1 at 2015-11-25 15:43:47 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:43:47 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:43:47 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:43:47 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:43:47 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:43:47 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:43:47 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:43:47 +0000
+
+
+Started GET "/rapidfire/" for 127.0.0.1 at 2015-11-25 15:44:42 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.2ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (3.0ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 138ms (Views: 137.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:44:42 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:44:42 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:44:42 +0000
+
+
+Started GET "/assets/stylesheet.self-f8736e8362f8297f086b723f631c053b7fefcad13dceef056d50e80cd2349e1b.css?body=1" for 127.0.0.1 at 2015-11-25 15:44:42 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:44:42 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:44:42 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:44:42 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:44:42 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:44:42 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:44:42 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:44:42 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:44:42 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:44:42 +0000
+
+
+Started GET "/rapidfire/question_groups/new" for 127.0.0.1 at 2015-11-25 15:44:46 +0000
+Processing by Rapidfire::QuestionGroupsController#new as HTML
+  Rendered rapidfire/question_groups/_form.html.erb (74.7ms)
+  Rendered rapidfire/question_groups/new.html.erb within layouts/application (78.6ms)
+Completed 200 OK in 183ms (Views: 181.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 15:44:49 +0000
+Processing by Rapidfire::QuestionGroupsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6t/SmuoAaL9x7Gt7H+BMESd5MOJQeuV/QCbuPbASnU4njnDtmdxIiTxH2OPs8Jtd1JxuuceS+BtUAQiSZ2gwzA==", "question_group"=>{"name"=>"asd"}, "commit"=>"Create Question group"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "rapidfire_question_groups" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "asd"], ["created_at", "2015-11-25 15:44:49.062948"], ["updated_at", "2015-11-25 15:44:49.062948"]]
+  [1m[35m (4.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/rapidfire/question_groups
+Completed 302 Found in 16ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 15:44:49 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.3ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (1.2ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 72ms (Views: 71.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 15:48:40 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.1ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (1.7ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 157ms (Views: 156.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:48:40 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:48:40 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:48:40 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:48:40 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:48:40 +0000
+
+
+Started GET "/assets/stylesheet.self-28aaf7dec8d0102c018db0271b4e9af767fc154436a84fe21ba7310bcb95f529.css?body=1" for 127.0.0.1 at 2015-11-25 15:48:40 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:48:40 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:48:40 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:48:40 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:48:40 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:48:40 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:48:40 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:48:40 +0000
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 15:49:12 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.2ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (5.9ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 191ms (Views: 190.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:49:13 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:49:13 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:49:13 +0000
+
+
+Started GET "/assets/stylesheet.self-d0a69765830e0e6ba12d88489d9720c0cc535a547bbc6d176b1fd824e52732bc.css?body=1" for 127.0.0.1 at 2015-11-25 15:49:13 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:49:13 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:49:13 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:49:13 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:49:13 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:49:13 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:49:13 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:49:13 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:49:13 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:49:13 +0000
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 15:53:40 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.2ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (1.3ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 146ms (Views: 144.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:53:40 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:53:40 +0000
+
+
+Started GET "/assets/stylesheet.self-f8736e8362f8297f086b723f631c053b7fefcad13dceef056d50e80cd2349e1b.css?body=1" for 127.0.0.1 at 2015-11-25 15:53:40 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:53:40 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:53:40 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:53:40 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:53:40 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:53:40 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:53:40 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:53:40 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:53:40 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:53:40 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:53:40 +0000
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 15:55:36 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.2ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (5.4ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 166ms (Views: 165.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:55:36 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:55:36 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 15:55:36 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 15:55:36 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 15:55:36 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 15:55:36 +0000
+
+
+Started GET "/assets/stylesheet.self-115775c8e53ac9ca217fe738d45b242f09d4f501c61025c3fcbdf038693dc757.css?body=1" for 127.0.0.1 at 2015-11-25 15:55:36 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 15:55:36 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:55:36 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 15:55:36 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:55:36 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 15:55:36 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 15:55:36 +0000
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 16:00:45 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.2ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (2.8ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 133ms (Views: 132.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:00:45 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:00:45 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:00:46 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 16:00:46 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 16:00:46 +0000
+
+
+Started GET "/assets/stylesheet.self-115775c8e53ac9ca217fe738d45b242f09d4f501c61025c3fcbdf038693dc757.css?body=1" for 127.0.0.1 at 2015-11-25 16:00:46 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 16:00:46 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 16:00:46 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 16:00:46 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:00:46 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:00:46 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:00:46 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 16:00:46 +0000
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 16:04:02 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.2ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (5.4ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 156ms (Views: 155.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:04:03 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:04:03 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 16:04:03 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:04:03 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 16:04:03 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 16:04:03 +0000
+
+
+Started GET "/assets/stylesheet.self-5f916821690ecfb16dbe76e2b87aa69d9a9eb569f09a8358b42f03192d082583.css?body=1" for 127.0.0.1 at 2015-11-25 16:04:03 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 16:04:03 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 16:04:03 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:04:03 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:04:03 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:04:03 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 16:04:03 +0000
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 16:05:10 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.1ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (1.6ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 192ms (Views: 191.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:05:10 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:05:10 +0000
+
+
+Started GET "/assets/stylesheet.self-ecfdd7608ac2f64a8962d5b4d1c1c349918f1fa8d3519964b21699ab76dd0e42.css?body=1" for 127.0.0.1 at 2015-11-25 16:05:10 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:05:10 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 16:05:10 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 16:05:10 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 16:05:10 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 16:05:10 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 16:05:10 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:05:10 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:05:10 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 16:05:10 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:05:10 +0000
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 16:06:06 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.2ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (1.2ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 171ms (Views: 170.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:06:06 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 16:06:06 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:06:06 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:06:06 +0000
+
+
+Started GET "/assets/stylesheet.self-187e8f7d148ffc0a1b27fd3bb55518718a861620681eaa4e71a7b8c242c1797e.css?body=1" for 127.0.0.1 at 2015-11-25 16:06:06 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 16:06:06 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 16:06:06 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 16:06:06 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 16:06:06 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:06:06 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:06:06 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:06:06 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 16:06:06 +0000
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 16:06:57 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.2ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (5.7ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 148ms (Views: 147.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:06:57 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:06:57 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 16:06:57 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:06:57 +0000
+
+
+Started GET "/assets/stylesheet.self-187e8f7d148ffc0a1b27fd3bb55518718a861620681eaa4e71a7b8c242c1797e.css?body=1" for 127.0.0.1 at 2015-11-25 16:06:57 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 16:06:57 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 16:06:57 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 16:06:57 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 16:06:57 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:06:57 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:06:57 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:06:57 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 16:06:57 +0000
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 16:08:48 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.1ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (1.2ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 177ms (Views: 176.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:08:48 +0000
+
+
+Started GET "/assets/stylesheet.self-8523cf2f635e9b1f7b7110c3b0ec570383d2888ee0f3a91b7490a036163feac9.css?body=1" for 127.0.0.1 at 2015-11-25 16:08:49 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:08:49 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:08:49 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 16:08:49 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 16:08:49 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 16:08:49 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 16:08:49 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 16:08:49 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:08:49 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:08:49 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:08:49 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 16:08:49 +0000
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 16:09:32 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (4.2ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (1.7ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 147ms (Views: 141.6ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:09:32 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:09:32 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:09:32 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 16:09:32 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 16:09:32 +0000
+
+
+Started GET "/assets/stylesheet.self-8523cf2f635e9b1f7b7110c3b0ec570383d2888ee0f3a91b7490a036163feac9.css?body=1" for 127.0.0.1 at 2015-11-25 16:09:32 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 16:09:32 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 16:09:32 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 16:09:32 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:09:32 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:09:32 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:09:32 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 16:09:32 +0000
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 16:09:52 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.1ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (1.1ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 160ms (Views: 158.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:09:53 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:09:53 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:09:53 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 16:09:53 +0000
+
+
+Started GET "/assets/stylesheet.self-09410a22f16aefeebd90fda08ee45cd4ed94717532627f89dc4378b4dde3e58b.css?body=1" for 127.0.0.1 at 2015-11-25 16:09:53 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 16:09:53 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 16:09:53 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 16:09:53 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 16:09:53 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:09:53 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:09:53 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:09:53 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 16:09:53 +0000
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 16:10:42 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (4.4ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (1.3ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 144ms (Views: 138.6ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:10:42 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:10:42 +0000
+
+
+Started GET "/assets/stylesheet.self-187e8f7d148ffc0a1b27fd3bb55518718a861620681eaa4e71a7b8c242c1797e.css?body=1" for 127.0.0.1 at 2015-11-25 16:10:42 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:10:42 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 16:10:42 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 16:10:42 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 16:10:42 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 16:10:42 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 16:10:42 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:10:43 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:10:43 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:10:43 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 16:10:43 +0000
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 16:11:31 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (4.4ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (1.1ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 168ms (Views: 163.1ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:11:31 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 16:11:31 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:11:31 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:11:31 +0000
+
+
+Started GET "/assets/stylesheet.self-1f715ca0b07215cf12c187e7841974a3b2cc7cd0e1c22de96c7a106898e1b0a0.css?body=1" for 127.0.0.1 at 2015-11-25 16:11:31 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 16:11:31 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 16:11:31 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 16:11:31 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 16:11:31 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:11:31 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:11:31 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:11:31 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 16:11:31 +0000
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 16:12:04 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.2ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (1.1ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 152ms (Views: 150.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:12:04 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 16:12:04 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:12:04 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:12:04 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 16:12:04 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 16:12:04 +0000
+
+
+Started GET "/assets/stylesheet.self-4fa0a1695571d03db6848e493631cc8a884ef376afc69025ce8246d080d84180.css?body=1" for 127.0.0.1 at 2015-11-25 16:12:04 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 16:12:04 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 16:12:04 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:12:04 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:12:04 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:12:04 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 16:12:04 +0000
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 16:13:04 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.2ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (1.1ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 141ms (Views: 139.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:13:04 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:13:04 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:13:04 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 16:13:04 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 16:13:04 +0000
+
+
+Started GET "/assets/stylesheet.self-4fa0a1695571d03db6848e493631cc8a884ef376afc69025ce8246d080d84180.css?body=1" for 127.0.0.1 at 2015-11-25 16:13:04 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 16:13:04 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 16:13:04 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:13:04 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 16:13:04 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:13:04 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:13:04 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 16:13:04 +0000
+
+
+Started GET "/rapidfire/question_groups/1/questions" for 127.0.0.1 at 2015-11-25 16:13:09 +0000
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"question_group_id"=>"1"}
+  [1m[35mRapidfire::QuestionGroup Load (0.4ms)[0m  SELECT  "rapidfire_question_groups".* FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRapidfire::Question Load (0.3ms)[0m  [1mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."question_group_id" = ?  ORDER BY "rapidfire_questions"."position" ASC[0m  [["question_group_id", 1]]
+  Rendered rapidfire/questions/_question.html.erb (2.1ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (48.0ms)
+Completed 200 OK in 235ms (Views: 133.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 16:14:36 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.2ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (1.2ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 135ms (Views: 133.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:14:37 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:14:37 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 16:14:37 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:14:37 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 16:14:37 +0000
+
+
+Started GET "/assets/stylesheet.self-73976ffa98a4c795d741749c18c70e21ff954b776b779b15d791302e696d5eff.css?body=1" for 127.0.0.1 at 2015-11-25 16:14:37 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 16:14:37 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 16:14:37 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 16:14:37 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:14:37 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:14:37 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:14:37 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 16:14:37 +0000
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 16:18:41 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.2ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (3.0ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 132ms (Views: 130.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:18:42 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:18:42 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:18:42 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 16:18:42 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 16:18:42 +0000
+
+
+Started GET "/assets/stylesheet.self-73976ffa98a4c795d741749c18c70e21ff954b776b779b15d791302e696d5eff.css?body=1" for 127.0.0.1 at 2015-11-25 16:18:42 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 16:18:42 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 16:18:42 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 16:18:42 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:18:42 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:18:42 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:18:42 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 16:18:42 +0000
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 16:19:41 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.2ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (1.5ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 161ms (Views: 160.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:19:42 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:19:42 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:19:42 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 16:19:42 +0000
+
+
+Started GET "/assets/stylesheet.self-52270cec4a9bb3bc7b3fbca4db4fa63b721f63b76e6493e666f9abbf5bb6b4c6.css?body=1" for 127.0.0.1 at 2015-11-25 16:19:42 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 16:19:42 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 16:19:42 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 16:19:42 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 16:19:42 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:19:42 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:19:42 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:19:42 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 16:19:42 +0000
+
+
+Started GET "/rapidfire/question_groups/new" for 127.0.0.1 at 2015-11-25 16:20:20 +0000
+Processing by Rapidfire::QuestionGroupsController#new as HTML
+  Rendered rapidfire/question_groups/_form.html.erb (4.6ms)
+  Rendered rapidfire/question_groups/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 115ms (Views: 114.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 16:20:24 +0000
+Processing by Rapidfire::QuestionGroupsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4nteg/KGB3zhkftX3S25GrCQCRt2OHHr/sGs5/xYULYvKvz0gVonSqw6SM8uPW5WQ3VXQOHQbI/q5kpIKyL9NA==", "question_group"=>{"name"=>"asdfsfefsgsga"}, "commit"=>"Create Question group"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "rapidfire_question_groups" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "asdfsfefsgsga"], ["created_at", "2015-11-25 16:20:24.745281"], ["updated_at", "2015-11-25 16:20:24.745281"]]
+  [1m[36m (37.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/rapidfire/question_groups
+Completed 302 Found in 42ms (ActiveRecord: 37.5ms)
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 16:20:24 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.2ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (5.8ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 71ms (Views: 70.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rapidfire/question_groups/new" for 127.0.0.1 at 2015-11-25 16:20:28 +0000
+Processing by Rapidfire::QuestionGroupsController#new as HTML
+  Rendered rapidfire/question_groups/_form.html.erb (1.1ms)
+  Rendered rapidfire/question_groups/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 90ms (Views: 89.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 16:20:34 +0000
+Processing by Rapidfire::QuestionGroupsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x0W05UPh1clCo7rcEbKIgfB+FEBNYcwSZ4+E7OVS5twKFBaSMD31/w8ICUTiol/NA5tKG9qJ0XZzqGJDMihLXg==", "question_group"=>{"name"=>"asdfghjkl;asdfghjklsdfghjkl"}, "commit"=>"Create Question group"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (57.5ms)[0m  INSERT INTO "rapidfire_question_groups" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "asdfghjkl;asdfghjklsdfghjkl"], ["created_at", "2015-11-25 16:20:34.572783"], ["updated_at", "2015-11-25 16:20:34.572783"]]
+  [1m[36m (58.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/rapidfire/question_groups
+Completed 302 Found in 119ms (ActiveRecord: 116.2ms)
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 16:20:34 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.2ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (2.3ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 79ms (Views: 77.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 16:20:43 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.2ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (2.5ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 114ms (Views: 113.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:20:43 +0000
+
+
+Started GET "/assets/scaffolds.self-6633411748bcd99327a099f2f1402d44bc57ebeb271700b1f2386ddcdf2844c4.css?body=1" for 127.0.0.1 at 2015-11-25 16:20:43 +0000
+
+
+Started GET "/assets/stylesheet.self-52270cec4a9bb3bc7b3fbca4db4fa63b721f63b76e6493e666f9abbf5bb6b4c6.css?body=1" for 127.0.0.1 at 2015-11-25 16:20:43 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 16:20:43 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:20:43 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 16:20:43 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:20:43 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 16:20:43 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 16:20:43 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:20:43 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:20:43 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:20:43 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 16:20:43 +0000
+
+
+Started GET "/rapidfire/question_groups/2/questions" for 127.0.0.1 at 2015-11-25 16:20:45 +0000
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"question_group_id"=>"2"}
+  [1m[35mRapidfire::QuestionGroup Load (0.1ms)[0m  SELECT  "rapidfire_question_groups".* FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mRapidfire::Question Load (0.1ms)[0m  [1mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."question_group_id" = ?  ORDER BY "rapidfire_questions"."position" ASC[0m  [["question_group_id", 2]]
+  Rendered rapidfire/questions/_question.html.erb (0.0ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 66ms (Views: 64.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 16:22:05 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (4.2ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (2.1ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 176ms (Views: 171.0ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:22:05 +0000
+
+
+Started GET "/assets/scaffolds.self-16bc0babaf25f5c3878f2b3f6a19a43c90eb6d1f09089ea4f9c7d08687cb486d.css?body=1" for 127.0.0.1 at 2015-11-25 16:22:05 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:22:05 +0000
+
+
+Started GET "/assets/stylesheet.self-52270cec4a9bb3bc7b3fbca4db4fa63b721f63b76e6493e666f9abbf5bb6b4c6.css?body=1" for 127.0.0.1 at 2015-11-25 16:22:05 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:22:05 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 16:22:05 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 16:22:05 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 16:22:05 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 16:22:05 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:22:05 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:22:05 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:22:05 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 16:22:05 +0000
+
+
+Started DELETE "/rapidfire/question_groups/4" for 127.0.0.1 at 2015-11-25 16:22:10 +0000
+Processing by Rapidfire::QuestionGroupsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ddPL5mQH9jKz24SmMLluR0d/R/lRPgT2iclbhUwv8bW4gmmRF9vWBP5wNz7DqbkLtJoZosbWGZKd7r0qm1VcNw==", "id"=>"4"}
+  [1m[36mRapidfire::QuestionGroup Load (0.1ms)[0m  [1mSELECT  "rapidfire_question_groups".* FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ?[0m  [["id", 4]]
+  [1m[35m (3.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/rapidfire/question_groups
+Completed 302 Found in 6ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 16:22:10 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.2ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (6.1ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 140ms (Views: 138.9ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/rapidfire/question_groups/3" for 127.0.0.1 at 2015-11-25 16:22:11 +0000
+Processing by Rapidfire::QuestionGroupsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xRWGmXojjalQr01z+ZdAVPBLmqR3TAqJ0z4162m34ngIRCTuCf+tnx0E/usKh5cYA67E/+CkF+3HGdNEvs1P+g==", "id"=>"3"}
+  [1m[35mRapidfire::QuestionGroup Load (0.1ms)[0m  SELECT  "rapidfire_question_groups".* FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ?  [["id", 3]]
+  [1m[36m (14.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/rapidfire/question_groups
+Completed 302 Found in 20ms (ActiveRecord: 14.3ms)
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 16:22:11 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.2ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (1.1ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 125ms (Views: 124.7ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/rapidfire/question_groups/2" for 127.0.0.1 at 2015-11-25 16:22:13 +0000
+Processing by Rapidfire::QuestionGroupsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vwFoX4sbJQhFgQhjXKVCx3XZ5RrDUgy2UM5X9OCAwYpyUMoo+McFPggqu/uvtZWLhjy7QVS6EdJE6bFbN/psCA==", "id"=>"2"}
+  [1m[36mRapidfire::QuestionGroup Load (0.1ms)[0m  [1mSELECT  "rapidfire_question_groups".* FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ?[0m  [["id", 2]]
+  [1m[35m (16.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/rapidfire/question_groups
+Completed 302 Found in 19ms (ActiveRecord: 17.0ms)
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 16:22:13 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.2ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.7ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 76ms (Views: 75.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rapidfire/question_groups/1/answer_groups/new" for 127.0.0.1 at 2015-11-25 16:22:34 +0000
+Processing by Rapidfire::AnswerGroupsController#new as HTML
+  Parameters: {"question_group_id"=>"1"}
+  [1m[35mRapidfire::QuestionGroup Load (0.1ms)[0m  SELECT  "rapidfire_question_groups".* FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mRapidfire::Question Load (0.1ms)[0m  SELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."question_group_id" = ?  ORDER BY "rapidfire_questions"."position" ASC  [["question_group_id", 1]]
+  [1m[36mRapidfire::Question Load (0.2ms)[0m  [1mSELECT  "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."id" = ?  ORDER BY "rapidfire_questions"."position" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered rapidfire/answers/_errors.html.erb (0.3ms)
+  Rendered rapidfire/answers/_checkbox.html.erb (217.3ms)
+  [1m[35mRapidfire::Question Load (0.1ms)[0m  SELECT  "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."id" = ?  ORDER BY "rapidfire_questions"."position" ASC LIMIT 1  [["id", 2]]
+  Rendered rapidfire/answers/_errors.html.erb (0.0ms)
+  Rendered rapidfire/answers/_date.html.erb (1.5ms)
+  [1m[36mRapidfire::Question Load (0.1ms)[0m  [1mSELECT  "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."id" = ?  ORDER BY "rapidfire_questions"."position" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered rapidfire/answers/_errors.html.erb (0.0ms)
+  Rendered rapidfire/answers/_numeric.html.erb (1.4ms)
+  Rendered rapidfire/answer_groups/new.html.erb within layouts/application (229.4ms)
+Completed 200 OK in 446ms (Views: 296.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/rapidfire/question_groups/1/questions" for 127.0.0.1 at 2015-11-25 16:23:54 +0000
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"question_group_id"=>"1"}
+  [1m[35mRapidfire::QuestionGroup Load (0.1ms)[0m  SELECT  "rapidfire_question_groups".* FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRapidfire::Question Load (0.1ms)[0m  [1mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."question_group_id" = ?  ORDER BY "rapidfire_questions"."position" ASC[0m  [["question_group_id", 1]]
+  Rendered rapidfire/questions/_question.html.erb (1.7ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 75ms (Views: 72.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rapidfire/question_groups/1/answer_groups/new" for 127.0.0.1 at 2015-11-25 16:23:59 +0000
+Processing by Rapidfire::AnswerGroupsController#new as HTML
+  Parameters: {"question_group_id"=>"1"}
+  [1m[35mRapidfire::QuestionGroup Load (0.1ms)[0m  SELECT  "rapidfire_question_groups".* FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mRapidfire::Question Load (0.1ms)[0m  SELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."question_group_id" = ?  ORDER BY "rapidfire_questions"."position" ASC  [["question_group_id", 1]]
+  [1m[36mRapidfire::Question Load (0.1ms)[0m  [1mSELECT  "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."id" = ?  ORDER BY "rapidfire_questions"."position" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered rapidfire/answers/_errors.html.erb (0.0ms)
+  Rendered rapidfire/answers/_checkbox.html.erb (8.1ms)
+  [1m[35mRapidfire::Question Load (0.1ms)[0m  SELECT  "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."id" = ?  ORDER BY "rapidfire_questions"."position" ASC LIMIT 1  [["id", 2]]
+  Rendered rapidfire/answers/_errors.html.erb (0.0ms)
+  Rendered rapidfire/answers/_date.html.erb (1.2ms)
+  [1m[36mRapidfire::Question Load (0.1ms)[0m  [1mSELECT  "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."id" = ?  ORDER BY "rapidfire_questions"."position" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered rapidfire/answers/_errors.html.erb (0.0ms)
+  Rendered rapidfire/answers/_numeric.html.erb (1.1ms)
+  Rendered rapidfire/answer_groups/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 79ms (Views: 75.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/rapidfire/question_groups/1/answer_groups/new" for 127.0.0.1 at 2015-11-25 16:26:03 +0000
+Processing by Rapidfire::AnswerGroupsController#new as HTML
+  Parameters: {"question_group_id"=>"1"}
+  [1m[35mRapidfire::QuestionGroup Load (0.1ms)[0m  SELECT  "rapidfire_question_groups".* FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mRapidfire::Question Load (0.1ms)[0m  SELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."question_group_id" = ?  ORDER BY "rapidfire_questions"."position" ASC  [["question_group_id", 1]]
+  [1m[36mRapidfire::Question Load (0.1ms)[0m  [1mSELECT  "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."id" = ?  ORDER BY "rapidfire_questions"."position" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered rapidfire/answers/_errors.html.erb (0.5ms)
+  Rendered rapidfire/answers/_checkbox.html.erb (15.9ms)
+  [1m[35mRapidfire::Question Load (0.1ms)[0m  SELECT  "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."id" = ?  ORDER BY "rapidfire_questions"."position" ASC LIMIT 1  [["id", 2]]
+  Rendered rapidfire/answers/_errors.html.erb (0.0ms)
+  Rendered rapidfire/answers/_date.html.erb (3.4ms)
+  [1m[36mRapidfire::Question Load (0.1ms)[0m  [1mSELECT  "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."id" = ?  ORDER BY "rapidfire_questions"."position" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered rapidfire/answers/_errors.html.erb (0.0ms)
+  Rendered rapidfire/answers/_numeric.html.erb (3.3ms)
+  Rendered rapidfire/answer_groups/new.html.erb within layouts/application (42.1ms)
+Completed 200 OK in 170ms (Views: 161.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:26:03 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:26:03 +0000
+
+
+Started GET "/assets/scaffolds.self-16bc0babaf25f5c3878f2b3f6a19a43c90eb6d1f09089ea4f9c7d08687cb486d.css?body=1" for 127.0.0.1 at 2015-11-25 16:26:03 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:26:03 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 16:26:03 +0000
+
+
+Started GET "/assets/stylesheet.self-52270cec4a9bb3bc7b3fbca4db4fa63b721f63b76e6493e666f9abbf5bb6b4c6.css?body=1" for 127.0.0.1 at 2015-11-25 16:26:03 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 16:26:03 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 16:26:03 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 16:26:03 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:26:03 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:26:03 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:26:03 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 16:26:03 +0000
+
+
+Started GET "/rapidfire/question_groups/1/answer_groups/new" for 127.0.0.1 at 2015-11-25 16:29:18 +0000
+Processing by Rapidfire::AnswerGroupsController#new as HTML
+  Parameters: {"question_group_id"=>"1"}
+  [1m[35mRapidfire::QuestionGroup Load (0.1ms)[0m  SELECT  "rapidfire_question_groups".* FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mRapidfire::Question Load (0.1ms)[0m  SELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."question_group_id" = ?  ORDER BY "rapidfire_questions"."position" ASC  [["question_group_id", 1]]
+  [1m[36mRapidfire::Question Load (0.1ms)[0m  [1mSELECT  "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."id" = ?  ORDER BY "rapidfire_questions"."position" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered rapidfire/answers/_errors.html.erb (0.0ms)
+  Rendered rapidfire/answers/_checkbox.html.erb (14.4ms)
+  [1m[35mRapidfire::Question Load (0.1ms)[0m  SELECT  "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."id" = ?  ORDER BY "rapidfire_questions"."position" ASC LIMIT 1  [["id", 2]]
+  Rendered rapidfire/answers/_errors.html.erb (0.0ms)
+  Rendered rapidfire/answers/_date.html.erb (6.5ms)
+  [1m[36mRapidfire::Question Load (0.1ms)[0m  [1mSELECT  "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."id" = ?  ORDER BY "rapidfire_questions"."position" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered rapidfire/answers/_errors.html.erb (0.0ms)
+  Rendered rapidfire/answers/_numeric.html.erb (1.0ms)
+  Rendered rapidfire/answer_groups/new.html.erb within layouts/application (36.8ms)
+Completed 200 OK in 167ms (Views: 157.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:29:19 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:29:19 +0000
+
+
+Started GET "/assets/scaffolds.self-16bc0babaf25f5c3878f2b3f6a19a43c90eb6d1f09089ea4f9c7d08687cb486d.css?body=1" for 127.0.0.1 at 2015-11-25 16:29:19 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-25 16:29:19 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-25 16:29:19 +0000
+
+
+Started GET "/assets/stylesheet.self-52270cec4a9bb3bc7b3fbca4db4fa63b721f63b76e6493e666f9abbf5bb6b4c6.css?body=1" for 127.0.0.1 at 2015-11-25 16:29:19 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-25 16:29:19 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-25 16:29:19 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-25 16:29:19 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:29:19 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:29:19 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-25 16:29:19 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-25 16:29:19 +0000
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-11-25 16:29:27 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.3ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (1.4ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 140ms (Views: 139.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rapidfire/question_groups/1/questions" for 127.0.0.1 at 2015-11-25 16:29:30 +0000
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"question_group_id"=>"1"}
+  [1m[36mRapidfire::QuestionGroup Load (0.1ms)[0m  [1mSELECT  "rapidfire_question_groups".* FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRapidfire::Question Load (0.1ms)[0m  SELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."question_group_id" = ?  ORDER BY "rapidfire_questions"."position" ASC  [["question_group_id", 1]]
+  Rendered rapidfire/questions/_question.html.erb (1.2ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 61ms (Views: 59.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rapidfire/question_groups/1/results" for 127.0.0.1 at 2015-11-25 16:29:42 +0000
+Processing by Rapidfire::QuestionGroupsController#results as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRapidfire::QuestionGroup Load (0.1ms)[0m  [1mSELECT  "rapidfire_question_groups".* FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRapidfire::Question Load (0.1ms)[0m  SELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."question_group_id" = ?  ORDER BY "rapidfire_questions"."position" ASC  [["question_group_id", 1]]
+  [1m[36mRapidfire::Answer Load (0.2ms)[0m  [1mSELECT "rapidfire_answers".* FROM "rapidfire_answers" WHERE "rapidfire_answers"."question_id" = ?[0m  [["question_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT "rapidfire_answers"."answer_text" FROM "rapidfire_answers" WHERE "rapidfire_answers"."question_id" = ?  [["question_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT "rapidfire_answers"."answer_text" FROM "rapidfire_answers" WHERE "rapidfire_answers"."question_id" = ?[0m  [["question_id", 3]]
+  Rendered rapidfire/question_groups/results.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 253ms (Views: 65.6ms | ActiveRecord: 0.6ms)
