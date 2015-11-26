@@ -1,4 +1,4 @@
-<ul id= "question_group_<%= question_group.id %>" class="question_box">
+<ul id= "question_group_<%= question_group.id %>" class="question_box wide">
   <li>
     <% if can_administer? %>
       <%= link_to question_group.name, question_group_questions_path(question_group) %>

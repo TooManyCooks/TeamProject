@@ -1,1 +1,16 @@
-<%= render partial: 'form', locals: {question_group: @question_group} %>
+<% content_for :title, "New Question Group" %>
+
+<div id="sideCol">
+  <p id="notice"><%= notice %></p>
+</div>
+
+<div id="mainCol">
+	<div class="animated fadeInDown">
+		<div id="intro_box">
+			<%= image_tag("logo.png", class:"logo") %>
+		</div>
+	  <div id="center_box">
+      <%= render partial: 'form', locals: {question_group: @question_group} %>
+	  </div>
+	</div>
+</div>

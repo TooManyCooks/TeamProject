@@ -1,15 +1,18 @@
-<div class="animated fadeInDown">
-	<div id="intro_box">
-    <h1>PMP</h1>
-    <h2>New Doctor</h2>
+<% content_for :title, "New Doctor" %>
+
+<div id="sideCol">
+  <p id="notice"><%= notice %></p>
+</div>
+
+<div id="mainCol">
+	<div class="animated fadeInDown">
+		<div id="intro_box">
+			<%= image_tag("logo.png", class:"logo") %>
+      <h2><%= yield(:title) %></h2>
+		</div>
+	  <div id="center_box">
+	    <%= render 'form' %>
+			<%= link_to 'Cancel', doctors_path%>
+	  </div>
 	</div>
-  <div id="center_box">
-    <%= render 'form' %>
-  </div>
-	<div id="outro_box">
-		<ul>
-			<li><%= link_to 'Cancel', doctors_path %></li>
-			<li><small>Patient Monitoring Platform &copy; 2015</small></li>
-		</ul>
-  </div>
 </div>

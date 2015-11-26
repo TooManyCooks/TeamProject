@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Teamproject</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>
+      <%= (yield(:title) + " - " unless yield(:title).blank?).to_s + "PMP" %>
+    </title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="animated fadeIn">
+      <div id="content">
 
-<%= yield %>
+        <%= yield %>
 
-</body>
+        <div id="outro_box">
+    			<p><small>Patient Monitoring Platform &copy; 2015</small></p>
+    		</div>
+    	</div>
+    </div
+  </body>
 </html>

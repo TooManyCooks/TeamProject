@@ -1,24 +1,36 @@
-<p id="notice"><%= notice %></p>
+<% @page_title = "Patient Information" %>
 
-<p>
-  <strong>Doctor:</strong>
-  <%= @patient.doctor_id %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @patient.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @patient.email %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @patient.content %>
-</p>
-
-<%= link_to 'Edit', edit_patient_path(@patient) %> |
-<%= link_to 'Back', patients_path %>
+<div class="animated fadeInDown">
+  <div id="content">
+    <div id="doctorCol">
+      <p id="notice"><%= notice %></p>
+      <div>
+        <p>
+          <strong>Doctor Name:</strong><%= Doctor.find(@patient.doctor_id).name %>
+        </p>
+        <p>
+          <strong>Patient Name:</strong><%= @patient.name %>
+        </p>
+        <p>
+          <strong>Patient Email:</strong><%= @patient.email %>
+        </p>
+      </div>
+      <p>
+        <%= link_to 'Edit', edit_patient_path(@patient) %> |
+        <%= link_to 'Back', patients_path %>
+      </p>
+    </div>
+    <div id="patientCol">
+      <h1>PMP</h1>
+        <p>
+          <strong>Content:</strong><%= @patient.content %>
+        </p>
+    </div>
+  </div><br>
+	<div id="outro_box">
+		<ul>
+			<li><%= link_to 'New Patient', new_patient_path %></li>
+      <li><small>Patient Monitoring Platform &copy; 2015</small></li>
+		</ul>
+  </div>
+</div>

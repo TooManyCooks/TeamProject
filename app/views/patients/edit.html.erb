@@ -1,20 +1,19 @@
-<% @page_title = "Edit Patient" %>
+<% content_for :title, "Edit Patient" %>
 
-<div class="animated fadeInDown">
-	<div id="intro_box">
-    <h1>PMP</h1>
-    <h2>Editing Patient</h2>
-  </div>
-  <div id="center_box">
-    <%= render 'form' %>
+<div id="sideCol">
+  <p id="notice"><%= notice %></p>
+</div>
 
-    <%= link_to 'Show', @patient %> |
-    <%= link_to 'Back', patients_path %>
-  </div>
-	<div id="outro_box">
-		<ul>
-			<li><%= link_to("Create a Doctor account", {:controller => 'doctors', :action => 'new'} ) %></li>
-			<li><small>Patient Monitoring Platform &copy; 2015</small></li>
-		</ul>
-  </div>
+<div id="mainCol">
+	<div class="animated fadeInDown">
+		<div id="intro_box">
+			<%= image_tag("logo.png", class:"logo") %>
+			<h2><%= yield(:title) %></h2>
+  	</div>
+  	<div id="center_box">
+    	<%= render 'form' %>
+    		<%= link_to 'Show', @patient %> |
+    	<%= link_to 'Back', patients_path %>
+  	</div>
+	</div>
 </div>

@@ -40,49 +40,49 @@ img {
 	border-radius: 0.5em;
 	background-color: #EEF;
 }
-#doctorCol {
+#sideCol {
 	float:left;
 	width:250px;
-  border-style: solid;
-  border-width: 0px 0px 3px 5px;
-  margin-left: 10px;
-  padding-left: 15px;
+  	border-style: solid;
+  	border-width: 0px 0px 3px 5px;
+  	margin-left: 10px;
+  	padding: 0 15px;
+	display: inline-block;
+	text-align: left;
+	height: 85vh;
+	overflow: auto;
+	background-image: url(sideCol.jpg);
+	background-size: 100% 100%;
 }
- #patientCol {
+#sideCol div {
+  border-style: solid;
+  border-width: 2px 3px 0px 0px;
+	background-color: rgba(255, 255, 255,0.3);
+	padding: 5px;
+}
+#sideCol Sp{
+	text-align: left;
+	margin-top: 0;
+}
+ #mainCol {
 	float:right;
 	width:770px;
   border-style: solid;
   border-width: 0px 0px 3px 5px;
   margin-right: 10px;
   padding-left: 10px;
-}
-#doctorCol, #patientCol{
-  display: inline-block;
-  text-align: left;
-  height: 85vh;
-  overflow: auto;
+	height: 85vh;
 }
 #content{
   margin: 25px auto;
   width: 1100px;
   height: 85vh;
 }
-#doctorCol div, #patientCol div{
-  border-style: solid;
-  border-width: 2px 3px 0px 0px;
-}
-#doctorCol div p{
-	text-align: left;
-}
-#doctorCol h2, #doctorCol p{
-  text-align: center;
-}
-#patientCol h1{
-  width: 0px;
-  height: 0px;
-  top: 10%;
-  left: 48%;
-  position: absolute;
+.logo{
+	width:20em;
+	height:15em;
+	margin: 20px auto;
+	opacity: 0.3;
 }
 .question_box{
 	width: 24em;
@@ -105,6 +105,12 @@ img {
 .wide{
 	width: 18em;
 }
+.top{
+	vertical-align: top;
+}
+.thin{
+	width: 5em;
+}
 .btn {
 	border-radius: 0.25em;
 	margin: 0.5em;
@@ -118,9 +124,11 @@ img {
 	user-select: none;
 }
 .btn-primary {
+	font-size: 1.3em;
 	background-color: #58B;
 	border-color: #58B;
 	color: #FFF;
+	padding: 0 5px;
 	margin: 0;
 }
 .btn-primary:hover, .btn-primary:active, .btn-primary.active:focus {
@@ -150,6 +158,31 @@ img {
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
     z-index: 100;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
 }
 
 @-webkit-keyframes fadeInDown {

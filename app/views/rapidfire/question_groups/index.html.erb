@@ -1,21 +1,20 @@
-<% @page_title = "Queston Group Index" %>
+<% content_for :title, "Queston Groups" %>
 
-<div class="animated fadeInDown">
-  <br><br>
-	<div id="intro_box">
-    <h2>
-      Question Groups
-    </h2>
-  </div>
-  <div>
-    <%= render partial: "question_group", collection: @question_groups %>
-  </div>
-  <% if can_administer? %>
-    <%= link_to "New Group", new_question_group_path, class:"btn btn-white" %>
-  <% end %>
-  <div id="outro_box">
-    <ul>
-      <li><small>Patient Monitoring Platform &copy; 2015</small></li>
-    </ul>
+<div id="sideCol">
+  <p id="notice"><%= notice %></p>
+</div>
+
+<div id="mainCol">
+  <div class="animated fadeInDown">
+  	<div id="intro_box">
+      <%= image_tag("logo.png", class:"logo") %>
+      <h2><%= yield(:title) %></h2>
+    </div>
+	  <div id="center_box">
+      <%= render partial: "question_group", collection: @question_groups %>
+      <% if can_administer? %>
+        <%= link_to "New Group", new_question_group_path, class:"btn btn-white" %>
+      <% end %>
+    </div>
   </div>
 </div>

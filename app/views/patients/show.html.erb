@@ -1,36 +1,28 @@
-<% @page_title = "Patient Information" %>
+<% content_for :title, "Patient Information" %>
 
-<div class="animated fadeInDown">
-  <div id="content">
-    <div id="doctorCol">
-      <p id="notice"><%= notice %></p>
-      <div>
-        <p>
-          <strong>Doctor Name:</strong><%= Doctor.find(@patient.doctor_id).name %>
-        </p>
-        <p>
-          <strong>Patient Name:</strong><%= @patient.name %>
-        </p>
-        <p>
-          <strong>Patient Email:</strong><%= @patient.email %>
-        </p>
-      </div>
-      <p>
-        <%= link_to 'Edit', edit_patient_path(@patient) %> |
-        <%= link_to 'Back', patients_path %>
-      </p>
-    </div>
-    <div id="patientCol">
-      <h1>PMP</h1>
-        <p>
-          <strong>Content:</strong><%= @patient.content %>
-        </p>
-    </div>
-  </div><br>
-	<div id="outro_box">
-		<ul>
-			<li><%= link_to 'New Patient', new_patient_path %></li>
-      <li><small>Patient Monitoring Platform &copy; 2015</small></li>
-		</ul>
+<div id="sideCol">
+  <p id="notice"><%= notice %></p>
+  <div>
+    <p>
+      <strong>Doctor Name:</strong><%= Doctor.find(@patient.doctor_id).name %>
+    </p>
+    <p>
+      <strong>Patient Name:</strong><%= @patient.name %>
+    </p>
+    <p>
+      <strong>Patient Email:</strong><%= @patient.email %>
+    </p>
+    <%= link_to 'Edit', edit_patient_path(@patient) %> |
+    <%= link_to 'Back', patients_path %>
+  </div>
+</div>
+
+<div id="mainCol">
+	<div class="animated fadeInDown">
+		<div id="intro_box">
+			<%= image_tag("logo.png", class:"logo") %>
+	    <h2><%= yield(:title) %></h2>
+		</div>
+    <strong>Content:</strong><%= @patient.content %>
   </div>
 </div>

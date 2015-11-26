@@ -1,0 +1,35 @@
+<% @page_title = "Doctor Login" %>
+
+<div class="animated fadeInDown">
+	<div id="intro_box">
+		<h1>
+			PMP
+		</h1>
+		<h2>
+			Welcome to PMP!
+		</h2>
+		<p>
+			An App for Doctors
+		</p>
+		<p>
+			Log In:
+		</p>
+	</div>
+  <div id="center_box">
+    <%= form_tag(:action => 'attempt_login', :class => "m-t") do %>
+      <div class="form-group">
+        <td><%= text_field_tag(:name, nil, :placeholder => 'Username', :onclick => 'if($(this).val()=="Username"){$(this).val("");};') %></td>
+      </div><br>
+      <div class="form-group">
+        <td><%= password_field_tag(:password, nil, :placeholder => 'Password', :onclick => 'if($(this).val()=="Username"){$(this).val("");};') %></td>
+      </div><br>
+      <%= submit_tag("Log In", :class => "btn btn-primary block full-width m-b") %>
+		</form>
+	</div>
+	<div id="outro_box">
+		<ul>
+			<li><%= link_to("Create a Doctor account", {:controller => 'doctors', :action => 'new'} ) %><% end %></li>
+			<li><small>Patient Monitoring Platform &copy; 2015</small></li>
+		</ul>
+  </div>
+</div>

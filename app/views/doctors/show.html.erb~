@@ -1,22 +1,31 @@
-<p id="notice"><%= notice %></p>
+<% @page_title = "Doctor WorkStation" %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @doctor.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @doctor.email %>
-</p>
-
-<p>
-  <strong>Patients:</strong>
-  <% @doctor.patients.each do |patient| %>
-    <%= patient.name %><%= "," unless patient == @doctor.patients.last %>
-  <% end %>
-</p>
-
-<%= link_to 'Create Patient', new_patient_path(:doctor => @doctor.id) %>
-<%= link_to 'Edit', edit_doctor_path(@doctor) %> |
-<%= link_to 'Back', doctors_path %>
+<div class="animated fadeInDown">
+  <div id="content">
+    <div id="doctorCol">
+      <p id="notice"><%= notice %></p>
+      <h2>Name: <%= @doctor.name %> </h2>
+      <h2>Email: <%= @doctor.email %> </h2>
+      <h3>Patients:</h3>
+      <div id="doctorList">
+        <p><% @doctor.patients.each do |patient| %>
+          <%= patient.name %><%= "," unless patient == @doctor.patients.last %>
+          <% end %>
+        </p>
+        <%= link_to 'Create Patient', new_patient_path(:doctor_id => @doctor.id) %>
+        <%= link_to 'Edit', edit_doctor_path(@doctor) %> |
+        <%= link_to 'Back', doctors_path %>
+      </div>
+    </div>
+    <div id="patientCol">
+      <h1>PMP</h1>
+      <p>Code for showing patients</p>
+    </div>
+  </div><br>
+	<div id="outro_box">
+		<ul>
+			<li><%= link_to("Create a Doctor Account", {:controller => 'doctors', :action => 'new'} ) %></li>
+			<li><small>Patient Monitoring Platform &copy; 2015</small></li>
+		</ul>
+  </div>
+</div>

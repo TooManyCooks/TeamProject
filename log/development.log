@@ -36724,3 +36724,72 @@ Processing by Rapidfire::QuestionGroupsController#results as HTML
   [1m[36m (0.1ms)[0m  [1mSELECT "rapidfire_answers"."answer_text" FROM "rapidfire_answers" WHERE "rapidfire_answers"."question_id" = ?[0m  [["question_id", 3]]
   Rendered rapidfire/question_groups/results.html.erb within layouts/application (0.6ms)
 Completed 200 OK in 253ms (Views: 65.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-26 23:33:22 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (211.4ms)
+Completed 200 OK in 455ms (Views: 440.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-11-26 23:33:23 +0000
+
+
+Started GET "/assets/stylesheet.self-fcb8e27a7dfcdf490728e934b2ba9161fef49b71f153cb20304707acb4dc8a21.css?body=1" for 127.0.0.1 at 2015-11-26 23:33:23 +0000
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-11-26 23:33:23 +0000
+
+
+Started POST "/access/attempt_login?class=m-t" for 127.0.0.1 at 2015-11-26 23:33:32 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fwN4wZToWW+jsos3Vxzbim8trVhsr9yeaBXnPLwOtzBgU9z0wtv/pU3VjXG3DcMusk+0Om7nMT7iEw3Y7PzmJw==", "name"=>"asd", "password"=>"[FILTERED]", "commit"=>"Log In", "class"=>"m-t"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "asd"]]
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1[0m  [["name", "asd"]]
+Redirected to http://localhost:3000/doctors/2
+Completed 302 Found in 200ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/doctors/2" for 127.0.0.1 at 2015-11-26 23:33:33 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 2]]
+  Rendered doctors/show.html.erb within layouts/application (57.7ms)
+Completed 200 OK in 202ms (Views: 199.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-11-26 23:33:33 +0000
+
+
+Started GET "/doctors" for 127.0.0.1 at 2015-11-26 23:33:37 +0000
+Processing by DoctorsController#index as HTML
+  [1m[35mDoctor Load (0.3ms)[0m  SELECT "doctors".* FROM "doctors"
+  Rendered doctors/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 89ms (Views: 87.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/doctors/1/edit" for 127.0.0.1 at 2015-11-26 23:33:40 +0000
+Processing by DoctorsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered doctors/_form.html.erb (15.3ms)
+  Rendered doctors/edit.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 79ms (Views: 77.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/doctors" for 127.0.0.1 at 2015-11-26 23:33:44 +0000
+Processing by DoctorsController#index as HTML
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT "doctors".* FROM "doctors"
+  Rendered doctors/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 62ms (Views: 61.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2015-11-26 23:33:47 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPatient Load (0.1ms)[0m  SELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?  [["doctor_id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 67ms (Views: 65.6ms | ActiveRecord: 0.1ms)

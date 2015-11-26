@@ -1,5 +1,3 @@
-<h3>Question</h3>
-
 <%= form_for form, as: :question, url: url, method: method do |f| %>
   <%- unless form.errors.empty? %>
     <ul>
@@ -8,33 +6,33 @@
       <% end %>
     </ul>
   <% end %>
-
-  <%= f.label :type %>
-  <%= f.select :type, ::Rapidfire::QuestionForm::QUESTION_TYPES, {}, id: "question_type" %>
-
-  <%= f.label :question_text %>
-  <%= f.text_field :question_text %>
-
-  <%= f.label :answer_options %>
-  <%= f.text_area :answer_options, rows: 5 %>
-
-  <h4>Other options</h4>
-  <hr/>
-
-  <%= f.label :answer_presence %>
-  <%= f.check_box :answer_presence %>
-
-  <%= f.label :answer_minimum_length %>
-  <%= f.text_field :answer_minimum_length %>
-
-  <%= f.label :answer_maximum_length %>
-  <%= f.text_field :answer_maximum_length %>
-
-  <%= f.label :answer_greater_than_or_equal_to %>
-  <%= f.text_field :answer_greater_than_or_equal_to %>
-
-  <%= f.label :answer_less_than_or_equal_to %>
-  <%= f.text_field :answer_less_than_or_equal_to %>
-
+  <div id="question_box">
+    <%= f.label :type %>
+    <%= f.select :type, ::Rapidfire::QuestionForm::QUESTION_TYPES, {}, id: "question_type" %>
+    <br>
+    <%= f.label :question_text %>
+    <%= f.text_field :question_text %>
+    <br>
+    <%= f.label :answer_options, class:"top"%>
+    <%= f.text_area :answer_options, rows: 5 %>
+  </div>
+  <br>
+  <div id="question_box">
+    <%= f.label :answer_presence %>
+    <%= f.check_box :answer_presence %>
+    <br>
+    <%= f.label :answer_minimum_length %>
+    <%= f.number_field :answer_minimum_length, placeholder:"Optional", class:"thin" %>
+    <br>
+    <%= f.label :answer_maximum_length %>
+    <%= f.number_field :answer_maximum_length, placeholder:"Optional", class:"thin" %>
+    <br>
+    <%= f.label :answer_greater_than_or_equal_to %>
+    <%= f.number_field :answer_greater_than_or_equal_to, placeholder:"Optional", class:"thin" %>
+    <br>
+    <%= f.label :answer_less_than_or_equal_to %>
+    <%= f.number_field :answer_less_than_or_equal_to, placeholder:"Optional", class:"thin" %>
+    <br>
+  </div><br>
   <%= f.submit submit_text %>
 <% end %>
