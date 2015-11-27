@@ -8,8 +8,8 @@
   <div id="center_box">
     <div class="identity">Logged in as: <%= session[:name] %></div>
     <ul>
-      <li><%= link_to(" link to doctor list page", :controller => 'doctors',:action => 'index') %></li>
-      <li><%= link_to("Logout", :action => 'logout') %></li>
+      <li><%= link_to("Doctor List", :controller => 'doctors',:action => 'index') %></li>
+      <li><%= link_to("New Doctor", :controller => 'doctors',:action => 'new') %></li>
     </ul>
   </div>
 <% end %>
