@@ -1,6 +1,6 @@
 <% content_for :title, "Patient Information" %>
 
-<div id="sideCol">
+<% content_for :sideCol do %>
   <p id="notice"><%= notice %></p>
   <div>
     <p>
@@ -15,14 +15,11 @@
     <%= link_to 'Edit', edit_patient_path(@patient) %> |
     <%= link_to 'Back', patients_path %>
   </div>
-</div>
+<% end %>
 
-<div id="mainCol">
-	<div class="animated fadeInDown">
-		<div id="intro_box">
-			<%= image_tag("logo.png", class:"logo") %>
-	    <h2><%= yield(:title) %></h2>
-		</div>
+
+<% content_for :mainCol do %>
+	<div id="center_box">
     <strong>Content:</strong><%= @patient.content %>
   </div>
-</div>
+<% end %>

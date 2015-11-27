@@ -11,9 +11,18 @@
   <body>
     <div class="animated fadeIn">
       <div id="content">
-
-        <%= yield %>
-
+        <div id="sideCol">
+          <%= yield(:sideCol) %>
+        </div>
+        <div id="mainCol">
+        	<div class="animated fadeInDown">
+          	<div id="intro_box">
+          		<%= image_tag("logo.png", class:"logo") %>
+          	  <h2><%= yield(:title) %></h2>
+          	</div>
+            <%= yield(:mainCol) %>
+        	</div>
+        </div>
         <div id="outro_box">
     			<p><small>Patient Monitoring Platform &copy; 2015</small></p>
     		</div>

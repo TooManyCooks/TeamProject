@@ -1,19 +1,13 @@
 <% content_for :title, "Edit Doctor" %>
 
-<div id="sideCol">
+<% content_for :sideCol do %>
   <p id="notice"><%= notice %></p>
-</div>
+<% end %>
 
-<div id="mainCol">
-	<div class="animated fadeInDown">
-		<div id="intro_box">
-			<%= image_tag("logo.png", class:"logo") %>
-	    <h2><%= yield(:title) %></h2>
-	  </div>
-	  <div id="center_box">
-	    <%= render 'form' %>
-		    <%= link_to 'Show', @doctor %> |
-	    <%= link_to 'Back', doctors_path %>
-	  </div>
-	</div>
-</div>
+<% content_for :mainCol do %>
+  <div id="center_box">
+    <%= render 'form' %>
+	  <%= link_to 'Show', @doctor %> |
+    <%= link_to 'Back', doctors_path %>
+  </div>
+<% end %>

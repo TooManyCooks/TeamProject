@@ -1,14 +1,15 @@
 <% content_for :title, "Admin Menu" %>
 
-<div id="sideCol">
+<% content_for :sideCol do %>
   <%= flash[:notice]%>
-</div>
+<% end %>
 
-<div  id="mainCol">
-  <h1>Holding Page</h1>
-  <div class="identity">Logged in as: <%= session[:name] %></div>
-  <ul>
-    <li><%= link_to(" link to doctor list page", :controller => 'doctors',:action => 'index') %></li>
-    <li><%= link_to("Logout", :action => 'logout') %></li>
-  </ul>
-</div>
+<% content_for :mainCol do %>
+  <div id="center_box">
+    <div class="identity">Logged in as: <%= session[:name] %></div>
+    <ul>
+      <li><%= link_to(" link to doctor list page", :controller => 'doctors',:action => 'index') %></li>
+      <li><%= link_to("Logout", :action => 'logout') %></li>
+    </ul>
+  </div>
+<% end %>
