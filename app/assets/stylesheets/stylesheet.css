@@ -105,6 +105,9 @@ img {
 .wide{
 	width: 18em;
 }
+.wider{
+	width: 32em;
+}
 .top{
 	vertical-align: top;
 }

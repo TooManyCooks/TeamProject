@@ -37494,3 +37494,424 @@ Processing by DoctorsController#show as HTML
   [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 2]]
   Rendered doctors/show.html.erb within layouts/application (5.6ms)
 Completed 200 OK in 98ms (Views: 97.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-28 23:20:38 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 229ms (Views: 221.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-11-28 23:20:39 +0000
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-11-28 23:20:53 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"80dEw5sQ6MrP2I4TevMMLCwNPy9zwIyVbyS4D9Mbb8EctdRXD1xrC2CWkKEEh0qSvCY8YlIENJYzbMzOCb6WvQ==", "name"=>"asd", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mDoctor Load (0.3ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "asd"]]
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1[0m  [["name", "asd"]]
+Redirected to http://localhost:3000/doctors/2
+Completed 302 Found in 183ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/doctors/2" for 127.0.0.1 at 2015-11-28 23:20:53 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 2]]
+  Rendered doctors/show.html.erb within layouts/application (61.0ms)
+Completed 200 OK in 159ms (Views: 156.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-11-28 23:20:54 +0000
+
+
+Started GET "/doctors" for 127.0.0.1 at 2015-11-28 23:20:56 +0000
+Processing by DoctorsController#index as HTML
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT "doctors".* FROM "doctors"
+  Rendered doctors/index.html.erb within layouts/application (76.0ms)
+Completed 200 OK in 182ms (Views: 179.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/patients/" for 127.0.0.1 at 2015-11-28 23:21:16 +0000
+Processing by PatientsController#index as HTML
+  [1m[36mPatient Load (0.3ms)[0m  [1mSELECT "patients".* FROM "patients"[0m
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered patients/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 104ms (Views: 100.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-11-28 23:21:17 +0000
+
+
+Started GET "/patients/" for 127.0.0.1 at 2015-11-28 23:22:38 +0000
+Processing by PatientsController#index as HTML
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients"[0m
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered patients/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 86ms (Views: 84.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:22:38 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:22:38 +0000
+
+
+Started GET "/assets/stylesheet.self-fcb8e27a7dfcdf490728e934b2ba9161fef49b71f153cb20304707acb4dc8a21.css?body=1" for 127.0.0.1 at 2015-11-28 23:22:38 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-11-28 23:22:38 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-28 23:22:38 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-28 23:22:38 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:22:38 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-28 23:22:38 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:22:38 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-28 23:22:38 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:22:38 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:22:38 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-28 23:22:38 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-11-28 23:22:38 +0000
+
+
+Started GET "/assets/open-497a3c7e36d42911b727229d96a676aa3db0ed75dce0e128fe1706f16387a30a.png" for 127.0.0.1 at 2015-11-28 23:22:38 +0000
+
+
+Started GET "/assets/edit-c2e3915cbefb43614262ded754377d9fdda7e002c288499f44452f54101bb1d6.png" for 127.0.0.1 at 2015-11-28 23:22:38 +0000
+
+
+Started GET "/assets/bin-457cdbfb376c86a1b4da27fb310d595eb05ed6e0a1339191f068dd39b169f5c4.png" for 127.0.0.1 at 2015-11-28 23:22:38 +0000
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-11-28 23:22:38 +0000
+
+
+Started GET "/patients/" for 127.0.0.1 at 2015-11-28 23:24:31 +0000
+Processing by PatientsController#index as HTML
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients"[0m
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered patients/index.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 104ms (Views: 102.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:24:31 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:24:31 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:24:31 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-11-28 23:24:31 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-28 23:24:31 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-28 23:24:31 +0000
+
+
+Started GET "/assets/stylesheet.self-ec884548eb31ea84daab00829f08a15fe1c095d56bbf675e95beab51a0d615a2.css?body=1" for 127.0.0.1 at 2015-11-28 23:24:31 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-28 23:24:32 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-28 23:24:32 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:24:32 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:24:32 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:24:32 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-28 23:24:32 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-11-28 23:24:32 +0000
+
+
+Started GET "/assets/bin-457cdbfb376c86a1b4da27fb310d595eb05ed6e0a1339191f068dd39b169f5c4.png" for 127.0.0.1 at 2015-11-28 23:24:32 +0000
+
+
+Started GET "/assets/edit-c2e3915cbefb43614262ded754377d9fdda7e002c288499f44452f54101bb1d6.png" for 127.0.0.1 at 2015-11-28 23:24:32 +0000
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-11-28 23:24:32 +0000
+
+
+Started GET "/assets/open-497a3c7e36d42911b727229d96a676aa3db0ed75dce0e128fe1706f16387a30a.png" for 127.0.0.1 at 2015-11-28 23:24:32 +0000
+
+
+Started GET "/patients/" for 127.0.0.1 at 2015-11-28 23:25:33 +0000
+Processing by PatientsController#index as HTML
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT "patients".* FROM "patients"[0m
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered patients/index.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 118ms (Views: 116.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:25:33 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:25:34 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-28 23:25:34 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-11-28 23:25:34 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-28 23:25:34 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:25:34 +0000
+
+
+Started GET "/assets/stylesheet.self-e0845056f254c6365b1eb6f81e729a37e73e05234e9d3954a8d1190223fcdfbe.css?body=1" for 127.0.0.1 at 2015-11-28 23:25:34 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-28 23:25:34 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-28 23:25:34 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:25:34 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:25:34 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:25:34 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-28 23:25:34 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-11-28 23:25:34 +0000
+
+
+Started GET "/assets/open-497a3c7e36d42911b727229d96a676aa3db0ed75dce0e128fe1706f16387a30a.png" for 127.0.0.1 at 2015-11-28 23:25:34 +0000
+
+
+Started GET "/assets/edit-c2e3915cbefb43614262ded754377d9fdda7e002c288499f44452f54101bb1d6.png" for 127.0.0.1 at 2015-11-28 23:25:34 +0000
+
+
+Started GET "/assets/bin-457cdbfb376c86a1b4da27fb310d595eb05ed6e0a1339191f068dd39b169f5c4.png" for 127.0.0.1 at 2015-11-28 23:25:34 +0000
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-11-28 23:25:34 +0000
+
+
+Started GET "/patients/" for 127.0.0.1 at 2015-11-28 23:25:38 +0000
+Processing by PatientsController#index as HTML
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT "patients".* FROM "patients"[0m
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered patients/index.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 81ms (Views: 80.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:25:38 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:25:38 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-28 23:25:38 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-28 23:25:38 +0000
+
+
+Started GET "/assets/stylesheet.self-e0845056f254c6365b1eb6f81e729a37e73e05234e9d3954a8d1190223fcdfbe.css?body=1" for 127.0.0.1 at 2015-11-28 23:25:38 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:25:38 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-11-28 23:25:38 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-28 23:25:38 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-28 23:25:38 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:25:38 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:25:38 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:25:38 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-28 23:25:39 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-11-28 23:25:39 +0000
+
+
+Started GET "/assets/edit-c2e3915cbefb43614262ded754377d9fdda7e002c288499f44452f54101bb1d6.png" for 127.0.0.1 at 2015-11-28 23:25:39 +0000
+
+
+Started GET "/assets/bin-457cdbfb376c86a1b4da27fb310d595eb05ed6e0a1339191f068dd39b169f5c4.png" for 127.0.0.1 at 2015-11-28 23:25:39 +0000
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-11-28 23:25:39 +0000
+
+
+Started GET "/assets/open-497a3c7e36d42911b727229d96a676aa3db0ed75dce0e128fe1706f16387a30a.png" for 127.0.0.1 at 2015-11-28 23:25:39 +0000
+
+
+Started GET "/patients/" for 127.0.0.1 at 2015-11-28 23:26:37 +0000
+Processing by PatientsController#index as HTML
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients"[0m
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered patients/index.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 101ms (Views: 100.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:26:37 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:26:37 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:26:37 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-11-28 23:26:37 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-28 23:26:37 +0000
+
+
+Started GET "/assets/stylesheet.self-4aa4999282dbf83737f9983674fcb37662c0de912850c9cfce49748b7600e2ed.css?body=1" for 127.0.0.1 at 2015-11-28 23:26:37 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-28 23:26:37 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-28 23:26:37 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-28 23:26:37 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:26:37 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:26:37 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-28 23:26:37 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:26:37 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-11-28 23:26:37 +0000
+
+
+Started GET "/assets/bin-457cdbfb376c86a1b4da27fb310d595eb05ed6e0a1339191f068dd39b169f5c4.png" for 127.0.0.1 at 2015-11-28 23:26:37 +0000
+
+
+Started GET "/assets/edit-c2e3915cbefb43614262ded754377d9fdda7e002c288499f44452f54101bb1d6.png" for 127.0.0.1 at 2015-11-28 23:26:37 +0000
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-11-28 23:26:37 +0000
+
+
+Started GET "/assets/open-497a3c7e36d42911b727229d96a676aa3db0ed75dce0e128fe1706f16387a30a.png" for 127.0.0.1 at 2015-11-28 23:26:37 +0000
+
+
+Started GET "/patients/" for 127.0.0.1 at 2015-11-28 23:27:17 +0000
+Processing by PatientsController#index as HTML
+  [1m[36mPatient Load (4.8ms)[0m  [1mSELECT "patients".* FROM "patients"[0m
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered patients/index.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 93ms (Views: 87.4ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:27:17 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:27:17 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:27:17 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-28 23:27:17 +0000
+
+
+Started GET "/assets/stylesheet.self-4aa4999282dbf83737f9983674fcb37662c0de912850c9cfce49748b7600e2ed.css?body=1" for 127.0.0.1 at 2015-11-28 23:27:17 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-11-28 23:27:17 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-28 23:27:17 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-28 23:27:17 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-11-28 23:27:17 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:27:17 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:27:17 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:27:17 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-28 23:27:17 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-11-28 23:27:17 +0000
+
+
+Started GET "/assets/edit-c2e3915cbefb43614262ded754377d9fdda7e002c288499f44452f54101bb1d6.png" for 127.0.0.1 at 2015-11-28 23:27:17 +0000
+
+
+Started GET "/assets/bin-457cdbfb376c86a1b4da27fb310d595eb05ed6e0a1339191f068dd39b169f5c4.png" for 127.0.0.1 at 2015-11-28 23:27:17 +0000
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-11-28 23:27:17 +0000
+
+
+Started GET "/assets/open-497a3c7e36d42911b727229d96a676aa3db0ed75dce0e128fe1706f16387a30a.png" for 127.0.0.1 at 2015-11-28 23:27:17 +0000
