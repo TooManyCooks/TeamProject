@@ -37915,3 +37915,3196 @@ Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-11-28 23:27:17 +0000
 
 
 Started GET "/assets/open-497a3c7e36d42911b727229d96a676aa3db0ed75dce0e128fe1706f16387a30a.png" for 127.0.0.1 at 2015-11-28 23:27:17 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-01 09:48:55 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 422ms (Views: 413.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/stylesheet.self-4aa4999282dbf83737f9983674fcb37662c0de912850c9cfce49748b7600e2ed.css?body=1" for 127.0.0.1 at 2015-12-01 09:48:56 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-12-01 09:48:56 +0000
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-12-01 09:48:56 +0000
+
+
+Started GET "/doctors/new" for 127.0.0.1 at 2015-12-01 09:49:37 +0000
+Processing by DoctorsController#new as HTML
+  Rendered doctors/_form.html.erb (19.6ms)
+  Rendered doctors/new.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 112ms (Views: 100.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/doctors" for 127.0.0.1 at 2015-12-01 09:49:44 +0000
+Processing by DoctorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lq48aUfR0VWFPPmD558NqiYvPnLCromFxfAMVMBtZ6U55AVtt0qLcLcDHSJsJjMFIttAxHVl8Vp78PWuZSIYSQ==", "doctor"=>{"name"=>"jim", "password"=>"[FILTERED]"}, "commit"=>"Create Doctor"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "doctors" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "jim"], ["password_digest", "$2a$10$YZGPdMvEBc3eGI9lXmdBuulfSa48igdsnjElp580Rtssih0etIHWi"], ["created_at", "2015-12-01 09:49:44.128381"], ["updated_at", "2015-12-01 09:49:44.128381"]]
+  [1m[35m (24.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/doctors/3
+Completed 302 Found in 110ms (ActiveRecord: 24.4ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-01 09:49:44 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+Redirected to http://localhost:3000/access/login
+Filter chain halted as :confirm_logged_in rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2015-12-01 09:49:44 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-01 09:49:49 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Kv6rkXysftPaCWWdzixUvdtl3lQlBZdxMy3ELPPfS+A9tJKVjDck9ug2gTxFlWoS35Gg4pLO766NLT3WVpA0DA==", "name"=>"jim", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1[0m  [["name", "jim"]]
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1  [["name", "jim"]]
+Redirected to http://localhost:3000/doctors/3
+Completed 302 Found in 88ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-01 09:49:49 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mPatient Load (0.1ms)[0m  SELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 59ms (Views: 57.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-01 14:30:44 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 197ms (Views: 174.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-01 14:30:44 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-01 14:30:44 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-01 14:30:44 +0000
+
+
+Started GET "/assets/stylesheet.self-4aa4999282dbf83737f9983674fcb37662c0de912850c9cfce49748b7600e2ed.css?body=1" for 127.0.0.1 at 2015-12-01 14:30:44 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-01 14:30:44 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-12-01 14:30:44 +0000
+
+
+Started GET "/assets/scaffolds.self-9d4184da8f230f9c0b2ec66cd57972d5f55c9f84c5263497bde80f36fa6b2a80.css?body=1" for 127.0.0.1 at 2015-12-01 14:30:44 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-12-01 14:30:44 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-12-01 14:30:44 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-01 14:30:44 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-01 14:30:44 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-01 14:30:44 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-01 14:30:44 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-12-01 14:30:44 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-01 14:30:59 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 80ms (Views: 79.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-12-01 14:31:00 +0000
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-01 14:31:09 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z2NdMV0adnc5j5ZxVuzu8g5IqWDyeXWSjhOWw3R3IEBwKWQ1rYEsUguwctDdVdBdCrzX1kWyDU0wE2850ThfrA==", "name"=>"jim", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "jim"]]
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1[0m  [["name", "jim"]]
+Redirected to http://localhost:3000/doctors/3
+Completed 302 Found in 88ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-01 14:31:10 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 71ms (Views: 70.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/patients/new?doctor_id=3" for 127.0.0.1 at 2015-12-01 14:31:14 +0000
+Processing by PatientsController#new as HTML
+  Parameters: {"doctor_id"=>"3"}
+  Rendered patients/_form.html.erb (12.7ms)
+  Rendered patients/new.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 57ms (Views: 53.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-01 14:31:31 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h2nf+6eUhr4uNXuEuMufH1COTz8IyXEznQLceLWmC/qQI+b/Vw/cmxwKnyUzcqGwVHoxib8CCewjAiWCEOl0Fg==", "patient"=>{"doctor_id"=>"3", "name"=>"james ", "email"=>"jamestate11@gmail.com", "content"=>"Please work"}, "commit"=>"Create Patient"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["doctor_id", 3], ["name", "james "], ["email", "jamestate11@gmail.com"], ["content", "Please work"], ["created_at", "2015-12-01 14:31:31.596484"], ["updated_at", "2015-12-01 14:31:31.596484"]]
+  [1m[35m (38.4ms)[0m  commit transaction
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 7e21e128-d2c4-4ca2-81d8-63d696d3679d) to Inline(mailers) with arguments: "PatientMailer", "welcome_email", "deliver_now", gid://teamproject/Patient/2
+[ActiveJob]   [1m[36mPatient Load (0.2ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 2]]
+[ActiveJob] [ActionMailer::DeliveryJob] [7e21e128-d2c4-4ca2-81d8-63d696d3679d] Performing ActionMailer::DeliveryJob from Inline(mailers) with arguments: "PatientMailer", "welcome_email", "deliver_now", gid://teamproject/Patient/2
+[ActiveJob] [ActionMailer::DeliveryJob] [7e21e128-d2c4-4ca2-81d8-63d696d3679d] 
+PatientMailer#welcome_email: processed outbound mail in 10.6ms
+[ActiveJob] [ActionMailer::DeliveryJob] [7e21e128-d2c4-4ca2-81d8-63d696d3679d] Performed ActionMailer::DeliveryJob from Inline(mailers) in 11.53ms
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 38.9ms)
+
+ActionView::MissingTemplate (Missing template patient_mailer/welcome_email with "mailer". Searched in:
+  * "patient_mailer"
+):
+  app/mailers/patient_mailer.rb:14:in `welcome_email'
+  app/controllers/patients_controller.rb:33:in `block in create'
+  app/controllers/patients_controller.rb:31:in `create'
+
+
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/missing_template.html.erb within rescues/layout (0.4ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-01 14:35:09 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h2nf+6eUhr4uNXuEuMufH1COTz8IyXEznQLceLWmC/qQI+b/Vw/cmxwKnyUzcqGwVHoxib8CCewjAiWCEOl0Fg==", "patient"=>{"doctor_id"=>"3", "name"=>"james ", "email"=>"jamestate11@gmail.com", "content"=>"Please work"}, "commit"=>"Create Patient"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["doctor_id", 3], ["name", "james "], ["email", "jamestate11@gmail.com"], ["content", "Please work"], ["created_at", "2015-12-01 14:35:09.318459"], ["updated_at", "2015-12-01 14:35:09.318459"]]
+  [1m[35m (34.6ms)[0m  commit transaction
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 041d4e56-4605-4aac-85d5-608a25f5ba0f) to Inline(mailers) with arguments: "PatientMailer", "welcome_email", "deliver_now", gid://teamproject/Patient/3
+[ActiveJob]   [1m[36mPatient Load (0.2ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 3]]
+[ActiveJob] [ActionMailer::DeliveryJob] [041d4e56-4605-4aac-85d5-608a25f5ba0f] Performing ActionMailer::DeliveryJob from Inline(mailers) with arguments: "PatientMailer", "welcome_email", "deliver_now", gid://teamproject/Patient/3
+[ActiveJob] [ActionMailer::DeliveryJob] [041d4e56-4605-4aac-85d5-608a25f5ba0f] 
+PatientMailer#welcome_email: processed outbound mail in 10.0ms
+[ActiveJob] [ActionMailer::DeliveryJob] [041d4e56-4605-4aac-85d5-608a25f5ba0f] Performed ActionMailer::DeliveryJob from Inline(mailers) in 10.77ms
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 35.5ms)
+
+ActionView::MissingTemplate (Missing template patient_mailer/welcome_email with "mailer". Searched in:
+  * "patient_mailer"
+):
+  app/mailers/patient_mailer.rb:14:in `welcome_email'
+  app/controllers/patients_controller.rb:33:in `block in create'
+  app/controllers/patients_controller.rb:31:in `create'
+
+
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/missing_template.html.erb within rescues/layout (0.4ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-01 14:35:14 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j1fXy3cIxwNtEEuU/pUj+uOG6Dgb9jwsyttYdzeVoOyYHe7Ph5OdJl8vrzV1LB1V53KWjqw9RPN026GNktrfAA==", "patient"=>{"doctor_id"=>"3", "name"=>"james ", "email"=>"jamestate11@gmail.com", "content"=>"Please work"}, "commit"=>"Create Patient"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["doctor_id", 3], ["name", "james "], ["email", "jamestate11@gmail.com"], ["content", "Please work"], ["created_at", "2015-12-01 14:35:14.017230"], ["updated_at", "2015-12-01 14:35:14.017230"]]
+  [1m[35m (35.1ms)[0m  commit transaction
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 9bc5e294-cbf9-4e2f-af4d-c9cd64042bac) to Inline(mailers) with arguments: "PatientMailer", "welcome_email", "deliver_now", gid://teamproject/Patient/4
+[ActiveJob]   [1m[36mPatient Load (0.1ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 4]]
+[ActiveJob] [ActionMailer::DeliveryJob] [9bc5e294-cbf9-4e2f-af4d-c9cd64042bac] Performing ActionMailer::DeliveryJob from Inline(mailers) with arguments: "PatientMailer", "welcome_email", "deliver_now", gid://teamproject/Patient/4
+[ActiveJob] [ActionMailer::DeliveryJob] [9bc5e294-cbf9-4e2f-af4d-c9cd64042bac] 
+PatientMailer#welcome_email: processed outbound mail in 8.9ms
+[ActiveJob] [ActionMailer::DeliveryJob] [9bc5e294-cbf9-4e2f-af4d-c9cd64042bac] Performed ActionMailer::DeliveryJob from Inline(mailers) in 9.71ms
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 35.6ms)
+
+ActionView::MissingTemplate (Missing template patient_mailer/welcome_email with "mailer". Searched in:
+  * "patient_mailer"
+):
+  app/mailers/patient_mailer.rb:14:in `welcome_email'
+  app/controllers/patients_controller.rb:33:in `block in create'
+  app/controllers/patients_controller.rb:31:in `create'
+
+
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/missing_template.html.erb within rescues/layout (0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-01 14:40:19 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 167ms (Views: 159.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-12-01 14:40:19 +0000
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-01 14:41:12 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Iw7DbiJW8HFT4GbYNqMMLMW0n/1QnwwvJk7MSe9ZBoY0RPpq0s2qVGHfgnm9GjKDwUDhS+dUdPCYTjWzShZ5ag==", "name"=>"jim", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "jim"]]
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1[0m  [["name", "jim"]]
+Redirected to http://localhost:3000/doctors/3
+Completed 302 Found in 97ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-01 14:41:12 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 89ms (Views: 87.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/patients/new?doctor_id=3" for 127.0.0.1 at 2015-12-01 14:41:16 +0000
+Processing by PatientsController#new as HTML
+  Parameters: {"doctor_id"=>"3"}
+  Rendered patients/_form.html.erb (13.4ms)
+  Rendered patients/new.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 85ms (Views: 84.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-01 14:41:25 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W3Y+O/rQ8nH7UBuWhYl+XZZYM+7155dTH6BqBAPlgK9MPAc/CkuoVMlv/zcOMEDykqxNWEIs74yhoJP+pqr/Qw==", "patient"=>{"doctor_id"=>"3", "name"=>"tom", "email"=>"jamestate11@gmail.com", "content"=>""}, "commit"=>"Create Patient"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["doctor_id", 3], ["name", "tom"], ["email", "jamestate11@gmail.com"], ["content", ""], ["created_at", "2015-12-01 14:41:25.721706"], ["updated_at", "2015-12-01 14:41:25.721706"]]
+  [1m[35m (57.4ms)[0m  commit transaction
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 6dd059a5-87d8-4c14-b083-658bdebe346c) to Inline(mailers) with arguments: "PatientMailer", "welcome_email", "deliver_now", gid://teamproject/Patient/5
+[ActiveJob]   [1m[36mPatient Load (0.2ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 5]]
+[ActiveJob] [ActionMailer::DeliveryJob] [6dd059a5-87d8-4c14-b083-658bdebe346c] Performing ActionMailer::DeliveryJob from Inline(mailers) with arguments: "PatientMailer", "welcome_email", "deliver_now", gid://teamproject/Patient/5
+[ActiveJob] [ActionMailer::DeliveryJob] [6dd059a5-87d8-4c14-b083-658bdebe346c] 
+PatientMailer#welcome_email: processed outbound mail in 14.3ms
+[ActiveJob] [ActionMailer::DeliveryJob] [6dd059a5-87d8-4c14-b083-658bdebe346c] Performed ActionMailer::DeliveryJob from Inline(mailers) in 16.15ms
+Completed 500 Internal Server Error in 121ms (ActiveRecord: 57.9ms)
+
+ActionView::MissingTemplate (Missing template patient_mailer/welcome_email with "mailer". Searched in:
+  * "patient_mailer"
+):
+  app/mailers/patient_mailer.rb:14:in `welcome_email'
+  app/controllers/patients_controller.rb:33:in `block in create'
+  app/controllers/patients_controller.rb:31:in `create'
+
+
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/missing_template.html.erb within rescues/layout (0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-01 14:44:05 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 161ms (Views: 152.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-12-01 14:44:06 +0000
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-01 14:44:12 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FXtBoHreEsOMzy+/HSM811woquPyIU9QW2kCfFem3zMCMXikikVI5r7wyx6WmgJ4WNzUVUXqN4/lafuG8umg3w==", "name"=>"jim", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mDoctor Load (0.3ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "jim"]]
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1[0m  [["name", "jim"]]
+Redirected to http://localhost:3000/doctors/3
+Completed 302 Found in 114ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-01 14:44:12 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (41.9ms)
+Completed 200 OK in 94ms (Views: 92.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/patients/new?doctor_id=3" for 127.0.0.1 at 2015-12-01 14:44:16 +0000
+Processing by PatientsController#new as HTML
+  Parameters: {"doctor_id"=>"3"}
+  Rendered patients/_form.html.erb (24.0ms)
+  Rendered patients/new.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 111ms (Views: 109.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-01 14:44:24 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sxzkolqimqrse/rZx5Cz0cAFN0zjOUSrNd8oNGblgu+kVt2mqjnAj95EHnhMKY1+xPFJ+lTyPHSL39HOw6r9Aw==", "patient"=>{"doctor_id"=>"3", "name"=>"bill", "email"=>"jamestate11@gmail.com", "content"=>""}, "commit"=>"Create Patient"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["doctor_id", 3], ["name", "bill"], ["email", "jamestate11@gmail.com"], ["content", ""], ["created_at", "2015-12-01 14:44:24.874570"], ["updated_at", "2015-12-01 14:44:24.874570"]]
+  [1m[35m (42.7ms)[0m  commit transaction
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 43.0ms)
+
+NoMethodError (undefined method `welcome_email' for PatientMailer:Class):
+  app/controllers/patients_controller.rb:33:in `block in create'
+  app/controllers/patients_controller.rb:31:in `create'
+
+
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (3.7ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (24.1ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-01 14:49:00 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sxzkolqimqrse/rZx5Cz0cAFN0zjOUSrNd8oNGblgu+kVt2mqjnAj95EHnhMKY1+xPFJ+lTyPHSL39HOw6r9Aw==", "patient"=>{"doctor_id"=>"3", "name"=>"bill", "email"=>"jamestate11@gmail.com", "content"=>""}, "commit"=>"Create Patient"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["doctor_id", 3], ["name", "bill"], ["email", "jamestate11@gmail.com"], ["content", ""], ["created_at", "2015-12-01 14:49:00.655464"], ["updated_at", "2015-12-01 14:49:00.655464"]]
+  [1m[35m (40.2ms)[0m  commit transaction
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 7a71b5cd-7767-4ee1-89c6-296eb03106c7) to Inline(mailers) with arguments: "PatientMailer", "welcome_email", "deliver_now", gid://teamproject/Patient/7
+[ActiveJob]   [1m[36mPatient Load (0.2ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 7]]
+[ActiveJob] [ActionMailer::DeliveryJob] [7a71b5cd-7767-4ee1-89c6-296eb03106c7] Performing ActionMailer::DeliveryJob from Inline(mailers) with arguments: "PatientMailer", "welcome_email", "deliver_now", gid://teamproject/Patient/7
+[ActiveJob] [ActionMailer::DeliveryJob] [7a71b5cd-7767-4ee1-89c6-296eb03106c7]   Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (4.3ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [7a71b5cd-7767-4ee1-89c6-296eb03106c7] 
+PatientMailer#welcome_email: processed outbound mail in 14.0ms
+[ActiveJob] [ActionMailer::DeliveryJob] [7a71b5cd-7767-4ee1-89c6-296eb03106c7] Performed ActionMailer::DeliveryJob from Inline(mailers) in 14.87ms
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 41.0ms)
+
+NoMethodError (undefined method `login' for #<Patient:0x007f1fa8f79850>):
+  app/views/patient_mailer/welcome_email.html.erb:8:in `_app_views_patient_mailer_welcome_email_html_erb___3808570724001630593_69886978158220'
+  app/mailers/patient_mailer.rb:14:in `welcome_email'
+  app/controllers/patients_controller.rb:33:in `block in create'
+  app/controllers/patients_controller.rb:31:in `create'
+
+
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (7.7ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (28.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-01 14:49:05 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 174ms (Views: 172.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-12-01 14:49:06 +0000
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-01 14:49:13 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XLMWGzCvyUKh1BWPu6h738U1fxL0SicabzmMhkGiNfdL+S8fwDSTZ5Pr8S4wEUVwwcEBpEOBX8XROXV85O1KGw==", "name"=>"jim", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "jim"]]
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1[0m  [["name", "jim"]]
+Redirected to http://localhost:3000/doctors/3
+Completed 302 Found in 95ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-01 14:49:13 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (24.1ms)
+Completed 200 OK in 129ms (Views: 127.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/doctors" for 127.0.0.1 at 2015-12-01 14:49:15 +0000
+Processing by DoctorsController#index as HTML
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT "doctors".* FROM "doctors"
+  Rendered doctors/index.html.erb within layouts/application (40.4ms)
+Completed 200 OK in 80ms (Views: 79.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/open-497a3c7e36d42911b727229d96a676aa3db0ed75dce0e128fe1706f16387a30a.png" for 127.0.0.1 at 2015-12-01 14:49:15 +0000
+
+
+Started GET "/assets/edit-c2e3915cbefb43614262ded754377d9fdda7e002c288499f44452f54101bb1d6.png" for 127.0.0.1 at 2015-12-01 14:49:15 +0000
+
+
+Started GET "/assets/bin-457cdbfb376c86a1b4da27fb310d595eb05ed6e0a1339191f068dd39b169f5c4.png" for 127.0.0.1 at 2015-12-01 14:49:15 +0000
+
+
+Started GET "/patients/new?doctor_id=3" for 127.0.0.1 at 2015-12-01 14:49:21 +0000
+Processing by PatientsController#new as HTML
+  Parameters: {"doctor_id"=>"3"}
+  Rendered patients/_form.html.erb (10.9ms)
+  Rendered patients/new.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 57ms (Views: 56.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-01 14:49:35 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bKvLyjvrS4FmBGaFELfGzaB2V4FvpBKtIivdwm+daNZ74fLOy3ARpFQ7giSbDvhipIIpN9hvanKcKyQ4ytIXOg==", "patient"=>{"doctor_id"=>"3", "name"=>"fass", "email"=>"jamestate11@gmail.com", "content"=>""}, "commit"=>"Create Patient"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["doctor_id", 3], ["name", "fass"], ["email", "jamestate11@gmail.com"], ["content", ""], ["created_at", "2015-12-01 14:49:35.270332"], ["updated_at", "2015-12-01 14:49:35.270332"]]
+  [1m[36m (55.3ms)[0m  [1mcommit transaction[0m
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 81365947-607b-4a45-9f33-dad3fd7d9bfc) to Inline(mailers) with arguments: "PatientMailer", "welcome_email", "deliver_now", gid://teamproject/Patient/8
+[ActiveJob]   [1m[35mPatient Load (0.1ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 8]]
+[ActiveJob] [ActionMailer::DeliveryJob] [81365947-607b-4a45-9f33-dad3fd7d9bfc] Performing ActionMailer::DeliveryJob from Inline(mailers) with arguments: "PatientMailer", "welcome_email", "deliver_now", gid://teamproject/Patient/8
+[ActiveJob] [ActionMailer::DeliveryJob] [81365947-607b-4a45-9f33-dad3fd7d9bfc]   Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (1.8ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [81365947-607b-4a45-9f33-dad3fd7d9bfc] 
+PatientMailer#welcome_email: processed outbound mail in 6.7ms
+[ActiveJob] [ActionMailer::DeliveryJob] [81365947-607b-4a45-9f33-dad3fd7d9bfc] Performed ActionMailer::DeliveryJob from Inline(mailers) in 7.49ms
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 55.8ms)
+
+NoMethodError (undefined method `login' for #<Patient:0x007f1fa98bfba8>):
+  app/views/patient_mailer/welcome_email.html.erb:8:in `_app_views_patient_mailer_welcome_email_html_erb___3808570724001630593_69886978158220'
+  app/mailers/patient_mailer.rb:14:in `welcome_email'
+  app/controllers/patients_controller.rb:33:in `block in create'
+  app/controllers/patients_controller.rb:31:in `create'
+
+
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (7.8ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.6ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (27.9ms)
+
+
+Started POST "/console/repl_sessions/2/trace" for 127.0.0.1 at 2015-12-01 14:51:52 +0000
+
+
+Started POST "/console/repl_sessions/2/trace" for 127.0.0.1 at 2015-12-01 14:51:54 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-01 14:54:26 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 144ms (Views: 135.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-01 14:54:26 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 64ms (Views: 63.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-12-01 14:54:26 +0000
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-01 14:54:34 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QyXQ4MdF/C5Tz9g6OW9e+/6HGQazM7TIGS9uE/v4K+lUb+nkN96mC2HwPJuy1mBU+nNnsAT4zBenL5fpXrdUBQ==", "name"=>"jim", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mDoctor Load (0.4ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "jim"]]
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1[0m  [["name", "jim"]]
+Redirected to http://localhost:3000/doctors/3
+Completed 302 Found in 100ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-01 14:54:34 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (36.8ms)
+Completed 200 OK in 119ms (Views: 117.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/patients/new?doctor_id=3" for 127.0.0.1 at 2015-12-01 14:54:37 +0000
+Processing by PatientsController#new as HTML
+  Parameters: {"doctor_id"=>"3"}
+  Rendered patients/_form.html.erb (24.0ms)
+  Rendered patients/new.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 66ms (Views: 65.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-01 14:54:45 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ndZOX0399J4mN1OckFYMswzHQTW9TVqTMJXKgtcUzCaKnHdbvWauuxQItz0b7zIcCDM/gwqGIkyOlTN4cluzyg==", "patient"=>{"doctor_id"=>"3", "name"=>"foo", "email"=>"jamestate11@gmail.com", "content"=>""}, "commit"=>"Create Patient"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["doctor_id", 3], ["name", "foo"], ["email", "jamestate11@gmail.com"], ["content", ""], ["created_at", "2015-12-01 14:54:45.780692"], ["updated_at", "2015-12-01 14:54:45.780692"]]
+  [1m[35m (80.5ms)[0m  commit transaction
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: abe6d64a-73ec-4eb3-bd8e-272d67160be8) to Inline(mailers) with arguments: "PatientMailer", "welcome_email", "deliver_now", gid://teamproject/Patient/9
+[ActiveJob]   [1m[36mPatient Load (0.2ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 9]]
+[ActiveJob] [ActionMailer::DeliveryJob] [abe6d64a-73ec-4eb3-bd8e-272d67160be8] Performing ActionMailer::DeliveryJob from Inline(mailers) with arguments: "PatientMailer", "welcome_email", "deliver_now", gid://teamproject/Patient/9
+[ActiveJob] [ActionMailer::DeliveryJob] [abe6d64a-73ec-4eb3-bd8e-272d67160be8]   Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.4ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [abe6d64a-73ec-4eb3-bd8e-272d67160be8]   Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.5ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [abe6d64a-73ec-4eb3-bd8e-272d67160be8] 
+PatientMailer#welcome_email: processed outbound mail in 110.2ms
+[ActiveJob] [ActionMailer::DeliveryJob] [abe6d64a-73ec-4eb3-bd8e-272d67160be8] 
+Sent mail to jamestate11@gmail.com (7.7ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [abe6d64a-73ec-4eb3-bd8e-272d67160be8] Date: Tue, 01 Dec 2015 14:54:46 +0000
+To: jamestate11@gmail.com
+Message-ID: <565db4b6190b_16073f85cf39f4ec750dd@lazyeye.mail>
+Subject: You are registered with PMP.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_565db4b5f3b2d_16073f85cf39f4ec749e8";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_565db4b5f3b2d_16073f85cf39f4ec749e8
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com, foo
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_565db4b5f3b2d_16073f85cf39f4ec749e8
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1><Welcome to PMP.com, foo</h1>
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+           
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_565db4b5f3b2d_16073f85cf39f4ec749e8--
+
+[ActiveJob] [ActionMailer::DeliveryJob] [abe6d64a-73ec-4eb3-bd8e-272d67160be8] Performed ActionMailer::DeliveryJob from Inline(mailers) in 118.82ms
+Redirected to http://localhost:3000/patients/9
+Completed 302 Found in 230ms (ActiveRecord: 81.1ms)
+
+
+Started GET "/patients/9" for 127.0.0.1 at 2015-12-01 14:54:46 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mPatient Load (0.1ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered patients/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 45ms (Views: 43.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/patients" for 127.0.0.1 at 2015-12-01 14:57:58 +0000
+Processing by PatientsController#index as HTML
+  [1m[35mPatient Load (0.3ms)[0m  SELECT "patients".* FROM "patients"
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered patients/index.html.erb within layouts/application (49.5ms)
+Completed 200 OK in 92ms (Views: 91.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/patients/9/edit" for 127.0.0.1 at 2015-12-01 14:58:14 +0000
+Processing by PatientsController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mPatient Load (0.1ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered patients/_form.html.erb (1.6ms)
+  Rendered patients/edit.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 40ms (Views: 39.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/patients/9" for 127.0.0.1 at 2015-12-01 14:58:17 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered patients/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 39ms (Views: 37.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-01 14:58:45 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 155ms (Views: 146.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-12-01 14:58:46 +0000
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-01 14:58:53 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Cc3HhZW8JP04xkYlZViOnwnVUZlwFsBbX9oVyyUjbD8eh/6BZSd+2Ar5ooTu4bAwDSEvL8fduITh2uwxgGwT0w==", "name"=>"jim", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "jim"]]
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1[0m  [["name", "jim"]]
+Redirected to http://localhost:3000/doctors/3
+Completed 302 Found in 116ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-01 14:58:53 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (25.3ms)
+Completed 200 OK in 92ms (Views: 89.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/patients/new?doctor_id=3" for 127.0.0.1 at 2015-12-01 14:58:57 +0000
+Processing by PatientsController#new as HTML
+  Parameters: {"doctor_id"=>"3"}
+  Rendered patients/_form.html.erb (24.4ms)
+  Rendered patients/new.html.erb within layouts/application (28.9ms)
+Completed 200 OK in 102ms (Views: 100.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-01 14:59:09 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6stj7PgZOx9tPq/ZjGyyeXpWEZgoPycbCYKbXzaxdcL9gVroCIJhOl8BS3gH1YzWfqJvLp/0X8S3gmKlk/4KLg==", "patient"=>{"doctor_id"=>"3", "name"=>"james tate", "email"=>"jamestate11@gmail.com", "content"=>"bald"}, "commit"=>"Create Patient"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["doctor_id", 3], ["name", "james tate"], ["email", "jamestate11@gmail.com"], ["content", "bald"], ["created_at", "2015-12-01 14:59:09.324491"], ["updated_at", "2015-12-01 14:59:09.324491"]]
+  [1m[35m (61.7ms)[0m  commit transaction
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 9a15fcf3-888c-4b71-834a-2cfcde59330c) to Inline(mailers) with arguments: "PatientMailer", "welcome_email", "deliver_now", gid://teamproject/Patient/10
+[ActiveJob]   [1m[36mPatient Load (0.2ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 10]]
+[ActiveJob] [ActionMailer::DeliveryJob] [9a15fcf3-888c-4b71-834a-2cfcde59330c] Performing ActionMailer::DeliveryJob from Inline(mailers) with arguments: "PatientMailer", "welcome_email", "deliver_now", gid://teamproject/Patient/10
+[ActiveJob] [ActionMailer::DeliveryJob] [9a15fcf3-888c-4b71-834a-2cfcde59330c]   Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.4ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [9a15fcf3-888c-4b71-834a-2cfcde59330c]   Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.2ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [9a15fcf3-888c-4b71-834a-2cfcde59330c] 
+PatientMailer#welcome_email: processed outbound mail in 110.5ms
+[ActiveJob] [ActionMailer::DeliveryJob] [9a15fcf3-888c-4b71-834a-2cfcde59330c] 
+Sent mail to jamestate11@gmail.com (6.5ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [9a15fcf3-888c-4b71-834a-2cfcde59330c] Date: Tue, 01 Dec 2015 14:59:09 +0000
+To: jamestate11@gmail.com
+Message-ID: <565db5bd873d1_176d3f87506c917c9879d@lazyeye.mail>
+Subject: You are registered with PMP.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_565db5bd8564c_176d3f87506c917c98687";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_565db5bd8564c_176d3f87506c917c98687
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com, james tate
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_565db5bd8564c_176d3f87506c917c98687
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1><Welcome to PMP.com, james tate</h1>
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_565db5bd8564c_176d3f87506c917c98687--
+
+[ActiveJob] [ActionMailer::DeliveryJob] [9a15fcf3-888c-4b71-834a-2cfcde59330c] Performed ActionMailer::DeliveryJob from Inline(mailers) in 118.42ms
+Redirected to http://localhost:3000/patients/10
+Completed 302 Found in 236ms (ActiveRecord: 62.3ms)
+
+
+Started GET "/patients/10" for 127.0.0.1 at 2015-12-01 14:59:09 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mPatient Load (0.1ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered patients/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 48ms (Views: 46.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-01 15:06:22 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 171ms (Views: 162.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-12-01 15:06:22 +0000
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-01 15:06:29 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vc0ecQzRPG0B0QzDU+KgXea9eVynTiGZabKefYX9ajGqhyd1/EpmSDPu6GLYW57y4kkH6hCFWUbXsmeHILIV3Q==", "name"=>"jim", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "jim"]]
+  [1m[36mDoctor Load (0.3ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1[0m  [["name", "jim"]]
+Redirected to http://localhost:3000/doctors/3
+Completed 302 Found in 115ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-01 15:06:29 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 81ms (Views: 79.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/patients/new?doctor_id=3" for 127.0.0.1 at 2015-12-01 15:06:32 +0000
+Processing by PatientsController#new as HTML
+  Parameters: {"doctor_id"=>"3"}
+  Rendered patients/_form.html.erb (22.5ms)
+  Rendered patients/new.html.erb within layouts/application (27.3ms)
+Completed 200 OK in 102ms (Views: 99.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-01 15:07:11 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uZus0Vf9pqA6/54NIQL9HXtYlhW+YhIiPHN/957rraKu0ZXVp2b8hQjAeqyqu8Oyf6zoowmpav2Cc4YNO6TSTg==", "patient"=>{"doctor_id"=>"3", "name"=>"jamt", "email"=>"jamestate11@gmail.com", "content"=>""}, "commit"=>"Create Patient"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["doctor_id", 3], ["name", "jamt"], ["email", "jamestate11@gmail.com"], ["content", ""], ["created_at", "2015-12-01 15:07:11.748328"], ["updated_at", "2015-12-01 15:07:11.748328"]]
+  [1m[35m (51.2ms)[0m  commit transaction
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: a4172733-10f1-4f52-9fe4-6bf8dc6188e6) to Inline(mailers) with arguments: "PatientMailer", "welcome_email", "deliver_now", gid://teamproject/Patient/11
+[ActiveJob]   [1m[36mPatient Load (0.2ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 11]]
+[ActiveJob] [ActionMailer::DeliveryJob] [a4172733-10f1-4f52-9fe4-6bf8dc6188e6] Performing ActionMailer::DeliveryJob from Inline(mailers) with arguments: "PatientMailer", "welcome_email", "deliver_now", gid://teamproject/Patient/11
+[ActiveJob] [ActionMailer::DeliveryJob] [a4172733-10f1-4f52-9fe4-6bf8dc6188e6]   Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.4ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [a4172733-10f1-4f52-9fe4-6bf8dc6188e6]   Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.2ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [a4172733-10f1-4f52-9fe4-6bf8dc6188e6] 
+PatientMailer#welcome_email: processed outbound mail in 106.5ms
+[ActiveJob] [ActionMailer::DeliveryJob] [a4172733-10f1-4f52-9fe4-6bf8dc6188e6] 
+Sent mail to jamestate11@gmail.com (5.4ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [a4172733-10f1-4f52-9fe4-6bf8dc6188e6] Date: Tue, 01 Dec 2015 15:07:11 +0000
+To: jamestate11@gmail.com
+Message-ID: <565db79fe6a68_189f3ffacb1f25ec917cc@lazyeye.mail>
+Subject: You are registered with PMP.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_565db79fe5197_189f3ffacb1f25ec916b7";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_565db79fe5197_189f3ffacb1f25ec916b7
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com, jamt
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_565db79fe5197_189f3ffacb1f25ec916b7
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1><Welcome to PMP.com, jamt</h1>
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_565db79fe5197_189f3ffacb1f25ec916b7--
+
+[ActiveJob] [ActionMailer::DeliveryJob] [a4172733-10f1-4f52-9fe4-6bf8dc6188e6] Performed ActionMailer::DeliveryJob from Inline(mailers) in 113.12ms
+Redirected to http://localhost:3000/patients/11
+Completed 302 Found in 203ms (ActiveRecord: 52.0ms)
+
+
+Started GET "/patients/11" for 127.0.0.1 at 2015-12-01 15:07:11 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mPatient Load (0.1ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered patients/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 51ms (Views: 50.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/patients/create" for 127.0.0.1 at 2015-12-01 15:16:39 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"create"}
+Redirected to http://0.0.0.0:3000/access/login
+Filter chain halted as :confirm_logged_in rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2015-12-01 15:16:39 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 160ms (Views: 158.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/stylesheet.self-4aa4999282dbf83737f9983674fcb37662c0de912850c9cfce49748b7600e2ed.css?body=1" for 127.0.0.1 at 2015-12-01 15:16:40 +0000
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-12-01 15:16:40 +0000
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-01 15:16:47 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yrI5wfUpKAqo5qnyqTLAOZt2c+xqfIcGx3E5PktW63F1Epku4IPSeuzk0hSSw3SdIMdCZmksIFuwVZiop+0zbw==", "name"=>"jim", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "jim"]]
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1[0m  [["name", "jim"]]
+Redirected to http://0.0.0.0:3000/doctors/3
+Completed 302 Found in 101ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-01 15:16:47 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 91ms (Views: 89.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/patients/new?doctor_id=3" for 127.0.0.1 at 2015-12-01 15:16:49 +0000
+Processing by PatientsController#new as HTML
+  Parameters: {"doctor_id"=>"3"}
+  Rendered patients/_form.html.erb (13.8ms)
+  Rendered patients/new.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 95ms (Views: 93.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-01 15:17:19 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h9HBDk+JQEPhmki8VOI6fZ7BiCckh3dVp0rMfMymQ2c4cWHhWiO6M6WYM1pvE47ZJXC5rSfX0AjQbm3qIB2beQ==", "patient"=>{"doctor_id"=>"3", "name"=>"dean", "email"=>"jamestate11@gmail.com", "content"=>"liver failure"}, "commit"=>"Create Patient"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["doctor_id", 3], ["name", "dean"], ["email", "jamestate11@gmail.com"], ["content", "liver failure"], ["created_at", "2015-12-01 15:17:19.841694"], ["updated_at", "2015-12-01 15:17:19.841694"]]
+  [1m[35m (54.6ms)[0m  commit transaction
+  Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.4ms)
+  Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.6ms)
+
+PatientMailer#welcome_email: processed outbound mail in 138.2ms
+
+Sent mail to jamestate11@gmail.com (5.0ms)
+Date: Tue, 01 Dec 2015 15:17:20 +0000
+To: jamestate11@gmail.com
+Message-ID: <565dba00cc34_1c8b3fc66369c33c657f5@lazyeye.mail>
+Subject: You are registered with PMP.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_565dba00b63d_1c8b3fc66369c33c6562d";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_565dba00b63d_1c8b3fc66369c33c6562d
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com, dean
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_565dba00b63d_1c8b3fc66369c33c6562d
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1><Welcome to PMP.com, dean</h1>
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_565dba00b63d_1c8b3fc66369c33c6562d--
+
+Redirected to http://0.0.0.0:3000/patients/12
+Completed 302 Found in 217ms (ActiveRecord: 54.9ms)
+
+
+Started GET "/patients/12" for 127.0.0.1 at 2015-12-01 15:17:20 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered patients/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 48ms (Views: 47.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/patients/create" for 127.0.0.1 at 2015-12-01 15:19:01 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"create"}
+  [1m[35mPatient Load (0.2ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 18ms (ActiveRecord: 0.5ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Patient with 'id'=create):
+  app/controllers/patients_controller.rb:70:in `set_patient'
+
+
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (11.1ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (31.4ms)
+
+
+Started GET "/patients/create" for 127.0.0.1 at 2015-12-01 15:19:36 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"create"}
+  [1m[35mPatient Load (0.2ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 18ms (ActiveRecord: 0.5ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Patient with 'id'=create):
+  app/controllers/patients_controller.rb:70:in `set_patient'
+
+
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (3.3ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (23.1ms)
+
+
+Started POST "/patients/console/repl_sessions/1/trace" for 127.0.0.1 at 2015-12-01 15:19:43 +0000
+
+
+Started POST "/patients/console/repl_sessions/1/trace" for 127.0.0.1 at 2015-12-01 15:20:36 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-01 15:21:24 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 158ms (Views: 144.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-12-01 15:21:25 +0000
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-01 15:21:33 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JHJjJ9uX//T9X/UuUpCeQyhmAEwl8xUS1pxi+lFrZiMzOFojKwyl0c9gEY/ZKaDsLJJ++pI4bc1onJsA9CQZzw==", "name"=>"jim", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "jim"]]
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1[0m  [["name", "jim"]]
+Redirected to http://localhost:3000/doctors/3
+Completed 302 Found in 117ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-01 15:21:33 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 90ms (Views: 88.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/patients/new?doctor_id=3" for 127.0.0.1 at 2015-12-01 15:21:37 +0000
+Processing by PatientsController#new as HTML
+  Parameters: {"doctor_id"=>"3"}
+  Rendered patients/_form.html.erb (24.9ms)
+  Rendered patients/new.html.erb within layouts/application (29.5ms)
+Completed 200 OK in 102ms (Views: 101.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-01 15:21:44 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jMqv87jvGyLFVn+5D5I6wERnfeAQaaYQlXrersTJZuSbgJb3SHRBB/dpmxiEKwRvQJMDVqei3s8reidUYYYZCA==", "patient"=>{"doctor_id"=>"3", "name"=>"s", "email"=>"jamestate11@gmail.com", "content"=>""}, "commit"=>"Create Patient"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["doctor_id", 3], ["name", "s"], ["email", "jamestate11@gmail.com"], ["content", ""], ["created_at", "2015-12-01 15:21:44.414823"], ["updated_at", "2015-12-01 15:21:44.414823"]]
+  [1m[35m (42.8ms)[0m  commit transaction
+  Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.4ms)
+  Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.3ms)
+
+PatientMailer#welcome_email: processed outbound mail in 108.5ms
+
+Sent mail to jamestate11@gmail.com (8.1ms)
+Date: Tue, 01 Dec 2015 15:21:44 +0000
+To: jamestate11@gmail.com
+Message-ID: <565dbb088ff35_1e4e3ff9afbb1c94773d@lazyeye.mail>
+Subject: You are registered with PMP.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_565dbb088de52_1e4e3ff9afbb1c9476e2";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_565dbb088de52_1e4e3ff9afbb1c9476e2
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com, s
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_565dbb088de52_1e4e3ff9afbb1c9476e2
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1><Welcome to PMP.com, s</h1>
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_565dbb088de52_1e4e3ff9afbb1c9476e2--
+
+Redirected to http://localhost:3000/patients/13
+Completed 302 Found in 182ms (ActiveRecord: 43.5ms)
+
+
+Started GET "/patients/13" for 127.0.0.1 at 2015-12-01 15:21:44 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"13"}
+  Rendered patients/show.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `doctor_id' for nil:NilClass):
+  app/views/patients/show.html.erb:7:in `block in _app_views_patients_show_html_erb__950778901257531875_70341494206660'
+  app/views/patients/show.html.erb:3:in `_app_views_patients_show_html_erb__950778901257531875_70341494206660'
+
+
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (5.0ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (27.3ms)
+
+
+Started GET "/patients/create" for 127.0.0.1 at 2015-12-01 15:25:28 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"create"}
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 6ms (ActiveRecord: 1.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Patient with 'id'=create):
+  app/controllers/patients_controller.rb:70:in `set_patient'
+
+
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (4.3ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (25.5ms)
+
+
+Started GET "/patients/create" for 127.0.0.1 at 2015-12-01 15:25:49 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"create"}
+  [1m[35mPatient Load (0.2ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 17ms (ActiveRecord: 0.4ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Patient with 'id'=create):
+  app/controllers/patients_controller.rb:70:in `set_patient'
+
+
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (5.2ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (25.8ms)
+
+
+Started POST "/patients/console/repl_sessions/1/trace" for 127.0.0.1 at 2015-12-01 15:25:57 +0000
+
+
+Started GET "/patients/create" for 127.0.0.1 at 2015-12-01 15:28:26 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"create"}
+  [1m[35mPatient Load (0.1ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 17ms (ActiveRecord: 0.4ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Patient with 'id'=create):
+  app/controllers/patients_controller.rb:70:in `set_patient'
+
+
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (3.9ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (23.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-01 15:28:57 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 148ms (Views: 147.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-12-01 15:28:58 +0000
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-01 15:29:03 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"onl6Mk4H1Rh1WRlm5Up+wvDn/8o57vKwI3Uf3xDF8oMd2drdW60vaDFbYoDeu8pmS1bOQDq+Ve1UUb5J/H4qnQ==", "name"=>"jim", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1[0m  [["name", "jim"]]
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1  [["name", "jim"]]
+Redirected to http://0.0.0.0:3000/doctors/3
+Completed 302 Found in 92ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-01 15:29:03 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mPatient Load (0.2ms)[0m  SELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 83ms (Views: 81.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/patients/new?doctor_id=3" for 127.0.0.1 at 2015-12-01 15:29:07 +0000
+Processing by PatientsController#new as HTML
+  Parameters: {"doctor_id"=>"3"}
+  Rendered patients/_form.html.erb (14.2ms)
+  Rendered patients/new.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 94ms (Views: 92.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-01 15:29:14 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aySL9a5/sWnS94EqARz88pdTnMJSxSjExtKRFNUFU5LUhCsau9VLGZb1+sw67UhWLOKtSFGVj5mx9jCCOb6LjA==", "patient"=>{"doctor_id"=>"3", "name"=>"willl", "email"=>"jamestate11@gmail.com", "content"=>""}, "commit"=>"Create Patient"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["doctor_id", 3], ["name", "willl"], ["email", "jamestate11@gmail.com"], ["content", ""], ["created_at", "2015-12-01 15:29:14.004491"], ["updated_at", "2015-12-01 15:29:14.004491"]]
+  [1m[36m (28.9ms)[0m  [1mcommit transaction[0m
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: f33f12c2-d9db-4639-b644-9baba0b99c1f) to Inline(mailers) with arguments: "PatientMailer", "welcome_email", "deliver_now", gid://teamproject/Patient/14
+[ActiveJob]   [1m[35mPatient Load (0.2ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 14]]
+[ActiveJob] [ActionMailer::DeliveryJob] [f33f12c2-d9db-4639-b644-9baba0b99c1f] Performing ActionMailer::DeliveryJob from Inline(mailers) with arguments: "PatientMailer", "welcome_email", "deliver_now", gid://teamproject/Patient/14
+[ActiveJob] [ActionMailer::DeliveryJob] [f33f12c2-d9db-4639-b644-9baba0b99c1f]   Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.7ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [f33f12c2-d9db-4639-b644-9baba0b99c1f]   Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.3ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [f33f12c2-d9db-4639-b644-9baba0b99c1f] 
+PatientMailer#welcome_email: processed outbound mail in 135.1ms
+[ActiveJob] [ActionMailer::DeliveryJob] [f33f12c2-d9db-4639-b644-9baba0b99c1f] 
+Sent mail to jamestate11@gmail.com (8.3ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [f33f12c2-d9db-4639-b644-9baba0b99c1f] Date: Tue, 01 Dec 2015 15:29:14 +0000
+To: jamestate11@gmail.com
+Message-ID: <565dbcca3587b_1fb53f91c324c41456718@lazyeye.mail>
+Subject: You are registered with PMP.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_565dbcca32af9_1fb53f91c324c41456616";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_565dbcca32af9_1fb53f91c324c41456616
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com, willl
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_565dbcca32af9_1fb53f91c324c41456616
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1><Welcome to PMP.com, willl</h1>
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_565dbcca32af9_1fb53f91c324c41456616--
+
+[ActiveJob] [ActionMailer::DeliveryJob] [f33f12c2-d9db-4639-b644-9baba0b99c1f] Performed ActionMailer::DeliveryJob from Inline(mailers) in 145.93ms
+Redirected to http://0.0.0.0:3000/patients/14
+Completed 302 Found in 220ms (ActiveRecord: 29.4ms)
+
+
+Started GET "/patients/14" for 127.0.0.1 at 2015-12-01 15:29:14 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 14]]
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered patients/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 49ms (Views: 48.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/patients/create" for 127.0.0.1 at 2015-12-01 15:29:55 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"create"}
+  [1m[35mPatient Load (0.2ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 18ms (ActiveRecord: 0.5ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Patient with 'id'=create):
+  app/controllers/patients_controller.rb:70:in `set_patient'
+
+
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (3.3ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (23.0ms)
+
+
+Started GET "/patients" for 127.0.0.1 at 2015-12-01 15:30:15 +0000
+Processing by PatientsController#index as HTML
+  [1m[36mPatient Load (0.7ms)[0m  [1mSELECT "patients".* FROM "patients"[0m
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered patients/index.html.erb within layouts/application (195.5ms)
+Completed 200 OK in 298ms (Views: 295.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/open-497a3c7e36d42911b727229d96a676aa3db0ed75dce0e128fe1706f16387a30a.png" for 127.0.0.1 at 2015-12-01 15:30:15 +0000
+
+
+Started GET "/assets/edit-c2e3915cbefb43614262ded754377d9fdda7e002c288499f44452f54101bb1d6.png" for 127.0.0.1 at 2015-12-01 15:30:15 +0000
+
+
+Started GET "/assets/bin-457cdbfb376c86a1b4da27fb310d595eb05ed6e0a1339191f068dd39b169f5c4.png" for 127.0.0.1 at 2015-12-01 15:30:15 +0000
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-12-01 15:30:15 +0000
+
+
+Started DELETE "/patients/1" for 127.0.0.1 at 2015-12-01 15:30:36 +0000
+Processing by PatientsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DaiOWrcUZ/i9TT5J/nLbDfe57u0Rq/QMM/ObJd5SquSyCC61or6diPlPRa/Fg2+pTAjfZxL7U1FE1zqzMuly+g==", "id"=>"1"}
+  [1m[35mPatient Load (0.1ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "patients" WHERE "patients"."id" = ?  [["id", 1]]
+  [1m[36m (26.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/patients
+Completed 302 Found in 30ms (ActiveRecord: 26.6ms)
+
+
+Started GET "/patients" for 127.0.0.1 at 2015-12-01 15:30:36 +0000
+Processing by PatientsController#index as HTML
+  [1m[35mPatient Load (0.2ms)[0m  SELECT "patients".* FROM "patients"
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered patients/index.html.erb within layouts/application (82.1ms)
+Completed 200 OK in 129ms (Views: 127.8ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/patients/2" for 127.0.0.1 at 2015-12-01 15:30:39 +0000
+Processing by PatientsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"EHB4XOkRUR00grDwHWDpAifjXSBOq1o8k9m2qkEFYE2v0Niz/LurbXCAyxYmkV2mnFJsqk37/WHk/Rc8rb64Uw==", "id"=>"2"}
+  [1m[35mPatient Load (0.1ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "patients" WHERE "patients"."id" = ?  [["id", 2]]
+  [1m[36m (34.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/patients
+Completed 302 Found in 37ms (ActiveRecord: 35.0ms)
+
+
+Started GET "/patients" for 127.0.0.1 at 2015-12-01 15:30:39 +0000
+Processing by PatientsController#index as HTML
+  [1m[35mPatient Load (0.2ms)[0m  SELECT "patients".* FROM "patients"
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered patients/index.html.erb within layouts/application (55.1ms)
+Completed 200 OK in 99ms (Views: 98.0ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/patients/3" for 127.0.0.1 at 2015-12-01 15:30:43 +0000
+Processing by PatientsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4fPuxEI0VMlFSj171dJZm2wzKb5WMsN/F1qQ0kRXnqVeU04rV56uuQFIRp3uI+0/14IYNFViZCJgfjFEqOxGuw==", "id"=>"3"}
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "patients" WHERE "patients"."id" = ?[0m  [["id", 3]]
+  [1m[35m (26.4ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/patients
+Completed 302 Found in 29ms (ActiveRecord: 26.8ms)
+
+
+Started GET "/patients" for 127.0.0.1 at 2015-12-01 15:30:43 +0000
+Processing by PatientsController#index as HTML
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT "patients".* FROM "patients"[0m
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered patients/index.html.erb within layouts/application (47.9ms)
+Completed 200 OK in 96ms (Views: 95.0ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/patients/4" for 127.0.0.1 at 2015-12-01 15:30:46 +0000
+Processing by PatientsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"csmIp6+DPemodQoG4yEZlmhWQz19n1OLhE6AtdTCL5PNaShIuinHmex3ceDY0K0y0+dyt37P9NbzaiEjOHn3jQ==", "id"=>"4"}
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "patients" WHERE "patients"."id" = ?[0m  [["id", 4]]
+  [1m[35m (41.8ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/patients
+Completed 302 Found in 45ms (ActiveRecord: 42.2ms)
+
+
+Started GET "/patients" for 127.0.0.1 at 2015-12-01 15:30:46 +0000
+Processing by PatientsController#index as HTML
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT "patients".* FROM "patients"[0m
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered patients/index.html.erb within layouts/application (50.2ms)
+Completed 200 OK in 93ms (Views: 92.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/patients/5" for 127.0.0.1 at 2015-12-01 15:30:53 +0000
+Processing by PatientsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"41SVROdOGWx/riLeC/GVwBarIWzasbzYUY1IYmbTnQNc9DWr8uTjHDusWTgwACFkrRoQ5tnhG4Umqen0imhFHQ==", "id"=>"5"}
+  [1m[35mPatient Load (0.1ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "patients" WHERE "patients"."id" = ?  [["id", 5]]
+  [1m[36m (45.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/patients
+Completed 302 Found in 48ms (ActiveRecord: 46.1ms)
+
+
+Started GET "/patients" for 127.0.0.1 at 2015-12-01 15:30:53 +0000
+Processing by PatientsController#index as HTML
+  [1m[35mPatient Load (0.4ms)[0m  SELECT "patients".* FROM "patients"
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered patients/index.html.erb within layouts/application (40.1ms)
+Completed 200 OK in 91ms (Views: 89.6ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/patients/6" for 127.0.0.1 at 2015-12-01 15:30:56 +0000
+Processing by PatientsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+c/Gd0m3GQO0MU5WWq6Vu7XrpJUgP8g/t/QKFp6niKhGb2aYXB3jc/AzNbBhXyEfDlqVHyNvb2LA0KuAchxQtg==", "id"=>"6"}
+  [1m[35mPatient Load (0.1ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "patients" WHERE "patients"."id" = ?  [["id", 6]]
+  [1m[36m (37.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/patients
+Completed 302 Found in 40ms (ActiveRecord: 37.7ms)
+
+
+Started GET "/patients" for 127.0.0.1 at 2015-12-01 15:30:56 +0000
+Processing by PatientsController#index as HTML
+  [1m[35mPatient Load (0.2ms)[0m  SELECT "patients".* FROM "patients"
+  [1m[36mDoctor Load (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered patients/index.html.erb within layouts/application (41.4ms)
+Completed 200 OK in 88ms (Views: 86.8ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/patients/7" for 127.0.0.1 at 2015-12-01 15:31:00 +0000
+Processing by PatientsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ijcznOvTTvZQWt1SlSV5R0AAFl9QRVuRw7I7cPLFXCU1l5Nz/nm0hhRYprSu1M3j+7En1VMV/My0lprmHn6EOw==", "id"=>"7"}
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "patients" WHERE "patients"."id" = ?[0m  [["id", 7]]
+  [1m[35m (37.3ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/patients
+Completed 302 Found in 41ms (ActiveRecord: 37.9ms)
+
+
+Started GET "/patients" for 127.0.0.1 at 2015-12-01 15:31:00 +0000
+Processing by PatientsController#index as HTML
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT "patients".* FROM "patients"[0m
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered patients/index.html.erb within layouts/application (34.2ms)
+Completed 200 OK in 90ms (Views: 89.7ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/patients/8" for 127.0.0.1 at 2015-12-01 15:31:03 +0000
+Processing by PatientsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ytib3gufB83G39QIa0hhylIVGqYIRAiAdWqGy6HQzS11eDsxHjX9vYLdr+5QudVu6aQrLAsUr90CTiddTWsVMw==", "id"=>"8"}
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "patients" WHERE "patients"."id" = ?[0m  [["id", 8]]
+  [1m[35m (51.5ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/patients
+Completed 302 Found in 55ms (ActiveRecord: 52.0ms)
+
+
+Started GET "/patients" for 127.0.0.1 at 2015-12-01 15:31:03 +0000
+Processing by PatientsController#index as HTML
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT "patients".* FROM "patients"[0m
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered patients/index.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 76ms (Views: 75.4ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/patients/9" for 127.0.0.1 at 2015-12-01 15:31:06 +0000
+Processing by PatientsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"II5ZQu8NF3OG7y9AnT88LggGbGFJsaZuYPAtcIqKZP2fLvmt+qftA8LtVKamzoiKs7dd60rhATMX1IzmZjG84w==", "id"=>"9"}
+  [1m[35mPatient Load (0.1ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "patients" WHERE "patients"."id" = ?  [["id", 9]]
+  [1m[36m (42.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/patients
+Completed 302 Found in 45ms (ActiveRecord: 42.9ms)
+
+
+Started GET "/patients" for 127.0.0.1 at 2015-12-01 15:31:06 +0000
+Processing by PatientsController#index as HTML
+  [1m[35mPatient Load (0.2ms)[0m  SELECT "patients".* FROM "patients"
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered patients/index.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 77ms (Views: 76.3ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/patients/10" for 127.0.0.1 at 2015-12-01 15:31:09 +0000
+Processing by PatientsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aWR2eDrUOP8QwCA3HgevmlPKHlJc5zuYKnS8oq7d1+zWxNaXL37Cj1TCW9El9hs+6Hsv2F+3nMVdUB00QmYP8g==", "id"=>"10"}
+  [1m[35mPatient Load (0.2ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "patients" WHERE "patients"."id" = ?  [["id", 10]]
+  [1m[36m (34.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/patients
+Completed 302 Found in 39ms (ActiveRecord: 35.3ms)
+
+
+Started GET "/patients" for 127.0.0.1 at 2015-12-01 15:31:09 +0000
+Processing by PatientsController#index as HTML
+  [1m[35mPatient Load (0.1ms)[0m  SELECT "patients".* FROM "patients"
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered patients/index.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 61ms (Views: 60.7ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/patients/11" for 127.0.0.1 at 2015-12-01 15:31:12 +0000
+Processing by PatientsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0TxCWvG9T9FjtmblQS8w4BE9QGzYlHg9Gi6hzad0sTxunOK15Be1oSe0HQN63oREqoxx5tvE32BtCgBbS89pIg==", "id"=>"11"}
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "patients" WHERE "patients"."id" = ?[0m  [["id", 11]]
+  [1m[35m (29.3ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/patients
+Completed 302 Found in 33ms (ActiveRecord: 29.8ms)
+
+
+Started GET "/patients" for 127.0.0.1 at 2015-12-01 15:31:12 +0000
+Processing by PatientsController#index as HTML
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients"[0m
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered patients/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 55ms (Views: 54.6ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/patients/12" for 127.0.0.1 at 2015-12-01 15:31:15 +0000
+Processing by PatientsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZWPbWhSb2OecIL0YnNKd2BXO4XsvcRbjFwKwGkwsKLzaw3u1ATEil9gixv6nIyl8rn/Q8Swhsb5gJhGMoJfwog==", "id"=>"12"}
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "patients" WHERE "patients"."id" = ?[0m  [["id", 12]]
+  [1m[35m (31.7ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/patients
+Completed 302 Found in 34ms (ActiveRecord: 32.0ms)
+
+
+Started GET "/patients" for 127.0.0.1 at 2015-12-01 15:31:15 +0000
+Processing by PatientsController#index as HTML
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients"[0m
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered patients/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 62ms (Views: 60.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/patients/13" for 127.0.0.1 at 2015-12-01 15:31:18 +0000
+Processing by PatientsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nRz0IrWiFwXvjJtkcv1cDLN39rqJ0TI3a7mryRw22bEivFTNoAjtdauO4IJJDOioCMbHMIqBlWocnQpf8I0Brw==", "id"=>"13"}
+  [1m[35mPatient Load (0.1ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "patients" WHERE "patients"."id" = ?  [["id", 13]]
+  [1m[36m (33.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/patients
+Completed 302 Found in 36ms (ActiveRecord: 34.3ms)
+
+
+Started GET "/patients" for 127.0.0.1 at 2015-12-01 15:31:18 +0000
+Processing by PatientsController#index as HTML
+  [1m[35mPatient Load (0.2ms)[0m  SELECT "patients".* FROM "patients"
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered patients/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 64ms (Views: 63.3ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/patients/14" for 127.0.0.1 at 2015-12-01 15:31:23 +0000
+Processing by PatientsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rf/KH8mUT0sM5uJhiHVkI1vi7FuQ+bmrl8QVJjnjy24SX2rw3D61O0jkmYezhNCH4FPd0ZOpHvbg4LSw1VgTcA==", "id"=>"14"}
+  [1m[35mPatient Load (0.1ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 14]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "patients" WHERE "patients"."id" = ?  [["id", 14]]
+  [1m[36m (29.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/patients
+Completed 302 Found in 32ms (ActiveRecord: 29.7ms)
+
+
+Started GET "/patients" for 127.0.0.1 at 2015-12-01 15:31:23 +0000
+Processing by PatientsController#index as HTML
+  [1m[35mPatient Load (0.1ms)[0m  SELECT "patients".* FROM "patients"
+  Rendered patients/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 55ms (Views: 54.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/patients/create" for 127.0.0.1 at 2015-12-01 15:32:12 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"create"}
+  [1m[35mPatient Load (0.2ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 17ms (ActiveRecord: 0.5ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Patient with 'id'=create):
+  app/controllers/patients_controller.rb:70:in `set_patient'
+
+
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (3.7ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (32.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-01 15:32:22 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 144ms (Views: 143.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-12-01 15:32:23 +0000
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-01 15:32:35 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r7nhtWTXvhc0cEuHwwUlmcgagT5P/9NzlionkQT2cSAQGUFacX1EZ3ByMGH49JE9c6uwtEyvdC7hDoYH6E2pPg==", "name"=>"jim", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1[0m  [["name", "jim"]]
+  [1m[35mDoctor Load (0.3ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1  [["name", "jim"]]
+Redirected to http://0.0.0.0:3000/doctors/3
+Completed 302 Found in 93ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-01 15:32:35 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mPatient Load (0.2ms)[0m  SELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 82ms (Views: 81.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/patients/new?doctor_id=3" for 127.0.0.1 at 2015-12-01 15:32:40 +0000
+Processing by PatientsController#new as HTML
+  Parameters: {"doctor_id"=>"3"}
+  Rendered patients/_form.html.erb (21.9ms)
+  Rendered patients/new.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 103ms (Views: 97.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-01 15:33:14 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hqXGBsFotGBaBEEMSlYxgSDjVGvFE6L8HaGz47Dgedg5BWbp1MJOEB4GOupxp4Ulm1Jl4cZDBaFqhRJ1XFuhxg==", "patient"=>{"doctor_id"=>"3", "name"=>"james", "email"=>"jamestate11@gmail.com", "content"=>""}, "commit"=>"Create Patient"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["doctor_id", 3], ["name", "james"], ["email", "jamestate11@gmail.com"], ["content", ""], ["created_at", "2015-12-01 15:33:14.014144"], ["updated_at", "2015-12-01 15:33:14.014144"]]
+  [1m[36m (46.3ms)[0m  [1mcommit transaction[0m
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 37738f0f-ef7f-40f6-86e4-f07355f68d8b) to Inline(mailers) with arguments: "PatientMailer", "welcome_email", "deliver_now", gid://teamproject/Patient/15
+[ActiveJob]   [1m[35mPatient Load (0.1ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 15]]
+[ActiveJob] [ActionMailer::DeliveryJob] [37738f0f-ef7f-40f6-86e4-f07355f68d8b] Performing ActionMailer::DeliveryJob from Inline(mailers) with arguments: "PatientMailer", "welcome_email", "deliver_now", gid://teamproject/Patient/15
+[ActiveJob] [ActionMailer::DeliveryJob] [37738f0f-ef7f-40f6-86e4-f07355f68d8b]   Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.7ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [37738f0f-ef7f-40f6-86e4-f07355f68d8b]   Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.3ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [37738f0f-ef7f-40f6-86e4-f07355f68d8b] 
+PatientMailer#welcome_email: processed outbound mail in 108.2ms
+[ActiveJob] [ActionMailer::DeliveryJob] [37738f0f-ef7f-40f6-86e4-f07355f68d8b] 
+Sent mail to jamestate11@gmail.com (5.2ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [37738f0f-ef7f-40f6-86e4-f07355f68d8b] Date: Tue, 01 Dec 2015 15:33:14 +0000
+To: jamestate11@gmail.com
+Message-ID: <565dbdba30e99_20f33feb911a209032776@lazyeye.mail>
+Subject: You are registered with PMP.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_565dbdba2f5c2_20f33feb911a2090326fa";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_565dbdba2f5c2_20f33feb911a2090326fa
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com, james
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_565dbdba2f5c2_20f33feb911a2090326fa
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1><Welcome to PMP.com, james</h1>
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_565dbdba2f5c2_20f33feb911a2090326fa--
+
+[ActiveJob] [ActionMailer::DeliveryJob] [37738f0f-ef7f-40f6-86e4-f07355f68d8b] Performed ActionMailer::DeliveryJob from Inline(mailers) in 114.42ms
+Redirected to http://0.0.0.0:3000/patients/15
+Completed 302 Found in 192ms (ActiveRecord: 46.9ms)
+
+
+Started GET "/patients/15" for 127.0.0.1 at 2015-12-01 15:33:14 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 15]]
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered patients/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 48ms (Views: 45.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/patients/create" for 127.0.0.1 at 2015-12-01 15:34:25 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"create"}
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Patient with 'id'=create):
+  app/controllers/patients_controller.rb:70:in `set_patient'
+
+
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (6.6ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (30.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-01 15:34:30 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 70ms (Views: 69.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-12-01 15:34:31 +0000
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-01 15:34:38 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fkxPTNjAFQlH/6ae59wsxBVXIx+qzJ3OeypcUybE0sDB7O+jzWrveQP93XjcLZhgruYSlamcOpMMDv3Fyn8K3g==", "name"=>"jim", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "jim"]]
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1[0m  [["name", "jim"]]
+Redirected to http://0.0.0.0:3000/doctors/3
+Completed 302 Found in 84ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-01 15:34:38 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 46ms (Views: 45.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/patients/new?doctor_id=3" for 127.0.0.1 at 2015-12-01 15:34:41 +0000
+Processing by PatientsController#new as HTML
+  Parameters: {"doctor_id"=>"3"}
+  Rendered patients/_form.html.erb (1.4ms)
+  Rendered patients/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 40ms (Views: 39.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-01 15:34:46 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z8wFcgjboh9y/2xJ5SRzX7emt411LF0RWSxnaQovSm5wbKWdHXFYbzb9F6/e1cf7DBeGB3Z8+kwuCMb/5pSScA==", "patient"=>{"doctor_id"=>"3", "name"=>"s", "email"=>"jamestate11@gmail.com", "content"=>""}, "commit"=>"Create Patient"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["doctor_id", 3], ["name", "s"], ["email", "jamestate11@gmail.com"], ["content", ""], ["created_at", "2015-12-01 15:34:46.972277"], ["updated_at", "2015-12-01 15:34:46.972277"]]
+  [1m[35m (40.2ms)[0m  commit transaction
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 4db1ae66-fd8c-4e7d-8a54-78a3d1f45416) to Inline(mailers) with arguments: "PatientMailer", "welcome_email", "deliver_now", gid://teamproject/Patient/16
+[ActiveJob]   [1m[36mPatient Load (0.1ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 16]]
+[ActiveJob] [ActionMailer::DeliveryJob] [4db1ae66-fd8c-4e7d-8a54-78a3d1f45416] Performing ActionMailer::DeliveryJob from Inline(mailers) with arguments: "PatientMailer", "welcome_email", "deliver_now", gid://teamproject/Patient/16
+[ActiveJob] [ActionMailer::DeliveryJob] [4db1ae66-fd8c-4e7d-8a54-78a3d1f45416]   Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.1ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [4db1ae66-fd8c-4e7d-8a54-78a3d1f45416]   Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.0ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [4db1ae66-fd8c-4e7d-8a54-78a3d1f45416] 
+PatientMailer#welcome_email: processed outbound mail in 9.8ms
+[ActiveJob] [ActionMailer::DeliveryJob] [4db1ae66-fd8c-4e7d-8a54-78a3d1f45416] 
+Sent mail to jamestate11@gmail.com (1.9ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [4db1ae66-fd8c-4e7d-8a54-78a3d1f45416] Date: Tue, 01 Dec 2015 15:34:47 +0000
+To: jamestate11@gmail.com
+Message-ID: <565dbe177c76_20f33feb91e64fe432957@lazyeye.mail>
+Subject: You are registered with PMP.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_565dbe176c79_20f33feb91e64fe432843";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_565dbe176c79_20f33feb91e64fe432843
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com, s
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_565dbe176c79_20f33feb91e64fe432843
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1><Welcome to PMP.com, s</h1>
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_565dbe176c79_20f33feb91e64fe432843--
+
+[ActiveJob] [ActionMailer::DeliveryJob] [4db1ae66-fd8c-4e7d-8a54-78a3d1f45416] Performed ActionMailer::DeliveryJob from Inline(mailers) in 12.73ms
+Redirected to http://0.0.0.0:3000/patients/16
+Completed 302 Found in 63ms (ActiveRecord: 40.5ms)
+
+
+Started GET "/patients/16" for 127.0.0.1 at 2015-12-01 15:34:47 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mPatient Load (0.1ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered patients/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 41ms (Views: 40.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-01 15:37:30 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 161ms (Views: 152.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-12-01 15:37:31 +0000
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-01 15:37:40 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7yw3L8Q861HKGyE0vYy9aPHe21WPoDvY7CYAZipz6gr4Zg4rNKexdPgkxZU2NYPH9Sql4zhrQwdSJvmcjzyV5g==", "name"=>"jim", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "jim"]]
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1[0m  [["name", "jim"]]
+Redirected to http://localhost:3000/doctors/3
+Completed 302 Found in 115ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-01 15:37:40 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 83ms (Views: 80.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/patients/new?doctor_id=3" for 127.0.0.1 at 2015-12-01 15:37:44 +0000
+Processing by PatientsController#new as HTML
+  Parameters: {"doctor_id"=>"3"}
+  Rendered patients/_form.html.erb (23.0ms)
+  Rendered patients/new.html.erb within layouts/application (27.5ms)
+Completed 200 OK in 100ms (Views: 99.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-01 15:37:50 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RMxmdAt3TRAuhhOwK37ulYLfy50xlR2km7ujDF74cRpThl9w++wXNRy59xGgx9A6hiu1K4ZeZXslu1r2+7cO9g==", "patient"=>{"doctor_id"=>"3", "name"=>"ddd", "email"=>"jamestate11@gmail.com", "content"=>""}, "commit"=>"Create Patient"}
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["doctor_id", 3], ["name", "ddd"], ["email", "jamestate11@gmail.com"], ["content", ""], ["created_at", "2015-12-01 15:37:50.818128"], ["updated_at", "2015-12-01 15:37:50.818128"]]
+  [1m[35m (42.2ms)[0m  commit transaction
+  Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.4ms)
+  Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.2ms)
+
+PatientMailer#welcome_email: processed outbound mail in 112.1ms
+
+Sent mail to jamestate11@gmail.com (5.2ms)
+Date: Tue, 01 Dec 2015 15:37:50 +0000
+To: jamestate11@gmail.com
+Message-ID: <565dbecef1df4_22573ff9742371b83557c@lazyeye.mail>
+Subject: You are registered with PMP.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_565dbecef021a_22573ff9742371b835468";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_565dbecef021a_22573ff9742371b835468
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com, ddd
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_565dbecef021a_22573ff9742371b835468
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1><Welcome to PMP.com, ddd</h1>
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_565dbecef021a_22573ff9742371b835468--
+
+Redirected to http://localhost:3000/patients/17
+Completed 302 Found in 179ms (ActiveRecord: 42.8ms)
+
+
+Started GET "/patients/17" for 127.0.0.1 at 2015-12-01 15:37:51 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 17]]
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered patients/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 50ms (Views: 48.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-01 15:39:52 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 155ms (Views: 147.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-12-01 15:39:52 +0000
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-01 15:39:59 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Takc9zClJJDiyWpRDmotjqcfln1zRzmI6u0SItMX2eVa4yXzwD5+tdD2jvCF0xMho+voy8SMQVdU7evYdlimCQ==", "name"=>"jim", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "jim"]]
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1[0m  [["name", "jim"]]
+Redirected to http://localhost:3000/doctors/3
+Completed 302 Found in 122ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-01 15:39:59 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 83ms (Views: 80.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/patients/new?doctor_id=3" for 127.0.0.1 at 2015-12-01 15:40:02 +0000
+Processing by PatientsController#new as HTML
+  Parameters: {"doctor_id"=>"3"}
+  Rendered patients/_form.html.erb (23.2ms)
+  Rendered patients/new.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 100ms (Views: 99.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-01 15:40:11 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LUDdSOxuWAIXdLhDY9kRdGSnpxW9p47fvUqd3qeEEKY6CuRMHPUCJyVLXOLoYC/bYFPZowps9gADSmQkAstvSg==", "patient"=>{"doctor_id"=>"3", "name"=>"fg", "email"=>"jamestate11@gmail.com", "content"=>""}, "commit"=>"Create Patient"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["doctor_id", 3], ["name", "fg"], ["email", "jamestate11@gmail.com"], ["content", ""], ["created_at", "2015-12-01 15:40:11.896770"], ["updated_at", "2015-12-01 15:40:11.896770"]]
+  [1m[35m (43.2ms)[0m  commit transaction
+  Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.4ms)
+  Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.2ms)
+
+PatientMailer#welcome_email: processed outbound mail in 107.1ms
+
+Sent mail to jamestate11@gmail.com (5.0ms)
+Date: Tue, 01 Dec 2015 15:40:12 +0000
+To: jamestate11@gmail.com
+Message-ID: <565dbf5c10a56_22a03fc8bbfeb8e82139a@lazyeye.mail>
+Subject: You are registered with PMP.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_565dbf5cf0dc_22a03fc8bbfeb8e82124d";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_565dbf5cf0dc_22a03fc8bbfeb8e82124d
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com, fg
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_565dbf5cf0dc_22a03fc8bbfeb8e82124d
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1><Welcome to PMP.com, fg</h1>
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_565dbf5cf0dc_22a03fc8bbfeb8e82124d--
+
+Completed 500 Internal Server Error in 175ms (ActiveRecord: 43.6ms)
+
+ArgumentError (An SMTP From address is required to send a message. Set the message smtp_envelope_from, return_path, sender, or from address.):
+  app/controllers/patients_controller.rb:33:in `block in create'
+  app/controllers/patients_controller.rb:31:in `create'
+
+
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (4.9ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (25.3ms)
+
+
+Started GET "/patients/1" for 127.0.0.1 at 2015-12-01 15:56:16 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPatient Load (0.2ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 1]]
+Completed 404 Not Found in 25ms (ActiveRecord: 0.5ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Patient with 'id'=1):
+  app/controllers/patients_controller.rb:70:in `set_patient'
+
+
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (3.7ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (35.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-01 15:56:25 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 150ms (Views: 149.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-12-01 15:56:25 +0000
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-01 15:56:31 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZsXn1nP3ZsCHneuXB4SV9ZWprORNXf5S1wDzHc7lZK3ZZUc5Zl2csMOfkHE8dSFRLhidbk4NWQ+gJFKLIl68sw==", "name"=>"jim", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1[0m  [["name", "jim"]]
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1  [["name", "jim"]]
+Redirected to http://0.0.0.0:3000/doctors/3
+Completed 302 Found in 93ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-01 15:56:31 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mPatient Load (0.2ms)[0m  SELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 92ms (Views: 90.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/patients/new?doctor_id=3" for 127.0.0.1 at 2015-12-01 15:56:34 +0000
+Processing by PatientsController#new as HTML
+  Parameters: {"doctor_id"=>"3"}
+  Rendered patients/_form.html.erb (23.2ms)
+  Rendered patients/new.html.erb within layouts/application (29.1ms)
+Completed 200 OK in 98ms (Views: 96.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-01 15:56:42 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pyr5DSTbELFVWKJomJMfpg8uT/O70uVXOkFpHU7cuJOAilniMXHqwRFa2Y6jYqsCtJ9+ebiCQgpNZciLomdgjQ==", "patient"=>{"doctor_id"=>"3", "name"=>"js", "email"=>"jamestate11@gmail.com", "content"=>""}, "commit"=>"Create Patient"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["doctor_id", 3], ["name", "js"], ["email", "jamestate11@gmail.com"], ["content", ""], ["created_at", "2015-12-01 15:56:42.449730"], ["updated_at", "2015-12-01 15:56:42.449730"]]
+  [1m[36m (35.4ms)[0m  [1mcommit transaction[0m
+  Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.4ms)
+  Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.3ms)
+
+PatientMailer#welcome_email: processed outbound mail in 106.0ms
+
+Sent mail to jamestate11@gmail.com (5.0ms)
+Date: Tue, 01 Dec 2015 15:56:42 +0000
+To: jamestate11@gmail.com
+Message-ID: <565dc33a93e89_265c3f9629fde2709771e@lazyeye.mail>
+Subject: You are registered with PMP.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_565dc33a9292a_265c3f9629fde2709769b";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_565dc33a9292a_265c3f9629fde2709769b
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com, js
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_565dc33a9292a_265c3f9629fde2709769b
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1><Welcome to PMP.com, js</h1>
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_565dc33a9292a_265c3f9629fde2709769b--
+
+Redirected to http://0.0.0.0:3000/patients/19
+Completed 302 Found in 162ms (ActiveRecord: 36.1ms)
+
+
+Started GET "/patients/19" for 127.0.0.1 at 2015-12-01 15:56:42 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[35mPatient Load (0.1ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 19]]
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered patients/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 49ms (Views: 47.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-01 21:34:59 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 182ms (Views: 172.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-12-01 21:34:59 +0000
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-01 21:35:10 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3eE/8rIBiDWVo8xFweqgunpjFOJGorIV6IxF8QOSfAvKqwb2QprSEKecKORKU54VfpdqVPFpyspWjLwLpt0D5w==", "name"=>"jim", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "jim"]]
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1[0m  [["name", "jim"]]
+Redirected to http://localhost:3000/doctors/3
+Completed 302 Found in 120ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-01 21:35:10 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (23.7ms)
+Completed 200 OK in 92ms (Views: 90.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/patients/new?doctor_id=3" for 127.0.0.1 at 2015-12-01 21:35:13 +0000
+Processing by PatientsController#new as HTML
+  Parameters: {"doctor_id"=>"3"}
+  Rendered patients/_form.html.erb (18.5ms)
+  Rendered patients/new.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 100ms (Views: 98.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-01 21:35:21 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MiWwMUV065F1CmQzXqudRMbOJABei4bQViuuwcI0O1Ilb4k1te+xtEc1gJLVEqPrwjpatulA/g/oK1c7Z3tEvg==", "patient"=>{"doctor_id"=>"3", "name"=>"wu", "email"=>"jamestate11@gmail.com", "content"=>""}, "commit"=>"Create Patient"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["doctor_id", 3], ["name", "wu"], ["email", "jamestate11@gmail.com"], ["content", ""], ["created_at", "2015-12-01 21:35:21.403976"], ["updated_at", "2015-12-01 21:35:21.403976"]]
+  [1m[35m (66.1ms)[0m  commit transaction
+  Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.4ms)
+  Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.2ms)
+
+PatientMailer#welcome_email: processed outbound mail in 105.9ms
+
+Sent mail to jamestate11@gmail.com (439.1ms)
+Date: Tue, 01 Dec 2015 21:35:21 +0000
+From: pmpquizlink@gmail.com
+To: jamestate11@gmail.com
+Message-ID: <565e1299930cb_42223fc015e2cec076a5@lazyeye.mail>
+Subject: You are registered with PMP.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_565e12999184b_42223fc015e2cec0755a";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_565e12999184b_42223fc015e2cec0755a
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com, wu
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_565e12999184b_42223fc015e2cec0755a
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1><Welcome to PMP.com, wu</h1>
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_565e12999184b_42223fc015e2cec0755a--
+
+Completed 500 Internal Server Error in 636ms (ActiveRecord: 66.5ms)
+
+Net::SMTPAuthenticationError (534-5.7.14 <https://accounts.google.com/ContinueSignIn?sarp=1&scc=1&plt=AKgnsbvA7
+):
+  app/controllers/patients_controller.rb:33:in `block in create'
+  app/controllers/patients_controller.rb:31:in `create'
+
+
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (4.6ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (24.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-01 21:37:16 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 158ms (Views: 148.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-12-01 21:37:16 +0000
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-01 21:37:21 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AwokcQhYcU5a9mOH0qAd9jEW+WSO8FMaatEqE+MNKkcUQB11+MMra2jJhyZZGSNZNeKH0jk7K8XU0dPpRkJVqw==", "name"=>"jim", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "jim"]]
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1[0m  [["name", "jim"]]
+Redirected to http://localhost:3000/doctors/3
+Completed 302 Found in 98ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-01 21:37:22 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 96ms (Views: 94.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/patients/new?doctor_id=3" for 127.0.0.1 at 2015-12-01 21:37:24 +0000
+Processing by PatientsController#new as HTML
+  Parameters: {"doctor_id"=>"3"}
+  Rendered patients/_form.html.erb (25.9ms)
+  Rendered patients/new.html.erb within layouts/application (32.3ms)
+Completed 200 OK in 109ms (Views: 108.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-01 21:37:34 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7MECNnoATqMsqtrc11haBkCC+WWpb40rk57a6Lw+Jrj7izsyipsUhh6VPn1c4WSpRHaH0x6k9fQtniMSGXFZVA==", "patient"=>{"doctor_id"=>"3", "name"=>"james", "email"=>"jamestate11@gmail.com", "content"=>""}, "commit"=>"Create Patient"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["doctor_id", 3], ["name", "james"], ["email", "jamestate11@gmail.com"], ["content", ""], ["created_at", "2015-12-01 21:37:34.257378"], ["updated_at", "2015-12-01 21:37:34.257378"]]
+  [1m[35m (39.6ms)[0m  commit transaction
+  Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.4ms)
+  Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.3ms)
+
+PatientMailer#welcome_email: processed outbound mail in 120.6ms
+
+Sent mail to jamestate11@gmail.com (971.3ms)
+Date: Tue, 01 Dec 2015 21:37:34 +0000
+From: pmpquizlink@gmail.com
+To: jamestate11@gmail.com
+Message-ID: <565e131e6b47c_42bf3ff25541a514941ce@lazyeye.mail>
+Subject: You are registered with PMP.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_565e131e69e27_42bf3ff25541a51494044";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_565e131e69e27_42bf3ff25541a51494044
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com, james
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_565e131e69e27_42bf3ff25541a51494044
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1><Welcome to PMP.com, james</h1>
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_565e131e69e27_42bf3ff25541a51494044--
+
+Completed 500 Internal Server Error in 1155ms (ActiveRecord: 40.0ms)
+
+Net::SMTPAuthenticationError (534-5.7.14 <https://accounts.google.com/ContinueSignIn?sarp=1&scc=1&plt=AKgnsbsU9
+):
+  app/controllers/patients_controller.rb:33:in `block in create'
+  app/controllers/patients_controller.rb:31:in `create'
+
+
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (5.0ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (24.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-01 21:38:57 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 165ms (Views: 156.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-12-01 21:38:58 +0000
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-01 21:39:03 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Hpwbp1nqVdToXJ45Ew5VtxYjXGhVaWPGIhz4rFNVZcEJ1iKjqXEP8dpjepiYt2sYEtci3uKiGxmcHAFW9hoaLQ==", "name"=>"jim", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "jim"]]
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1[0m  [["name", "jim"]]
+Redirected to http://localhost:3000/doctors/3
+Completed 302 Found in 97ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-01 21:39:03 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 85ms (Views: 83.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/patients/new?doctor_id=3" for 127.0.0.1 at 2015-12-01 21:39:06 +0000
+Processing by PatientsController#new as HTML
+  Parameters: {"doctor_id"=>"3"}
+  Rendered patients/_form.html.erb (15.1ms)
+  Rendered patients/new.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 89ms (Views: 87.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-01 21:39:14 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mNSkWn+VcFToZupQ9b6zeZKSxgZr7w2qEUSqVvL70GePnp1ejw4qcdpZDvF+B43Wlma4sNwkdXWvRFOsV7Sviw==", "patient"=>{"doctor_id"=>"3", "name"=>"tim", "email"=>"jamestate11@gmail.com", "content"=>""}, "commit"=>"Create Patient"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["doctor_id", 3], ["name", "tim"], ["email", "jamestate11@gmail.com"], ["content", ""], ["created_at", "2015-12-01 21:39:14.629648"], ["updated_at", "2015-12-01 21:39:14.629648"]]
+  [1m[35m (47.3ms)[0m  commit transaction
+  Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.6ms)
+  Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.5ms)
+
+PatientMailer#welcome_email: processed outbound mail in 144.4ms
+
+Sent mail to jamestate11@gmail.com (615.6ms)
+Date: Tue, 01 Dec 2015 21:39:14 +0000
+From: pmpquizlink@gmail.com
+To: jamestate11@gmail.com
+Message-ID: <565e1382ccce3_43143feb366273647673b@lazyeye.mail>
+Subject: You are registered with PMP.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_565e1382cb57f_43143feb36627364766e5";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_565e1382cb57f_43143feb36627364766e5
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com, tim
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_565e1382cb57f_43143feb36627364766e5
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1><Welcome to PMP.com, tim</h1>
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_565e1382cb57f_43143feb36627364766e5--
+
+Completed 500 Internal Server Error in 824ms (ActiveRecord: 47.6ms)
+
+Net::SMTPAuthenticationError (534-5.7.14 <https://accounts.google.com/ContinueSignIn?sarp=1&scc=1&plt=AKgnsbsfs
+):
+  app/controllers/patients_controller.rb:33:in `block in create'
+  app/controllers/patients_controller.rb:31:in `create'
+
+
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (4.0ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.6ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (22.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-01 21:51:18 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 165ms (Views: 155.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-12-01 21:51:19 +0000
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-01 21:51:25 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Cd2q4owY64iovs04m4Ncr5MdmD8llh8MPfkqNZ97DUkel5PmfIOxrZqBKZkQOmIAl+nmiZJdZ9OD+dPPOjRypQ==", "name"=>"jim", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "jim"]]
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1[0m  [["name", "jim"]]
+Redirected to http://localhost:3000/doctors/3
+Completed 302 Found in 101ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-01 21:51:25 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (42.7ms)
+Completed 200 OK in 98ms (Views: 95.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/patients/new?doctor_id=3" for 127.0.0.1 at 2015-12-01 21:51:28 +0000
+Processing by PatientsController#new as HTML
+  Parameters: {"doctor_id"=>"3"}
+  Rendered patients/_form.html.erb (23.3ms)
+  Rendered patients/new.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 111ms (Views: 108.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-01 21:51:37 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5keWWoJOMqVEKLS2yZfGIaBO42m6yFiA5vN8UaLGrCrxDa9ectVogHYXUBdCLviOpLqd3w0DIF9Y84WrB4nTxg==", "patient"=>{"doctor_id"=>"3", "name"=>"james", "email"=>"jamestate11@gmail.com", "content"=>""}, "commit"=>"Create Patient"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["doctor_id", 3], ["name", "james"], ["email", "jamestate11@gmail.com"], ["content", ""], ["created_at", "2015-12-01 21:51:37.714536"], ["updated_at", "2015-12-01 21:51:37.714536"]]
+  [1m[35m (45.3ms)[0m  commit transaction
+  Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.5ms)
+  Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.5ms)
+
+PatientMailer#welcome_email: processed outbound mail in 115.9ms
+
+Sent mail to jamestate11@gmail.com (1219.2ms)
+Date: Tue, 01 Dec 2015 21:51:37 +0000
+From: pmpquizlink@gmail.com
+To: jamestate11@gmail.com
+Message-ID: <565e1669dafac_45883f8a12a5a08862143@lazyeye.mail>
+Subject: You are registered with PMP.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_565e1669d99a8_45883f8a12a5a088620f";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_565e1669d99a8_45883f8a12a5a088620f
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com, james
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_565e1669d99a8_45883f8a12a5a088620f
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1><Welcome to PMP.com, james</h1>
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_565e1669d99a8_45883f8a12a5a088620f--
+
+Redirected to http://localhost:3000/patients/23
+Completed 302 Found in 1404ms (ActiveRecord: 45.7ms)
+
+
+Started GET "/patients/23" for 127.0.0.1 at 2015-12-01 21:51:39 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mPatient Load (0.4ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 23]]
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered patients/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 67ms (Views: 64.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-01 21:53:30 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 162ms (Views: 152.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-12-01 21:53:31 +0000
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-01 21:53:37 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8gSI6WQKS45sT2I9ghVLd5YsKbS/j8Vz0i4trmm/I9HlTrHtlJERq15whpwJrHXYkthXAghEvaxsLtRUzPBcPQ==", "name"=>"jim", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "jim"]]
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1[0m  [["name", "jim"]]
+Redirected to http://localhost:3000/doctors/3
+Completed 302 Found in 99ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-01 21:53:37 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (41.9ms)
+Completed 200 OK in 100ms (Views: 98.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/patients/new?doctor_id=3" for 127.0.0.1 at 2015-12-01 21:53:39 +0000
+Processing by PatientsController#new as HTML
+  Parameters: {"doctor_id"=>"3"}
+  Rendered patients/_form.html.erb (24.1ms)
+  Rendered patients/new.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 107ms (Views: 106.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-01 21:55:32 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jp5DBHiQCMLg7LEpFbccv1NWJr+zu+j1SArYPIjaPnKZ1HoAiAtS59LTVYieDiIQV6JYCQRwkCr2CiHGLZVBng==", "patient"=>{"doctor_id"=>"3", "name"=>"Jake  Mc Dermot", "email"=>"jakemc77@yahoo.co.uk", "content"=>""}, "commit"=>"Create Patient"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["doctor_id", 3], ["name", "Jake  Mc Dermot"], ["email", "jakemc77@yahoo.co.uk"], ["content", ""], ["created_at", "2015-12-01 21:55:32.369778"], ["updated_at", "2015-12-01 21:55:32.369778"]]
+  [1m[35m (26.7ms)[0m  commit transaction
+  Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.4ms)
+  Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.2ms)
+
+PatientMailer#welcome_email: processed outbound mail in 119.2ms
+
+Sent mail to jakemc77@yahoo.co.uk (1681.4ms)
+Date: Tue, 01 Dec 2015 21:55:32 +0000
+From: pmpquizlink@gmail.com
+To: jakemc77@yahoo.co.uk
+Message-ID: <565e175482c84_45da3fe0c3225c0c28c2@lazyeye.mail>
+Subject: You are registered with PMP.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_565e1754813ba_45da3fe0c3225c0c27b4";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_565e1754813ba_45da3fe0c3225c0c27b4
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com, Jake  Mc Dermot
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_565e1754813ba_45da3fe0c3225c0c27b4
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1><Welcome to PMP.com, Jake  Mc Dermot</h1>
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_565e1754813ba_45da3fe0c3225c0c27b4--
+
+Redirected to http://localhost:3000/patients/24
+Completed 302 Found in 1847ms (ActiveRecord: 27.0ms)
+
+
+Started GET "/patients/24" for 127.0.0.1 at 2015-12-01 21:55:34 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 24]]
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered patients/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 43ms (Views: 41.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-02 11:11:52 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 201ms (Views: 193.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-02 11:11:53 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-02 11:11:53 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-02 11:11:53 +0000
+
+
+Started GET "/assets/scaffolds.self-9d4184da8f230f9c0b2ec66cd57972d5f55c9f84c5263497bde80f36fa6b2a80.css?body=1" for 127.0.0.1 at 2015-12-02 11:11:53 +0000
+
+
+Started GET "/assets/stylesheet.self-4aa4999282dbf83737f9983674fcb37662c0de912850c9cfce49748b7600e2ed.css?body=1" for 127.0.0.1 at 2015-12-02 11:11:53 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-02 11:11:53 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-12-02 11:11:53 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-12-02 11:11:53 +0000
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-12-02 11:11:53 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-02 11:11:53 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-02 11:11:53 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-02 11:11:53 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-02 11:11:53 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-12-02 11:11:53 +0000
+
+
+Started GET "/assets/sideCol.jpg" for 127.0.0.1 at 2015-12-02 11:11:53 +0000
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-02 11:12:03 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HfkbLK+9pl/7JRZwMZOzPVqVZXZYa/sEZBJWVglDRSLX9PadcRZHqu5AfARkyGlu2NF3QXo7ELLxb+DyssdsrA==", "name"=>"jim", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "jim"]]
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1[0m  [["name", "jim"]]
+Redirected to http://localhost:3000/doctors/3
+Completed 302 Found in 115ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-02 11:12:03 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (44.3ms)
+Completed 200 OK in 110ms (Views: 108.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/patients/new?doctor_id=3" for 127.0.0.1 at 2015-12-02 11:12:07 +0000
+Processing by PatientsController#new as HTML
+  Parameters: {"doctor_id"=>"3"}
+  Rendered patients/_form.html.erb (27.1ms)
+  Rendered patients/new.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 109ms (Views: 107.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-02 11:12:17 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4bbFnYAjqedKZ4XKCSYxVBElJA8xvT5iNhMUUvolP0UruygsXohIEl8C775cfesHk2E2OBPt1dSjbqL2QaEWyw==", "patient"=>{"doctor_id"=>"3", "name"=>"Mark or", "email"=>"", "content"=>""}, "commit"=>"Create Patient"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["doctor_id", 3], ["name", "Mark or"], ["email", ""], ["content", ""], ["created_at", "2015-12-02 11:12:17.279548"], ["updated_at", "2015-12-02 11:12:17.279548"]]
+  [1m[35m (43.3ms)[0m  commit transaction
+  Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.7ms)
+  Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.3ms)
+
+PatientMailer#welcome_email: processed outbound mail in 117.7ms
+
+Sent mail to  (6.4ms)
+Date: Wed, 02 Dec 2015 11:12:17 +0000
+From: pmpquizlink@gmail.com
+Message-ID: <565ed2117084d_d6d3ff482a56fd476067@lazyeye.mail>
+Subject: You are registered with PMP.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_565ed2116efbb_d6d3ff482a56fd4759eb";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_565ed2116efbb_d6d3ff482a56fd4759eb
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com, Mark or
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_565ed2116efbb_d6d3ff482a56fd4759eb
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1><Welcome to PMP.com, Mark or</h1>
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_565ed2116efbb_d6d3ff482a56fd4759eb--
+
+Completed 500 Internal Server Error in 187ms (ActiveRecord: 43.9ms)
+
+ArgumentError (An SMTP To address is required to send a message. Set the message smtp_envelope_to, to, cc, or bcc address.):
+  app/controllers/patients_controller.rb:33:in `block in create'
+  app/controllers/patients_controller.rb:31:in `create'
+
+
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (5.1ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.9ms)
+  Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (37.4ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-02 11:12:59 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8DhMF7n6ASpDJ49bXb4Zu4z+G6r4u3Y92lA3xxgzE3s6NaGmZ1Hg31ZC5S8I5cPoDroJndrrnYtPLYFjo7c69Q==", "patient"=>{"doctor_id"=>"3", "name"=>"Marc Ordonez", "email"=>"marc.ordonez@ttu.edu", "content"=>""}, "commit"=>"Create Patient"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["doctor_id", 3], ["name", "Marc Ordonez"], ["email", "marc.ordonez@ttu.edu"], ["content", ""], ["created_at", "2015-12-02 11:12:59.166125"], ["updated_at", "2015-12-02 11:12:59.166125"]]
+  [1m[36m (37.4ms)[0m  [1mcommit transaction[0m
+  Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.0ms)
+  Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.1ms)
+
+PatientMailer#welcome_email: processed outbound mail in 11.4ms
+
+Sent mail to marc.ordonez@ttu.edu (1371.5ms)
+Date: Wed, 02 Dec 2015 11:12:59 +0000
+From: pmpquizlink@gmail.com
+To: marc.ordonez@ttu.edu
+Message-ID: <565ed23b35667_d6d3ff482ab23c0762b5@lazyeye.mail>
+Subject: You are registered with PMP.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_565ed23b33b3d_d6d3ff482ab23c076117";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_565ed23b33b3d_d6d3ff482ab23c076117
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com, Marc Ordonez
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_565ed23b33b3d_d6d3ff482ab23c076117
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1><Welcome to PMP.com, Marc Ordonez</h1>
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_565ed23b33b3d_d6d3ff482ab23c076117--
+
+Redirected to http://localhost:3000/patients/26
+Completed 302 Found in 1425ms (ActiveRecord: 37.7ms)
+
+
+Started GET "/patients/26" for 127.0.0.1 at 2015-12-02 11:13:00 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[35mPatient Load (0.2ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 26]]
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered patients/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 42ms (Views: 41.0ms | ActiveRecord: 0.2ms)
