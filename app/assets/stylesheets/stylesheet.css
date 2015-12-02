@@ -48,12 +48,14 @@ img {
 	display: inline-block;
 	text-align: left;
 	height: 85vh;
+	min-height: 400px;
 	overflow: auto;
 }
-#sideCol div {
+#sideCol div, .auto {
   border-style: solid;
   border-width: 2px 3px 0px 0px;
 	background-color: rgba(255, 255, 255,0.3);
+	position: relative;
 	padding: 5px;
 	margin: 5px;
 }
@@ -66,14 +68,19 @@ img {
 	width:770px;
   border-style: solid;
   border-width: 0px 0px 3px 5px;
-  margin-right: 10px;
-  padding-left: 10px;
 	height: 85vh;
+	min-height: 400px;
+	overflow: auto;
 }
 #content{
   margin: 25px auto;
   width: 1100px;
   height: 85vh;
+}
+div#floating{
+	border-width: 0;
+	margin-top: -85vh;
+	background-color: initial;
 }
 .logo{
 	width:20em;
@@ -83,11 +90,10 @@ img {
 }
 .sideLogo{
 	width:100%;
-	height:99%;
+	height:99.5%;
+	min-height: 400px;
 	margin: 0;
 	padding: 0;
-	position: relative;
-	z-index: -100;
 }
 .question_box{
 	width: 24em;
@@ -112,6 +118,9 @@ img {
 }
 .wider{
 	width: 32em;
+}
+.auto{
+	width: 95%;
 }
 .top{
 	vertical-align: top;
@@ -165,7 +174,6 @@ img {
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-    z-index: 100;
 }
 
 @-webkit-keyframes fadeIn {
