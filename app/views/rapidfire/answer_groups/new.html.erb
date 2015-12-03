@@ -1,25 +1,20 @@
 <% content_for :title, "Please Answer" %>
 
-<div id="sideCol">
+<% content_for :sideCol do %>
   <p id="notice"><%= notice %></p>
-</div>
+<% end %>
 
-<div id="mainCol">
-  <div class="animated fadeInDown">
-  	<div id="intro_box">
-  		<%= image_tag("logo.png", class:"logo") %>
-      <h2><%= yield(:title) %></h2>
-    </div>
-    <div id="question_box">
-      <%= form_for([@question_group, @answer_group_builder]) do |f| %>
-        <%- @answer_group_builder.answers.each do |answer| %>
-          <%= f.fields_for("#{answer.question.id}", answer) do |answer_form| %>
-            <%= render_answer_form_helper(answer, answer_form) %>
-          <% end %>
-          <br>
+
+<% content_for :mainCol do %>
+  <div id="question_box">
+    <%= form_for([@question_group, @answer_group_builder]) do |f| %>
+      <%- @answer_group_builder.answers.each do |answer| %>
+        <%= f.fields_for("#{answer.question.id}", answer) do |answer_form| %>
+          <%= render_answer_form_helper(answer, answer_form) %>
         <% end %>
-        <%= f.submit "Save" %>
+        <br>
       <% end %>
-    </div>
+      <%= f.submit "Save" %>
+    <% end %>
   </div>
-</div>
+<% end %>

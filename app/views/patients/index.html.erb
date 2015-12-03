@@ -1,38 +1,33 @@
 <% content_for :title, "Patient List" %>
 
-<div id="sideCol">
+<% content_for :sideCol do %>
   <p id="notice"><%= notice %></p>
-</div>
+<% end %>
 
-<div id="mainCol">
-	<div class="animated fadeInDown">
-		<div id="intro_box">
-			<%= image_tag("logo.png", class:"logo") %>
-			<h2><%= yield(:title) %></h2>
-	  </div>
-	  <table id="question_box">
-	    <thead>
-	      <tr>
-	        <th>Doctor</th>
-	        <th>Name</th>
-	        <th>Email</th>
-	        <th>Content</th>
-	        <th colspan="3"></th>
-	      </tr>
-	    </thead>
-	    <tbody>
-	      <% @patients.each do |patient| %>
-	      <tr>
-	        <td><%= Doctor.find(patient.doctor_id).name %></td>
-	        <td><%= patient.name %></td>
-	        <td><%= patient.email %></td>
-	        <td><%= patient.content %></td>
-	        <td><%= link_to 'Show', patient %></td>
-	        <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
-	        <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-	      </tr>
-	      <% end %>
-	    </tbody>
-	  </table>
-	</div>
-</div>
+
+<% content_for :mainCol do %>
+  <table class="question_box wider">
+    <thead>
+      <tr>
+        <th>Doctor</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Content</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @patients.each do |patient| %>
+      <tr>
+        <td><%= Doctor.find(patient.doctor_id).name %></td>
+        <td><%= patient.name %></td>
+        <td><%= patient.email %></td>
+        <td><%= patient.content %></td>
+        <td><%= link_to image_tag("open.png", title:"Open"), patient %></td>
+        <td><%= link_to image_tag("edit.png", title:"Edit"), edit_patient_path(patient) %></td>
+        <td><%= link_to image_tag("bin.png", title:"Delete"), patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
