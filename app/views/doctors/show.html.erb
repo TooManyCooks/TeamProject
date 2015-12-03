@@ -3,10 +3,11 @@
 <% content_for :sideCol do %>
   <p id="notice"><%= notice %></p>
   <div>
+    <%= image_tag("defaultImg.png", class:"defaultImg") %>
     <h2>Name: <%= @doctor.name %> </h2>
     <h2>Email: <%= @doctor.email %> </h2>
-    <%= link_to 'Edit', edit_doctor_path(@doctor) %>
   </div>
+  <%= link_to 'Edit', edit_doctor_path(@doctor) %>
   <br>
   <h3>Patients:</h3>
     <table class="auto">
@@ -33,28 +34,13 @@
 
 <% content_for :mainCol do %>
 	<div id="center_box">
-    <table class="question_box wider">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Content</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-      <tbody>
         <% @doctor.patients.each do |patient| %>
-        <tr>
-          <td><%= patient.name %></td>
-          <td><%= patient.email %></td>
-          <td><%= patient.content %></td>
-          <td><%= link_to image_tag("open.png", title:"Open"), patient %></td>
-          <td><%= link_to image_tag("edit.png", title:"Edit"), edit_patient_path(patient) %></td>
-          <td><%= link_to image_tag("bin.png", title:"Delete"), patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
+        <div class="question_box">
+          <%= patient.name %>
+          <%= patient.email %>
+          <%= patient.content %>
+        </div>
         <% end %>
-      </tbody>
-    </table>
     <%= link_to 'List of Doctors', doctors_path %>
   </div>
 <% end %>

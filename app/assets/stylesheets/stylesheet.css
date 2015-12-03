@@ -48,7 +48,6 @@ img {
 	display: inline-block;
 	text-align: left;
 	height: 85vh;
-	min-height: 400px;
 	overflow: auto;
 }
 #sideCol div, .auto {
@@ -69,18 +68,32 @@ img {
   border-style: solid;
   border-width: 0px 0px 3px 5px;
 	height: 85vh;
-	min-height: 400px;
 	overflow: auto;
 }
 #content{
   margin: 25px auto;
-  width: 1100px;
+  width: 1050px;
   height: 85vh;
 }
 div#floating{
 	border-width: 0;
 	margin-top: -85vh;
 	background-color: initial;
+}
+div#floating2{
+	border-width: 0;
+	margin-top: -3em;
+	background-color: initial;
+}
+#outro_box{
+	margin: 0 auto;
+	width: 24em;
+	height: 2em;
+}
+.defaultImg{
+	margin-left: 70px;
+	height: 5em;
+	width: 5em;
 }
 .logo{
 	width:20em;
@@ -91,7 +104,6 @@ div#floating{
 .sideLogo{
 	width:100%;
 	height:99.5%;
-	min-height: 400px;
 	margin: 0;
 	padding: 0;
 }
