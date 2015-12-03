@@ -11,16 +11,24 @@ gem 'sdoc',         '0.4.0', group: :doc
 gem 'bcrypt-ruby', '3.1.2', :require => 'bcrypt'
 gem 'bundler'
 gem 'rapidfire'
+gem 'figaro'
+gem 'puma'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
   gem 'byebug',      '3.4.0'
   gem 'web-console', '2.0.0.beta3'
   gem 'spring',      '1.1.3'
+  gem 'capistrano'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm'
 end
 
 group :production do
   gem 'pg',             '0.17.1'
   gem 'rails_12factor', '0.0.2'
-
+  gem 'puma'
+  
 end
