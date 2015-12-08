@@ -134,6 +134,24 @@ div#floating2{
 .auto{
 	width: 95%;
 }
+.q_box_2{
+	width: auto;
+	margin: 0 auto;
+	border: 0.125em solid #DDD;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	background-color: #EEF;
+}
+.q_box_2 li{
+	display: inline-block;
+	margin: 10px;
+	vertical-align: middle;
+}
+.q_box_2 li ul, .q_box_2 li ul li{
+	display: initial;
+	text-align: left;
+}
 .top{
 	vertical-align: top;
 }

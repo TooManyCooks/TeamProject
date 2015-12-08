@@ -49208,3 +49208,1847 @@ Completed 200 OK in 151ms (Views: 148.5ms | ActiveRecord: 0.3ms)
   [1m[36m (133.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151115200636')[0m
   [1m[35m (133.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151030154614')
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-08 12:02:23 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 1488ms (Views: 1457.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-08 12:02:33 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9PP0RySf5RLikqn+qRtGT4IkT034e0H1tJJ6DdBxbTLoRtinBS6r4AbrooJj34Iz1+Dag59IqM0w3HUSOpUeiQ==", "name"=>"asd", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "asd"]]
+Redirected to http://localhost:3000/access/login
+Completed 302 Found in 121ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2015-12-08 12:02:33 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 123ms (Views: 122.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/doctors/new" for 127.0.0.1 at 2015-12-08 12:02:36 +0000
+Processing by DoctorsController#new as HTML
+  Rendered doctors/_form.html.erb (40.1ms)
+  Rendered doctors/new.html.erb within layouts/application (58.5ms)
+Completed 200 OK in 162ms (Views: 149.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/doctors" for 127.0.0.1 at 2015-12-08 12:02:40 +0000
+Processing by DoctorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3w/L1KUy5UMX/R7j/b7p82y8F51hca7QlcMDnYP2bCPDuuc0hIOrsfOEFZ83ei2POXiCUwZCR+gRjQyCaRIfmA==", "doctor"=>{"name"=>"asd", "password"=>"[FILTERED]"}, "commit"=>"Create Doctor"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (5.8ms)[0m  INSERT INTO "doctors" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "asd"], ["password_digest", "$2a$10$5V.f1eQGJUe4lc3caw.etOnx8mixi/V4vV.begDrHWeI671RCRb/2"], ["created_at", "2015-12-08 12:02:40.397905"], ["updated_at", "2015-12-08 12:02:40.397905"]]
+  [1m[36m (5.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/doctors/1
+Completed 302 Found in 131ms (ActiveRecord: 11.0ms)
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2015-12-08 12:02:40 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://localhost:3000/access/login
+Filter chain halted as :confirm_logged_in rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2015-12-08 12:02:40 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 149ms (Views: 146.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-08 12:02:44 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oYysBYWtDGTZUrWUtAX6XLQbzSmoF2Je6EuDrjqkYce9OYDlpBxClj0rvuh+wT4g4d9Y588ki2ZsBYyx0EASfA==", "name"=>"asd", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "asd"]]
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1[0m  [["name", "asd"]]
+Redirected to http://localhost:3000/doctors/1
+Completed 302 Found in 131ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2015-12-08 12:02:44 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (62.7ms)
+Completed 200 OK in 148ms (Views: 146.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2015-12-08 12:03:52 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 102ms (Views: 98.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:03:52 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:03:52 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:03:52 +0000
+
+
+Started GET "/assets/stylesheet.self-841df0cb26211a659b5fe8be53242e048a78ec6b37ef1dc8f7c869a41c39ec9f.css?body=1" for 127.0.0.1 at 2015-12-08 12:03:52 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-12-08 12:03:52 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-08 12:03:52 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-12-08 12:03:52 +0000
+
+
+Started GET "/assets/turbolinks.self-c846e670826600e8c91b1a5ada3e6547110d996cd6ff24cde55024f7a135a1b4.js?body=1" for 127.0.0.1 at 2015-12-08 12:03:52 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-12-08 12:03:52 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:03:52 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:03:52 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:03:52 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-08 12:03:52 +0000
+
+
+Started GET "/assets/sideCol-cdf60d307da041b044252846a6d4839af142f6f1e557a7a3534f852275484255.jpg" for 127.0.0.1 at 2015-12-08 12:03:52 +0000
+
+
+Started GET "/assets/mainCol-1898b386e6d2f4b595c04928d87ec3a23545bc1fc2269f139a6b20e3c4431091.jpg" for 127.0.0.1 at 2015-12-08 12:03:52 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-12-08 12:03:52 +0000
+
+
+Started GET "/assets/lowBar-af4dbe41245c78ae480aa9fa91934f1a79d72645e88eae58fe55aee182c1c68d.jpg" for 127.0.0.1 at 2015-12-08 12:03:52 +0000
+
+
+Started GET "/assets/defaultImg-c5ddd5775574d904483970943f04ab7354f162390cf2e06b3cff35421ed334a7.png" for 127.0.0.1 at 2015-12-08 12:03:52 +0000
+
+
+Started GET "/doctors/logout" for 127.0.0.1 at 2015-12-08 12:03:54 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"logout"}
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Doctor with 'id'=logout):
+  app/controllers/doctors_controller.rb:70:in `set_doctor'
+
+
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (4.5ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.4ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (47.2ms)
+
+
+Started GET "/doctors/logout" for 127.0.0.1 at 2015-12-08 12:03:54 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"logout"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Doctor with 'id'=logout):
+  app/controllers/doctors_controller.rb:70:in `set_doctor'
+
+
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (11.3ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (33.3ms)
+
+
+Started GET "/doctors/logout" for 127.0.0.1 at 2015-12-08 12:04:52 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"logout"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Doctor with 'id'=logout):
+  app/controllers/doctors_controller.rb:70:in `set_doctor'
+
+
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (4.5ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (8.3ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (32.5ms)
+
+
+Started GET "/doctors/logout" for 127.0.0.1 at 2015-12-08 12:05:05 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"logout"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Doctor with 'id'=logout):
+  app/controllers/doctors_controller.rb:70:in `set_doctor'
+
+
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (4.4ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (23.8ms)
+
+
+Started GET "/doctors/logout" for 127.0.0.1 at 2015-12-08 12:05:05 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"logout"}
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Doctor with 'id'=logout):
+  app/controllers/doctors_controller.rb:70:in `set_doctor'
+
+
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (4.6ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (29.1ms)
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2015-12-08 12:06:45 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms)
+
+SyntaxError (/home/sclarke/Desktop/git/app/views/doctors/show.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;   end 
+               ^
+/home/sclarke/Desktop/git/app/views/doctors/show.html.erb:49: syntax error, unexpected keyword_ensure, expecting ')'
+/home/sclarke/Desktop/git/app/views/doctors/show.html.erb:51: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/doctors/show.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+  app/views/doctors/show.html.erb:49: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/doctors/show.html.erb:51: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (6.7ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (33.4ms)
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2015-12-08 12:07:07 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 91ms (Views: 86.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:07:08 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:07:08 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-12-08 12:07:08 +0000
+
+
+Started GET "/assets/stylesheet.self-841df0cb26211a659b5fe8be53242e048a78ec6b37ef1dc8f7c869a41c39ec9f.css?body=1" for 127.0.0.1 at 2015-12-08 12:07:08 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:07:08 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-08 12:07:08 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-12-08 12:07:08 +0000
+
+
+Started GET "/assets/turbolinks.self-c846e670826600e8c91b1a5ada3e6547110d996cd6ff24cde55024f7a135a1b4.js?body=1" for 127.0.0.1 at 2015-12-08 12:07:08 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-12-08 12:07:08 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:07:08 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:07:08 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:07:08 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-08 12:07:08 +0000
+
+
+Started GET "/assets/sideCol-cdf60d307da041b044252846a6d4839af142f6f1e557a7a3534f852275484255.jpg" for 127.0.0.1 at 2015-12-08 12:07:08 +0000
+
+
+Started GET "/assets/defaultImg-c5ddd5775574d904483970943f04ab7354f162390cf2e06b3cff35421ed334a7.png" for 127.0.0.1 at 2015-12-08 12:07:08 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-12-08 12:07:08 +0000
+
+
+Started GET "/assets/lowBar-af4dbe41245c78ae480aa9fa91934f1a79d72645e88eae58fe55aee182c1c68d.jpg" for 127.0.0.1 at 2015-12-08 12:07:08 +0000
+
+
+Started GET "/assets/mainCol-1898b386e6d2f4b595c04928d87ec3a23545bc1fc2269f139a6b20e3c4431091.jpg" for 127.0.0.1 at 2015-12-08 12:07:08 +0000
+
+
+Started GET "/access/logout" for 127.0.0.1 at 2015-12-08 12:07:10 +0000
+Processing by AccessController#logout as HTML
+Redirected to http://localhost:3000/access/login
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2015-12-08 12:07:10 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 78ms (Views: 77.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2015-12-08 12:07:21 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://localhost:3000/access/login
+Filter chain halted as :confirm_logged_in rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2015-12-08 12:07:21 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 96ms (Views: 95.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:07:21 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:07:21 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:07:21 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-12-08 12:07:21 +0000
+
+
+Started GET "/assets/stylesheet.self-841df0cb26211a659b5fe8be53242e048a78ec6b37ef1dc8f7c869a41c39ec9f.css?body=1" for 127.0.0.1 at 2015-12-08 12:07:21 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-08 12:07:21 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-12-08 12:07:21 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-12-08 12:07:21 +0000
+
+
+Started GET "/assets/turbolinks.self-c846e670826600e8c91b1a5ada3e6547110d996cd6ff24cde55024f7a135a1b4.js?body=1" for 127.0.0.1 at 2015-12-08 12:07:21 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:07:21 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:07:21 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:07:21 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-08 12:07:21 +0000
+
+
+Started GET "/assets/sideCol-cdf60d307da041b044252846a6d4839af142f6f1e557a7a3534f852275484255.jpg" for 127.0.0.1 at 2015-12-08 12:07:21 +0000
+
+
+Started GET "/assets/mainCol-1898b386e6d2f4b595c04928d87ec3a23545bc1fc2269f139a6b20e3c4431091.jpg" for 127.0.0.1 at 2015-12-08 12:07:21 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-12-08 12:07:21 +0000
+
+
+Started GET "/assets/lowBar-af4dbe41245c78ae480aa9fa91934f1a79d72645e88eae58fe55aee182c1c68d.jpg" for 127.0.0.1 at 2015-12-08 12:07:21 +0000
+
+
+Started GET "/access/login" for 127.0.0.1 at 2015-12-08 12:07:28 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 107ms (Views: 106.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-08 12:07:36 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y+G9d/q0NWnLjVTCqAyoxNhbuIb4jGrdFswAuGzG3qjXVJGX2wV7my/0X75iyGy4jZ8tSJ+/g+WSgg+nhiKtEw==", "name"=>"asd", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "asd"]]
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1[0m  [["name", "asd"]]
+Redirected to http://localhost:3000/doctors/1
+Completed 302 Found in 139ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2015-12-08 12:07:36 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 103ms (Views: 101.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2015-12-08 12:08:30 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPatient Load (2.9ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 96ms (Views: 90.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:08:30 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:08:30 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:08:30 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-12-08 12:08:30 +0000
+
+
+Started GET "/assets/stylesheet.self-841df0cb26211a659b5fe8be53242e048a78ec6b37ef1dc8f7c869a41c39ec9f.css?body=1" for 127.0.0.1 at 2015-12-08 12:08:30 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-12-08 12:08:30 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-08 12:08:30 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-12-08 12:08:30 +0000
+
+
+Started GET "/assets/turbolinks.self-c846e670826600e8c91b1a5ada3e6547110d996cd6ff24cde55024f7a135a1b4.js?body=1" for 127.0.0.1 at 2015-12-08 12:08:30 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:08:30 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:08:30 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:08:30 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-08 12:08:30 +0000
+
+
+Started GET "/assets/sideCol-cdf60d307da041b044252846a6d4839af142f6f1e557a7a3534f852275484255.jpg" for 127.0.0.1 at 2015-12-08 12:08:30 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-12-08 12:08:30 +0000
+
+
+Started GET "/assets/mainCol-1898b386e6d2f4b595c04928d87ec3a23545bc1fc2269f139a6b20e3c4431091.jpg" for 127.0.0.1 at 2015-12-08 12:08:30 +0000
+
+
+Started GET "/assets/lowBar-af4dbe41245c78ae480aa9fa91934f1a79d72645e88eae58fe55aee182c1c68d.jpg" for 127.0.0.1 at 2015-12-08 12:08:30 +0000
+
+
+Started GET "/assets/defaultImg-c5ddd5775574d904483970943f04ab7354f162390cf2e06b3cff35421ed334a7.png" for 127.0.0.1 at 2015-12-08 12:08:30 +0000
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2015-12-08 12:08:58 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDoctor Load (0.4ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 122ms (Views: 120.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:08:58 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:08:58 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:08:58 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-12-08 12:08:58 +0000
+
+
+Started GET "/assets/stylesheet.self-841df0cb26211a659b5fe8be53242e048a78ec6b37ef1dc8f7c869a41c39ec9f.css?body=1" for 127.0.0.1 at 2015-12-08 12:08:58 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-08 12:08:58 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-12-08 12:08:58 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:08:58 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-12-08 12:08:58 +0000
+
+
+Started GET "/assets/turbolinks.self-c846e670826600e8c91b1a5ada3e6547110d996cd6ff24cde55024f7a135a1b4.js?body=1" for 127.0.0.1 at 2015-12-08 12:08:58 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:08:58 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:08:58 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-08 12:08:58 +0000
+
+
+Started GET "/assets/sideCol-cdf60d307da041b044252846a6d4839af142f6f1e557a7a3534f852275484255.jpg" for 127.0.0.1 at 2015-12-08 12:08:58 +0000
+
+
+Started GET "/assets/defaultImg-c5ddd5775574d904483970943f04ab7354f162390cf2e06b3cff35421ed334a7.png" for 127.0.0.1 at 2015-12-08 12:08:58 +0000
+
+
+Started GET "/assets/mainCol-1898b386e6d2f4b595c04928d87ec3a23545bc1fc2269f139a6b20e3c4431091.jpg" for 127.0.0.1 at 2015-12-08 12:08:58 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-12-08 12:08:58 +0000
+
+
+Started GET "/assets/lowBar-af4dbe41245c78ae480aa9fa91934f1a79d72645e88eae58fe55aee182c1c68d.jpg" for 127.0.0.1 at 2015-12-08 12:08:58 +0000
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2015-12-08 12:09:12 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 92ms (Views: 91.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:09:12 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:09:12 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-12-08 12:09:12 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:09:12 +0000
+
+
+Started GET "/assets/stylesheet.self-841df0cb26211a659b5fe8be53242e048a78ec6b37ef1dc8f7c869a41c39ec9f.css?body=1" for 127.0.0.1 at 2015-12-08 12:09:12 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-08 12:09:12 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-12-08 12:09:12 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-12-08 12:09:12 +0000
+
+
+Started GET "/assets/turbolinks.self-c846e670826600e8c91b1a5ada3e6547110d996cd6ff24cde55024f7a135a1b4.js?body=1" for 127.0.0.1 at 2015-12-08 12:09:12 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:09:12 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:09:12 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:09:12 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-08 12:09:12 +0000
+
+
+Started GET "/assets/sideCol-cdf60d307da041b044252846a6d4839af142f6f1e557a7a3534f852275484255.jpg" for 127.0.0.1 at 2015-12-08 12:09:12 +0000
+
+
+Started GET "/assets/defaultImg-c5ddd5775574d904483970943f04ab7354f162390cf2e06b3cff35421ed334a7.png" for 127.0.0.1 at 2015-12-08 12:09:12 +0000
+
+
+Started GET "/assets/mainCol-1898b386e6d2f4b595c04928d87ec3a23545bc1fc2269f139a6b20e3c4431091.jpg" for 127.0.0.1 at 2015-12-08 12:09:12 +0000
+
+
+Started GET "/assets/lowBar-af4dbe41245c78ae480aa9fa91934f1a79d72645e88eae58fe55aee182c1c68d.jpg" for 127.0.0.1 at 2015-12-08 12:09:12 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-12-08 12:09:12 +0000
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2015-12-08 12:09:26 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 94ms (Views: 93.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:09:26 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:09:26 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:09:26 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-12-08 12:09:26 +0000
+
+
+Started GET "/assets/stylesheet.self-841df0cb26211a659b5fe8be53242e048a78ec6b37ef1dc8f7c869a41c39ec9f.css?body=1" for 127.0.0.1 at 2015-12-08 12:09:26 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-08 12:09:26 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-12-08 12:09:26 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-12-08 12:09:26 +0000
+
+
+Started GET "/assets/turbolinks.self-c846e670826600e8c91b1a5ada3e6547110d996cd6ff24cde55024f7a135a1b4.js?body=1" for 127.0.0.1 at 2015-12-08 12:09:26 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:09:26 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:09:26 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:09:26 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-08 12:09:26 +0000
+
+
+Started GET "/assets/sideCol-cdf60d307da041b044252846a6d4839af142f6f1e557a7a3534f852275484255.jpg" for 127.0.0.1 at 2015-12-08 12:09:26 +0000
+
+
+Started GET "/assets/defaultImg-c5ddd5775574d904483970943f04ab7354f162390cf2e06b3cff35421ed334a7.png" for 127.0.0.1 at 2015-12-08 12:09:26 +0000
+
+
+Started GET "/assets/mainCol-1898b386e6d2f4b595c04928d87ec3a23545bc1fc2269f139a6b20e3c4431091.jpg" for 127.0.0.1 at 2015-12-08 12:09:26 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-12-08 12:09:26 +0000
+
+
+Started GET "/assets/lowBar-af4dbe41245c78ae480aa9fa91934f1a79d72645e88eae58fe55aee182c1c68d.jpg" for 127.0.0.1 at 2015-12-08 12:09:26 +0000
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2015-12-08 12:10:09 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 100ms (Views: 98.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:10:10 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:10:10 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:10:10 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-08 12:10:10 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-12-08 12:10:10 +0000
+
+
+Started GET "/assets/turbolinks.self-c846e670826600e8c91b1a5ada3e6547110d996cd6ff24cde55024f7a135a1b4.js?body=1" for 127.0.0.1 at 2015-12-08 12:10:10 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-12-08 12:10:10 +0000
+
+
+Started GET "/assets/stylesheet.self-841df0cb26211a659b5fe8be53242e048a78ec6b37ef1dc8f7c869a41c39ec9f.css?body=1" for 127.0.0.1 at 2015-12-08 12:10:10 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-12-08 12:10:10 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:10:10 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:10:10 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:10:10 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-08 12:10:10 +0000
+
+
+Started GET "/assets/sideCol-cdf60d307da041b044252846a6d4839af142f6f1e557a7a3534f852275484255.jpg" for 127.0.0.1 at 2015-12-08 12:10:10 +0000
+
+
+Started GET "/assets/defaultImg-c5ddd5775574d904483970943f04ab7354f162390cf2e06b3cff35421ed334a7.png" for 127.0.0.1 at 2015-12-08 12:10:10 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-12-08 12:10:10 +0000
+
+
+Started GET "/assets/lowBar-af4dbe41245c78ae480aa9fa91934f1a79d72645e88eae58fe55aee182c1c68d.jpg" for 127.0.0.1 at 2015-12-08 12:10:10 +0000
+
+
+Started GET "/assets/mainCol-1898b386e6d2f4b595c04928d87ec3a23545bc1fc2269f139a6b20e3c4431091.jpg" for 127.0.0.1 at 2015-12-08 12:10:10 +0000
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2015-12-08 12:11:12 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 94ms (Views: 91.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:11:13 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:11:13 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:11:13 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-12-08 12:11:13 +0000
+
+
+Started GET "/assets/stylesheet.self-841df0cb26211a659b5fe8be53242e048a78ec6b37ef1dc8f7c869a41c39ec9f.css?body=1" for 127.0.0.1 at 2015-12-08 12:11:13 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-12-08 12:11:13 +0000
+
+
+Started GET "/assets/turbolinks.self-c846e670826600e8c91b1a5ada3e6547110d996cd6ff24cde55024f7a135a1b4.js?body=1" for 127.0.0.1 at 2015-12-08 12:11:13 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-08 12:11:13 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-12-08 12:11:13 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:11:13 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:11:13 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:11:13 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-08 12:11:13 +0000
+
+
+Started GET "/assets/sideCol-cdf60d307da041b044252846a6d4839af142f6f1e557a7a3534f852275484255.jpg" for 127.0.0.1 at 2015-12-08 12:11:13 +0000
+
+
+Started GET "/assets/defaultImg-c5ddd5775574d904483970943f04ab7354f162390cf2e06b3cff35421ed334a7.png" for 127.0.0.1 at 2015-12-08 12:11:13 +0000
+
+
+Started GET "/assets/mainCol-1898b386e6d2f4b595c04928d87ec3a23545bc1fc2269f139a6b20e3c4431091.jpg" for 127.0.0.1 at 2015-12-08 12:11:13 +0000
+
+
+Started GET "/assets/lowBar-af4dbe41245c78ae480aa9fa91934f1a79d72645e88eae58fe55aee182c1c68d.jpg" for 127.0.0.1 at 2015-12-08 12:11:13 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-12-08 12:11:13 +0000
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2015-12-08 12:11:31 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 128ms (Views: 126.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:11:31 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:11:31 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:11:31 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-12-08 12:11:31 +0000
+
+
+Started GET "/assets/stylesheet.self-841df0cb26211a659b5fe8be53242e048a78ec6b37ef1dc8f7c869a41c39ec9f.css?body=1" for 127.0.0.1 at 2015-12-08 12:11:31 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-12-08 12:11:31 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-08 12:11:31 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-12-08 12:11:31 +0000
+
+
+Started GET "/assets/turbolinks.self-c846e670826600e8c91b1a5ada3e6547110d996cd6ff24cde55024f7a135a1b4.js?body=1" for 127.0.0.1 at 2015-12-08 12:11:31 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:11:31 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:11:31 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:11:31 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-08 12:11:31 +0000
+
+
+Started GET "/assets/sideCol-cdf60d307da041b044252846a6d4839af142f6f1e557a7a3534f852275484255.jpg" for 127.0.0.1 at 2015-12-08 12:11:31 +0000
+
+
+Started GET "/assets/defaultImg-c5ddd5775574d904483970943f04ab7354f162390cf2e06b3cff35421ed334a7.png" for 127.0.0.1 at 2015-12-08 12:11:31 +0000
+
+
+Started GET "/assets/mainCol-1898b386e6d2f4b595c04928d87ec3a23545bc1fc2269f139a6b20e3c4431091.jpg" for 127.0.0.1 at 2015-12-08 12:11:31 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-12-08 12:11:31 +0000
+
+
+Started GET "/assets/lowBar-af4dbe41245c78ae480aa9fa91934f1a79d72645e88eae58fe55aee182c1c68d.jpg" for 127.0.0.1 at 2015-12-08 12:11:31 +0000
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2015-12-08 12:11:52 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 108ms (Views: 104.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:11:52 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:11:52 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:11:52 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-12-08 12:11:52 +0000
+
+
+Started GET "/assets/stylesheet.self-841df0cb26211a659b5fe8be53242e048a78ec6b37ef1dc8f7c869a41c39ec9f.css?body=1" for 127.0.0.1 at 2015-12-08 12:11:52 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-08 12:11:52 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-12-08 12:11:52 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-12-08 12:11:52 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:11:52 +0000
+
+
+Started GET "/assets/turbolinks.self-c846e670826600e8c91b1a5ada3e6547110d996cd6ff24cde55024f7a135a1b4.js?body=1" for 127.0.0.1 at 2015-12-08 12:11:52 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:11:52 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:11:52 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-08 12:11:52 +0000
+
+
+Started GET "/assets/sideCol-cdf60d307da041b044252846a6d4839af142f6f1e557a7a3534f852275484255.jpg" for 127.0.0.1 at 2015-12-08 12:11:52 +0000
+
+
+Started GET "/assets/defaultImg-c5ddd5775574d904483970943f04ab7354f162390cf2e06b3cff35421ed334a7.png" for 127.0.0.1 at 2015-12-08 12:11:52 +0000
+
+
+Started GET "/assets/mainCol-1898b386e6d2f4b595c04928d87ec3a23545bc1fc2269f139a6b20e3c4431091.jpg" for 127.0.0.1 at 2015-12-08 12:11:52 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-12-08 12:11:52 +0000
+
+
+Started GET "/assets/lowBar-af4dbe41245c78ae480aa9fa91934f1a79d72645e88eae58fe55aee182c1c68d.jpg" for 127.0.0.1 at 2015-12-08 12:11:52 +0000
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2015-12-08 12:13:25 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 161ms (Views: 158.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:13:26 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:13:26 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:13:26 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-12-08 12:13:26 +0000
+
+
+Started GET "/assets/stylesheet.self-841df0cb26211a659b5fe8be53242e048a78ec6b37ef1dc8f7c869a41c39ec9f.css?body=1" for 127.0.0.1 at 2015-12-08 12:13:26 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-08 12:13:26 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-12-08 12:13:26 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-12-08 12:13:26 +0000
+
+
+Started GET "/assets/turbolinks.self-c846e670826600e8c91b1a5ada3e6547110d996cd6ff24cde55024f7a135a1b4.js?body=1" for 127.0.0.1 at 2015-12-08 12:13:26 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:13:26 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:13:26 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:13:26 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-08 12:13:26 +0000
+
+
+Started GET "/assets/sideCol-cdf60d307da041b044252846a6d4839af142f6f1e557a7a3534f852275484255.jpg" for 127.0.0.1 at 2015-12-08 12:13:26 +0000
+
+
+Started GET "/assets/defaultImg-c5ddd5775574d904483970943f04ab7354f162390cf2e06b3cff35421ed334a7.png" for 127.0.0.1 at 2015-12-08 12:13:26 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-12-08 12:13:26 +0000
+
+
+Started GET "/assets/lowBar-af4dbe41245c78ae480aa9fa91934f1a79d72645e88eae58fe55aee182c1c68d.jpg" for 127.0.0.1 at 2015-12-08 12:13:26 +0000
+
+
+Started GET "/assets/mainCol-1898b386e6d2f4b595c04928d87ec3a23545bc1fc2269f139a6b20e3c4431091.jpg" for 127.0.0.1 at 2015-12-08 12:13:26 +0000
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2015-12-08 12:17:13 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (50.8ms)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 0.3ms)
+
+NoMethodError (undefined method `to_model' for #<ActionDispatch::Routing::RoutesProxy:0x007f8ab6d457b8>):
+  app/views/doctors/show.html.erb:38:in `block in _app_views_doctors_show_html_erb__2328785568251242031_70116868514340'
+  app/views/doctors/show.html.erb:36:in `_app_views_doctors_show_html_erb__2328785568251242031_70116868514340'
+
+
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (15.3ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (50.1ms)
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2015-12-08 12:17:41 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 125ms (Views: 121.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:17:41 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:17:41 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:17:41 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-12-08 12:17:41 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-08 12:17:41 +0000
+
+
+Started GET "/assets/stylesheet.self-841df0cb26211a659b5fe8be53242e048a78ec6b37ef1dc8f7c869a41c39ec9f.css?body=1" for 127.0.0.1 at 2015-12-08 12:17:41 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-12-08 12:17:41 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-12-08 12:17:41 +0000
+
+
+Started GET "/assets/turbolinks.self-c846e670826600e8c91b1a5ada3e6547110d996cd6ff24cde55024f7a135a1b4.js?body=1" for 127.0.0.1 at 2015-12-08 12:17:41 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:17:41 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:17:41 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:17:41 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-08 12:17:41 +0000
+
+
+Started GET "/assets/sideCol-cdf60d307da041b044252846a6d4839af142f6f1e557a7a3534f852275484255.jpg" for 127.0.0.1 at 2015-12-08 12:17:41 +0000
+
+
+Started GET "/assets/defaultImg-c5ddd5775574d904483970943f04ab7354f162390cf2e06b3cff35421ed334a7.png" for 127.0.0.1 at 2015-12-08 12:17:41 +0000
+
+
+Started GET "/assets/mainCol-1898b386e6d2f4b595c04928d87ec3a23545bc1fc2269f139a6b20e3c4431091.jpg" for 127.0.0.1 at 2015-12-08 12:17:41 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-12-08 12:17:41 +0000
+
+
+Started GET "/assets/lowBar-af4dbe41245c78ae480aa9fa91934f1a79d72645e88eae58fe55aee182c1c68d.jpg" for 127.0.0.1 at 2015-12-08 12:17:41 +0000
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2015-12-08 12:17:56 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 118ms (Views: 116.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:17:56 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:17:56 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:17:56 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-12-08 12:17:56 +0000
+
+
+Started GET "/assets/stylesheet.self-841df0cb26211a659b5fe8be53242e048a78ec6b37ef1dc8f7c869a41c39ec9f.css?body=1" for 127.0.0.1 at 2015-12-08 12:17:56 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-08 12:17:56 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-12-08 12:17:56 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-12-08 12:17:56 +0000
+
+
+Started GET "/assets/turbolinks.self-c846e670826600e8c91b1a5ada3e6547110d996cd6ff24cde55024f7a135a1b4.js?body=1" for 127.0.0.1 at 2015-12-08 12:17:56 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:17:56 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:17:56 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:17:56 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-08 12:17:56 +0000
+
+
+Started GET "/assets/sideCol-cdf60d307da041b044252846a6d4839af142f6f1e557a7a3534f852275484255.jpg" for 127.0.0.1 at 2015-12-08 12:17:56 +0000
+
+
+Started GET "/assets/defaultImg-c5ddd5775574d904483970943f04ab7354f162390cf2e06b3cff35421ed334a7.png" for 127.0.0.1 at 2015-12-08 12:17:56 +0000
+
+
+Started GET "/assets/mainCol-1898b386e6d2f4b595c04928d87ec3a23545bc1fc2269f139a6b20e3c4431091.jpg" for 127.0.0.1 at 2015-12-08 12:17:56 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-12-08 12:17:56 +0000
+
+
+Started GET "/assets/lowBar-af4dbe41245c78ae480aa9fa91934f1a79d72645e88eae58fe55aee182c1c68d.jpg" for 127.0.0.1 at 2015-12-08 12:17:56 +0000
+
+
+Started GET "/rapidfire" for 127.0.0.1 at 2015-12-08 12:17:58 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.2ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.0ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 121ms (Views: 104.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rapidfire" for 127.0.0.1 at 2015-12-08 12:20:11 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (14.6ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `name' for nil:NilClass):
+  app/views/rapidfire/question_groups/index.html.erb:7:in `block in _app_views_rapidfire_question_groups_index_html_erb__526151701036041690_70116690056220'
+  app/views/rapidfire/question_groups/index.html.erb:3:in `_app_views_rapidfire_question_groups_index_html_erb__526151701036041690_70116690056220'
+
+
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (16.3ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (44.2ms)
+
+
+Started GET "/rapidfire" for 127.0.0.1 at 2015-12-08 12:20:18 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (9.7ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `name' for nil:NilClass):
+  app/views/rapidfire/question_groups/index.html.erb:7:in `block in _app_views_rapidfire_question_groups_index_html_erb__526151701036041690_70116865336500'
+  app/views/rapidfire/question_groups/index.html.erb:3:in `_app_views_rapidfire_question_groups_index_html_erb__526151701036041690_70116865336500'
+
+
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (10.6ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (37.2ms)
+
+
+Started GET "/rapidfire" for 127.0.0.1 at 2015-12-08 12:20:18 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (11.8ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `name' for nil:NilClass):
+  app/views/rapidfire/question_groups/index.html.erb:7:in `block in _app_views_rapidfire_question_groups_index_html_erb__526151701036041690_70116690056220'
+  app/views/rapidfire/question_groups/index.html.erb:3:in `_app_views_rapidfire_question_groups_index_html_erb__526151701036041690_70116690056220'
+
+
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (8.5ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (7.5ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (43.4ms)
+
+
+Started GET "/rapidfire" for 127.0.0.1 at 2015-12-08 12:20:56 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.2ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.0ms)
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.0ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 100ms (Views: 99.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:20:56 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:20:56 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:20:56 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-12-08 12:20:56 +0000
+
+
+Started GET "/assets/stylesheet.self-841df0cb26211a659b5fe8be53242e048a78ec6b37ef1dc8f7c869a41c39ec9f.css?body=1" for 127.0.0.1 at 2015-12-08 12:20:56 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-08 12:20:56 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-12-08 12:20:56 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-12-08 12:20:56 +0000
+
+
+Started GET "/assets/turbolinks.self-c846e670826600e8c91b1a5ada3e6547110d996cd6ff24cde55024f7a135a1b4.js?body=1" for 127.0.0.1 at 2015-12-08 12:20:56 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:20:56 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:20:56 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:20:56 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-08 12:20:56 +0000
+
+
+Started GET "/assets/sideCol-cdf60d307da041b044252846a6d4839af142f6f1e557a7a3534f852275484255.jpg" for 127.0.0.1 at 2015-12-08 12:20:56 +0000
+
+
+Started GET "/assets/mainCol-1898b386e6d2f4b595c04928d87ec3a23545bc1fc2269f139a6b20e3c4431091.jpg" for 127.0.0.1 at 2015-12-08 12:20:56 +0000
+
+
+Started GET "/assets/lowBar-af4dbe41245c78ae480aa9fa91934f1a79d72645e88eae58fe55aee182c1c68d.jpg" for 127.0.0.1 at 2015-12-08 12:20:56 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-12-08 12:20:56 +0000
+
+
+Started GET "/rapidfire/question_groups/new" for 127.0.0.1 at 2015-12-08 12:21:02 +0000
+Processing by Rapidfire::QuestionGroupsController#new as HTML
+  Rendered rapidfire/question_groups/_form.html.erb (3.7ms)
+  Rendered rapidfire/question_groups/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 80ms (Views: 76.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/rapidfire/question_groups" for 127.0.0.1 at 2015-12-08 12:21:07 +0000
+Processing by Rapidfire::QuestionGroupsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9KK9uVz2mkeDMhNWQsXB0LNO+UNWN47OKRLE9GXLlKDoF5FZfUfUtWdLGCqIAQWs5opsjTEEZ/atXMvrjy/nGw==", "question_group"=>{"name"=>"asd"}, "commit"=>"Create Question group"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (15.9ms)[0m  [1mINSERT INTO "rapidfire_question_groups" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "asd"], ["created_at", "2015-12-08 12:21:07.256416"], ["updated_at", "2015-12-08 12:21:07.256416"]]
+  [1m[35m (8.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/rapidfire/question_groups
+Completed 302 Found in 35ms (ActiveRecord: 24.6ms)
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-12-08 12:21:07 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.4ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (5.9ms)
+  Rendered rapidfire/question_groups/_question_group.html.erb (3.2ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 176ms (Views: 174.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-12-08 12:21:49 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.2ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (1.4ms)
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.8ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 95ms (Views: 91.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:21:50 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:21:50 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:21:50 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-12-08 12:21:50 +0000
+
+
+Started GET "/assets/stylesheet.self-841df0cb26211a659b5fe8be53242e048a78ec6b37ef1dc8f7c869a41c39ec9f.css?body=1" for 127.0.0.1 at 2015-12-08 12:21:50 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-12-08 12:21:50 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-08 12:21:50 +0000
+
+
+Started GET "/assets/turbolinks.self-c846e670826600e8c91b1a5ada3e6547110d996cd6ff24cde55024f7a135a1b4.js?body=1" for 127.0.0.1 at 2015-12-08 12:21:50 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-12-08 12:21:50 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:21:50 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:21:50 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:21:50 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-08 12:21:50 +0000
+
+
+Started GET "/assets/sideCol-cdf60d307da041b044252846a6d4839af142f6f1e557a7a3534f852275484255.jpg" for 127.0.0.1 at 2015-12-08 12:21:50 +0000
+
+
+Started GET "/assets/mainCol-1898b386e6d2f4b595c04928d87ec3a23545bc1fc2269f139a6b20e3c4431091.jpg" for 127.0.0.1 at 2015-12-08 12:21:50 +0000
+
+
+Started GET "/assets/lowBar-af4dbe41245c78ae480aa9fa91934f1a79d72645e88eae58fe55aee182c1c68d.jpg" for 127.0.0.1 at 2015-12-08 12:21:50 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-12-08 12:21:50 +0000
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-12-08 12:23:05 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.3ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.8ms)
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.7ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 173ms (Views: 171.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:23:05 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:23:05 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:23:05 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-12-08 12:23:05 +0000
+
+
+Started GET "/assets/stylesheet.self-841df0cb26211a659b5fe8be53242e048a78ec6b37ef1dc8f7c869a41c39ec9f.css?body=1" for 127.0.0.1 at 2015-12-08 12:23:05 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-08 12:23:05 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-12-08 12:23:05 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-12-08 12:23:05 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:23:06 +0000
+
+
+Started GET "/assets/turbolinks.self-c846e670826600e8c91b1a5ada3e6547110d996cd6ff24cde55024f7a135a1b4.js?body=1" for 127.0.0.1 at 2015-12-08 12:23:06 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:23:06 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:23:06 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-08 12:23:06 +0000
+
+
+Started GET "/assets/sideCol-cdf60d307da041b044252846a6d4839af142f6f1e557a7a3534f852275484255.jpg" for 127.0.0.1 at 2015-12-08 12:23:06 +0000
+
+
+Started GET "/assets/mainCol-1898b386e6d2f4b595c04928d87ec3a23545bc1fc2269f139a6b20e3c4431091.jpg" for 127.0.0.1 at 2015-12-08 12:23:06 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-12-08 12:23:06 +0000
+
+
+Started GET "/assets/lowBar-af4dbe41245c78ae480aa9fa91934f1a79d72645e88eae58fe55aee182c1c68d.jpg" for 127.0.0.1 at 2015-12-08 12:23:06 +0000
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-12-08 12:23:24 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.2ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (1.4ms)
+  Rendered rapidfire/question_groups/_question_group.html.erb (4.8ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 152ms (Views: 151.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:23:25 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:23:25 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-12-08 12:23:25 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:23:25 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:23:25 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-12-08 12:23:25 +0000
+
+
+Started GET "/assets/turbolinks.self-c846e670826600e8c91b1a5ada3e6547110d996cd6ff24cde55024f7a135a1b4.js?body=1" for 127.0.0.1 at 2015-12-08 12:23:25 +0000
+
+
+Started GET "/assets/stylesheet.self-841df0cb26211a659b5fe8be53242e048a78ec6b37ef1dc8f7c869a41c39ec9f.css?body=1" for 127.0.0.1 at 2015-12-08 12:23:25 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-08 12:23:25 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-12-08 12:23:25 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:23:25 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:23:25 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-08 12:23:25 +0000
+
+
+Started GET "/assets/sideCol-cdf60d307da041b044252846a6d4839af142f6f1e557a7a3534f852275484255.jpg" for 127.0.0.1 at 2015-12-08 12:23:25 +0000
+
+
+Started GET "/assets/mainCol-1898b386e6d2f4b595c04928d87ec3a23545bc1fc2269f139a6b20e3c4431091.jpg" for 127.0.0.1 at 2015-12-08 12:23:25 +0000
+
+
+Started GET "/assets/lowBar-af4dbe41245c78ae480aa9fa91934f1a79d72645e88eae58fe55aee182c1c68d.jpg" for 127.0.0.1 at 2015-12-08 12:23:25 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-12-08 12:23:25 +0000
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-12-08 12:25:15 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.3ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (1.6ms)
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.6ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 289ms (Views: 288.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:25:16 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:25:16 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:25:16 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-12-08 12:25:16 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-08 12:25:16 +0000
+
+
+Started GET "/assets/stylesheet.self-ea83949385c3c56f8809586231b1d8783806fd381a6ac03f0b8d6360f95a4472.css?body=1" for 127.0.0.1 at 2015-12-08 12:25:16 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-12-08 12:25:16 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-12-08 12:25:16 +0000
+
+
+Started GET "/assets/turbolinks.self-c846e670826600e8c91b1a5ada3e6547110d996cd6ff24cde55024f7a135a1b4.js?body=1" for 127.0.0.1 at 2015-12-08 12:25:16 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:25:16 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:25:16 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:25:16 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-08 12:25:16 +0000
+
+
+Started GET "/assets/sideCol-cdf60d307da041b044252846a6d4839af142f6f1e557a7a3534f852275484255.jpg" for 127.0.0.1 at 2015-12-08 12:25:16 +0000
+
+
+Started GET "/assets/mainCol-1898b386e6d2f4b595c04928d87ec3a23545bc1fc2269f139a6b20e3c4431091.jpg" for 127.0.0.1 at 2015-12-08 12:25:16 +0000
+
+
+Started GET "/assets/lowBar-af4dbe41245c78ae480aa9fa91934f1a79d72645e88eae58fe55aee182c1c68d.jpg" for 127.0.0.1 at 2015-12-08 12:25:16 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-12-08 12:25:16 +0000
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-12-08 12:25:56 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.1ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.6ms)
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.4ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 155ms (Views: 154.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:25:56 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:25:56 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:25:56 +0000
+
+
+Started GET "/assets/stylesheet.self-ef6670ae51a0a96bcf98a4267ee6edb2f8e679f153a88910d1958155fd3eb427.css?body=1" for 127.0.0.1 at 2015-12-08 12:25:56 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-12-08 12:25:56 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:25:56 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-12-08 12:25:56 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-08 12:25:56 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-12-08 12:25:56 +0000
+
+
+Started GET "/assets/turbolinks.self-c846e670826600e8c91b1a5ada3e6547110d996cd6ff24cde55024f7a135a1b4.js?body=1" for 127.0.0.1 at 2015-12-08 12:25:56 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:25:56 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:25:56 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-08 12:25:56 +0000
+
+
+Started GET "/assets/sideCol-cdf60d307da041b044252846a6d4839af142f6f1e557a7a3534f852275484255.jpg" for 127.0.0.1 at 2015-12-08 12:25:56 +0000
+
+
+Started GET "/assets/mainCol-1898b386e6d2f4b595c04928d87ec3a23545bc1fc2269f139a6b20e3c4431091.jpg" for 127.0.0.1 at 2015-12-08 12:25:56 +0000
+
+
+Started GET "/assets/lowBar-af4dbe41245c78ae480aa9fa91934f1a79d72645e88eae58fe55aee182c1c68d.jpg" for 127.0.0.1 at 2015-12-08 12:25:56 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-12-08 12:25:56 +0000
+
+
+Started GET "/rapidfire/question_groups/1/answer_groups/new" for 127.0.0.1 at 2015-12-08 12:26:11 +0000
+Processing by Rapidfire::AnswerGroupsController#new as HTML
+  Parameters: {"question_group_id"=>"1"}
+  [1m[36mRapidfire::QuestionGroup Load (18.6ms)[0m  [1mSELECT  "rapidfire_question_groups".* FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRapidfire::Question Load (17.1ms)[0m  [1mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."question_group_id" = ?  ORDER BY "rapidfire_questions"."position" ASC[0m  [["question_group_id", 1]]
+  Rendered rapidfire/answer_groups/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 292ms (Views: 70.4ms | ActiveRecord: 36.3ms)
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-12-08 12:27:33 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.2ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.8ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 105ms (Views: 103.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:27:34 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:27:34 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:27:34 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-12-08 12:27:34 +0000
+
+
+Started GET "/assets/stylesheet.self-ef6670ae51a0a96bcf98a4267ee6edb2f8e679f153a88910d1958155fd3eb427.css?body=1" for 127.0.0.1 at 2015-12-08 12:27:34 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-08 12:27:34 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-12-08 12:27:34 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-12-08 12:27:34 +0000
+
+
+Started GET "/assets/turbolinks.self-c846e670826600e8c91b1a5ada3e6547110d996cd6ff24cde55024f7a135a1b4.js?body=1" for 127.0.0.1 at 2015-12-08 12:27:34 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:27:34 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:27:34 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:27:34 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-08 12:27:34 +0000
+
+
+Started GET "/assets/sideCol-cdf60d307da041b044252846a6d4839af142f6f1e557a7a3534f852275484255.jpg" for 127.0.0.1 at 2015-12-08 12:27:34 +0000
+
+
+Started GET "/assets/mainCol-1898b386e6d2f4b595c04928d87ec3a23545bc1fc2269f139a6b20e3c4431091.jpg" for 127.0.0.1 at 2015-12-08 12:27:34 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-12-08 12:27:34 +0000
+
+
+Started GET "/assets/lowBar-af4dbe41245c78ae480aa9fa91934f1a79d72645e88eae58fe55aee182c1c68d.jpg" for 127.0.0.1 at 2015-12-08 12:27:34 +0000
+
+
+Started GET "/rapidfire/question_groups/1/results" for 127.0.0.1 at 2015-12-08 12:28:02 +0000
+Processing by Rapidfire::QuestionGroupsController#results as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRapidfire::QuestionGroup Load (0.1ms)[0m  [1mSELECT  "rapidfire_question_groups".* FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRapidfire::Question Load (0.1ms)[0m  SELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."question_group_id" = ?  ORDER BY "rapidfire_questions"."position" ASC  [["question_group_id", 1]]
+  Rendered rapidfire/question_groups/results.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 106ms (Views: 90.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rapidfire/question_groups/1/answer_groups/new" for 127.0.0.1 at 2015-12-08 12:28:13 +0000
+Processing by Rapidfire::AnswerGroupsController#new as HTML
+  Parameters: {"question_group_id"=>"1"}
+  [1m[36mRapidfire::QuestionGroup Load (0.1ms)[0m  [1mSELECT  "rapidfire_question_groups".* FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRapidfire::Question Load (0.1ms)[0m  [1mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."question_group_id" = ?  ORDER BY "rapidfire_questions"."position" ASC[0m  [["question_group_id", 1]]
+  Rendered rapidfire/answer_groups/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 106ms (Views: 101.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/rapidfire/question_groups/1/answer_groups" for 127.0.0.1 at 2015-12-08 12:28:15 +0000
+Processing by Rapidfire::AnswerGroupsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ayW+WXYUo4bClB+jwICjXOXOlS1o9ioavTnXwzwDo9F3kJK5V6XtdCbtFN8KRGcgsAoA4w/FwyI5d9jc1ufQag==", "commit"=>"Save", "question_group_id"=>"1"}
+  [1m[35mRapidfire::QuestionGroup Load (0.1ms)[0m  SELECT  "rapidfire_question_groups".* FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRapidfire::Question Load (0.1ms)[0m  SELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."question_group_id" = ?  ORDER BY "rapidfire_questions"."position" ASC  [["question_group_id", 1]]
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms)
+
+NoMethodError (undefined method `each' for nil:NilClass):
+  rapidfire (2.1.0) app/services/rapidfire/answer_group_builder.rb:15:in `save!'
+  rapidfire (2.1.0) app/services/rapidfire/answer_group_builder.rb:36:in `save'
+  rapidfire (2.1.0) app/controllers/rapidfire/answer_groups_controller.rb:12:in `create'
+  actionpack (4.2.2) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.2) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.2) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.2) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:776:in `_run_process_action_callbacks'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.2) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.2) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.2) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.2) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.2) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.2) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.2) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.2) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.2) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.2) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.2) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.2) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.2) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.2) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.2) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.2) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.2) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.2) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.2) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/railtie.rb:194:in `public_send'
+  railties (4.2.2) lib/rails/railtie.rb:194:in `method_missing'
+  actionpack (4.2.2) lib/action_dispatch/routing/mapper.rb:51:in `serve'
+  actionpack (4.2.2) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.2) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.2) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.2) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.2) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:18:in `middleware_call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (2.15.3) lib/puma/server.rb:541:in `handle_request'
+  puma (2.15.3) lib/puma/server.rb:388:in `process_client'
+  puma (2.15.3) lib/puma/server.rb:270:in `block in run'
+  puma (2.15.3) lib/puma/thread_pool.rb:106:in `call'
+  puma (2.15.3) lib/puma/thread_pool.rb:106:in `block in spawn_thread'
+
+
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (14.7ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (81.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-08 12:28:30 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 174ms (Views: 173.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-08 12:28:34 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vG5OM+pKUAakyXGNVpJtW4C+ukTy6KEWfvah0GG5grOg22LTy/se9ECwevGcVqkn1XovipXbSC76uK7Pi13xCA==", "name"=>"asd", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1[0m  [["name", "asd"]]
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1  [["name", "asd"]]
+Redirected to http://localhost:3000/doctors/1
+Completed 302 Found in 190ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2015-12-08 12:28:35 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPatient Load (0.1ms)[0m  SELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?  [["doctor_id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 144ms (Views: 143.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2015-12-08 12:29:00 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPatient Load (0.1ms)[0m  SELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?  [["doctor_id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 149ms (Views: 148.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:29:00 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:29:00 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-08 12:29:00 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-12-08 12:29:00 +0000
+
+
+Started GET "/assets/stylesheet.self-ef6670ae51a0a96bcf98a4267ee6edb2f8e679f153a88910d1958155fd3eb427.css?body=1" for 127.0.0.1 at 2015-12-08 12:29:00 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-08 12:29:00 +0000
+
+
+Started GET "/assets/turbolinks.self-c846e670826600e8c91b1a5ada3e6547110d996cd6ff24cde55024f7a135a1b4.js?body=1" for 127.0.0.1 at 2015-12-08 12:29:00 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-12-08 12:29:00 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-12-08 12:29:00 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:29:00 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:29:00 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-08 12:29:00 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-08 12:29:00 +0000
+
+
+Started GET "/assets/sideCol-cdf60d307da041b044252846a6d4839af142f6f1e557a7a3534f852275484255.jpg" for 127.0.0.1 at 2015-12-08 12:29:00 +0000
+
+
+Started GET "/assets/defaultImg-c5ddd5775574d904483970943f04ab7354f162390cf2e06b3cff35421ed334a7.png" for 127.0.0.1 at 2015-12-08 12:29:00 +0000
+
+
+Started GET "/assets/mainCol-1898b386e6d2f4b595c04928d87ec3a23545bc1fc2269f139a6b20e3c4431091.jpg" for 127.0.0.1 at 2015-12-08 12:29:00 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-12-08 12:29:00 +0000
+
+
+Started GET "/assets/lowBar-af4dbe41245c78ae480aa9fa91934f1a79d72645e88eae58fe55aee182c1c68d.jpg" for 127.0.0.1 at 2015-12-08 12:29:00 +0000
