@@ -5,7 +5,6 @@
   <div>
     <%= image_tag("defaultImg.png", class:"defaultImg") %>
     <h2>Name: <%= @doctor.name %> </h2>
-    <h2>Email: <%= @doctor.email %> </h2>
     <%= link_to 'Edit', edit_doctor_path(@doctor) %>
   </div>
   <%= link_to('Log Out', {:controller => 'access', :action => 'logout'}, class: "btn btn-white", style: "text-align: center; margin: 0 60px;") %>

@@ -185,3 +185,123 @@ Redirected to http://test.host/access/login
 Filter chain halted as :confirm_logged_in rendered or redirected
 Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (130.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (154.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateDoctors (20151029161848)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "doctors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151029161848"]]
+  [1m[35m (115.1ms)[0m  commit transaction
+Migrating to CreatePatients (20151029162020)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "patients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "doctor_id" integer, "name" varchar, "email" varchar, "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151029162020"]]
+  [1m[35m (129.2ms)[0m  commit transaction
+Migrating to AddDoctorPassword (20151030154614)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "doctors" ADD "password" varchar
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151030154614"]]
+  [1m[35m (129.2ms)[0m  commit transaction
+Migrating to AddPasswordDigest (20151103215503)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TEMPORARY TABLE "adoctors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "doctors"[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "doctors"
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "doctors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "adoctors"
+  [1m[36m (0.6ms)[0m  [1mDROP TABLE "adoctors"[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151103215503"]]
+  [1m[36m (136.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateSurvey (20151115163535)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "survey_surveys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "attempts_number" integer DEFAULT 0, "finished" boolean DEFAULT 'f', "active" boolean DEFAULT 'f', "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "survey_questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "survey_id" integer, "text" varchar, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "survey_options" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question_id" integer, "weight" integer DEFAULT 0, "text" varchar, "correct" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "survey_attempts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "participant_id" integer, "participant_type" varchar, "survey_id" integer, "winner" boolean, "score" integer) 
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "survey_answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "attempt_id" integer, "question_id" integer, "option_id" integer, "correct" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151115163535"]]
+  [1m[36m (131.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateRapidfireQuestionGroups (20151115200634)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "rapidfire_question_groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151115200634"]]
+  [1m[36m (127.4ms)[0m  [1mcommit transaction[0m
+Migrating to CreateRapidfireQuestions (20151115200635)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "rapidfire_questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question_group_id" integer, "type" varchar, "question_text" varchar, "position" integer, "answer_options" text, "validation_rules" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.3ms)[0m  CREATE  INDEX "index_rapidfire_questions_on_question_group_id" ON "rapidfire_questions" ("question_group_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151115200635"]]
+  [1m[35m (138.9ms)[0m  commit transaction
+Migrating to CreateRapidfireAnswerGroups (20151115200636)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "rapidfire_answer_groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question_group_id" integer, "user_id" integer, "user_type" varchar, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.3ms)[0m  [1mCREATE  INDEX "index_rapidfire_answer_groups_on_question_group_id" ON "rapidfire_answer_groups" ("question_group_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_rapidfire_answer_groups_on_question_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_rapidfire_answer_groups_on_question_group_id' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE  INDEX "index_rapidfire_answer_groups_on_user_id_and_user_type" ON "rapidfire_answer_groups" ("user_id", "user_type")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151115200636"]]
+  [1m[36m (137.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateRapidfireAnswers (20151115200637)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "rapidfire_answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "answer_group_id" integer, "question_id" integer, "answer_text" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.4ms)[0m  CREATE  INDEX "index_rapidfire_answers_on_answer_group_id" ON "rapidfire_answers" ("answer_group_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_rapidfire_answers_on_answer_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_rapidfire_answers_on_answer_group_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  CREATE  INDEX "index_rapidfire_answers_on_question_id" ON "rapidfire_answers" ("question_id")
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151115200637"]]
+  [1m[35m (127.4ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_rapidfire_answer_groups_on_user_id_and_user_type' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_rapidfire_answer_groups_on_user_id_and_user_type' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_rapidfire_answer_groups_on_question_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_rapidfire_answer_groups_on_question_group_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_rapidfire_answers_on_question_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_rapidfire_answers_on_question_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_rapidfire_answers_on_answer_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_rapidfire_answers_on_answer_group_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_rapidfire_questions_on_question_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_rapidfire_questions_on_question_group_id' AND type='index'
+
