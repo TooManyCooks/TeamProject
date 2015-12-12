@@ -21,7 +21,7 @@
         <% @doctor.patients.each do |patient| %>
         <tr>
           <td><%= patient.name %></td>
-          <td><%= link_to image_tag("open.png", title:"Open"), patient_path(patient, @doctor.id) %></td>
+          <td><%= link_to image_tag("open.png", title:"Open"), patient_path(patient) %></td>
           <td><%= link_to image_tag("edit.png", title:"Edit"), edit_patient_path(patient) %></td>
           <td><%= link_to image_tag("bin.png", title:"Delete"), patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
