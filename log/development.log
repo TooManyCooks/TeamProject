@@ -51052,3 +51052,72 @@ Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b
 
 
 Started GET "/assets/lowBar-af4dbe41245c78ae480aa9fa91934f1a79d72645e88eae58fe55aee182c1c68d.jpg" for 127.0.0.1 at 2015-12-08 12:29:00 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-12 21:09:36 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 704ms (Views: 683.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-12 21:09:38 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 135ms (Views: 133.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/doctors/new" for 127.0.0.1 at 2015-12-12 21:09:40 +0000
+Processing by DoctorsController#new as HTML
+  Rendered doctors/_form.html.erb (47.1ms)
+  Rendered doctors/new.html.erb within layouts/application (58.0ms)
+Completed 200 OK in 250ms (Views: 222.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/doctors" for 127.0.0.1 at 2015-12-12 21:09:44 +0000
+Processing by DoctorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b4DCyz5KtlmsYJp4NvfmrrG++n1zOUlyjcT4peGA1miyH43MCd5hUsIqPL+/Q0mBS+d0jsRRXniTjzH0LVPCDA==", "doctor"=>{"name"=>"jake", "password"=>"[FILTERED]"}, "commit"=>"Create Doctor"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "doctors" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "jake"], ["password_digest", "$2a$10$S0SRyIRpwqawwsJ8Uzi62us4TpF3RwB7KU8Wo/JZRjugUV8drIKMq"], ["created_at", "2015-12-12 21:09:44.190904"], ["updated_at", "2015-12-12 21:09:44.190904"]]
+  [1m[35m (96.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/doctors/2
+Completed 302 Found in 239ms (ActiveRecord: 97.3ms)
+
+
+Started GET "/doctors/2" for 127.0.0.1 at 2015-12-12 21:09:44 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDoctor Load (0.3ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPatient Load (0.2ms)[0m  SELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?  [["doctor_id", 2]]
+  Rendered doctors/show.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 171ms (Views: 147.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/access/logout" for 127.0.0.1 at 2015-12-12 21:09:59 +0000
+Processing by AccessController#logout as HTML
+Redirected to http://localhost:3000/access/login
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2015-12-12 21:09:59 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 111ms (Views: 110.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-12 21:10:03 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hzQCv+50klk8TDk12junGt6Q+zq5qUMS4uLAJXa32Xlaq0242eBFUlIGn/JTjwg1JMl1yQ7BVBj8qQl0umTNHQ==", "name"=>"jake", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mDoctor Load (0.3ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1[0m  [["name", "jake"]]
+  [1m[35mDoctor Load (0.3ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1  [["name", "jake"]]
+Redirected to http://localhost:3000/doctors/2
+Completed 302 Found in 132ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/doctors/2" for 127.0.0.1 at 2015-12-12 21:10:03 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPatient Load (0.1ms)[0m  SELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?  [["doctor_id", 2]]
+  Rendered doctors/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 130ms (Views: 128.2ms | ActiveRecord: 0.3ms)
