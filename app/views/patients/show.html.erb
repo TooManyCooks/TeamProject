@@ -13,7 +13,7 @@
       <strong>Patient Email:</strong><%= @patient.email %>
     </p>
     <%= link_to 'Edit', edit_patient_path(@patient) %> |
-    <%= link_to 'Back', patients_path %>
+    <%= link_to 'Back', doctor_path(Doctor.find(@patient.doctor_id)) %>
   </div>
 <% end %>
 
