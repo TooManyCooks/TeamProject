@@ -1,0 +1,13 @@
+<% content_for :title, "Question Answers" %>
+
+<% content_for :sideCol do %>
+  <p id="notice"><%= notice %></p>
+<% end %>
+
+
+<% content_for :mainCol do %>
+	<div id="center_box">
+	  <%= render partial: "question", collection: @questions %>
+	  <%= link_to "New Question", new_question_group_question_path(@question_group), class:"btn btn-white" %>
+	</div>
+<% end %>

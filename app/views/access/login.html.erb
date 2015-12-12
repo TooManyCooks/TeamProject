@@ -1,0 +1,17 @@
+<% content_for :title, "Log In" %>
+
+<% content_for :sideCol do %>
+<% end %>
+
+
+<% content_for :mainCol do %>
+	<div id="center_box">
+		<p id="notice"><%= notice %></p>
+		<%= form_tag(:action => 'attempt_login') do %>
+			<%= text_field_tag(:name, nil, :placeholder => 'Username') %><br><br>
+			<%= password_field_tag(:password, nil, :placeholder => 'Password') %><br><br>
+			<%= submit_tag("Log In", :class => "btn btn-primary") %>
+		<% end %>
+		<p><%= link_to("Create a Doctor account", {:controller => 'doctors', :action => 'new'} ) %></p>
+	</div>
+<% end %>

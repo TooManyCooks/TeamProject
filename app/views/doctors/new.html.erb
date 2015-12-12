@@ -1,0 +1,14 @@
+<% content_for :title, "New Doctor" %>
+
+
+<% content_for :sideCol do %>
+  <p id="notice"><%= notice %></p>
+<% end %>
+
+
+<% content_for :mainCol do %>
+  <div id="center_box">
+    <%= render 'form' %>
+		<%= link_to 'Cancel', doctors_path%>
+  </div>
+<% end %>

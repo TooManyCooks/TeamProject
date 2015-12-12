@@ -1,0 +1,12 @@
+<% content_for :title, "New Question Group" %>
+
+<% content_for :sideCol do %>
+  <p id="notice"><%= notice %></p>
+<% end %>
+
+
+<% content_for :mainCol do %>
+	<div id="center_box">
+    <%= render partial: 'form', locals: {question_group: @question_group} %>
+	</div>
+<% end %>

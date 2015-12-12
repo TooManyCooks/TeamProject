@@ -1,0 +1,15 @@
+<div class="animated fadeInDown">
+	<div id="intro_box">
+    <h1>PMP</h1>
+    <h2>New Doctor</h2>
+	</div>
+  <div id="center_box">
+    <%= render 'form' %>
+  </div>
+	<div id="outro_box">
+		<ul>
+			<li><%= link_to 'Cancel', doctors_path %></li>
+			<li><small>Patient Monitoring Platform &copy; 2015</small></li>
+		</ul>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      <%= (yield(:title) + " - " unless yield(:title).blank?).to_s + "PMP" %>
+    </title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="animated fadeIn">
+      <div id="content">
+        <div id="sideCol">
+          <%= image_tag("sideCol.jpg", class:"sideLogo") %>
+          <div id="floatng" style="border-width: 0;margin-top: -85vh;background-color: initial;">
+            <%= yield(:sideCol) %>
+          </div>
+        </div>
+        <div id="mainCol">
+        	<div class="animated fadeInDown">
+          	<div id="intro_box">
+          		<%= image_tag("logo.png", class:"logo") %>
+          	  <h2><%= yield(:title) %></h2>
+          	</div>
+            <%= yield(:mainCol) %>
+        	</div>
+        </div>
+        <div id="outro_box">
+    			<p><small>Patient Monitoring Platform &copy; 2015</small></p>
+    		</div>
+    	</div>
+    </div>
+  </body>
+</html>

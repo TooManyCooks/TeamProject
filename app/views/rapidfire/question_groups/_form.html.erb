@@ -1,0 +1,16 @@
+<h2><%= yield(:title) %></h2>
+
+<%= form_for question_group do |f| %>
+  <%- if question_group.errors.any? %>
+    <ul>
+      <%- question_group.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br><br>
+  <%= f.submit %>
+<% end %>

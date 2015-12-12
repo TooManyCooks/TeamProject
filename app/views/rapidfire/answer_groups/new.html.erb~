@@ -1,0 +1,26 @@
+<% @page_title = "Answer Please" %>
+
+<div class="animated fadeInDown">
+  <br><br>
+	<div id="intro_box">
+    <h2>
+      Please answer these Questions
+    </h2>
+  </div>
+  <div id="question_box">
+    <%= form_for([@question_group, @answer_group_builder]) do |f| %>
+      <%- @answer_group_builder.answers.each do |answer| %>
+        <%= f.fields_for("#{answer.question.id}", answer) do |answer_form| %>
+          <%= render_answer_form_helper(answer, answer_form) %>
+        <% end %>
+        <br>
+      <% end %>
+      <%= f.submit "Save" %>
+    <% end %>
+  </div>
+  <div id="outro_box">
+    <ul>
+      <li><small>Patient Monitoring Platform &copy; 2015</small></li>
+    </ul>
+  </div>
+</div>

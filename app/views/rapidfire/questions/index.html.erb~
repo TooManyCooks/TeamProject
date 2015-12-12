@@ -1,0 +1,31 @@
+<% @page_title = "Question Index" %>
+
+<div class="animated fadeInDown">
+	<div id="intro_box">
+    <h2>
+      Questions
+      <%= link_to "New Question", new_question_group_question_path(@question_group) %>
+    </h2>
+  </div>
+  <hr>
+  <table id="question_box">
+    <colgroup>
+      <col>
+      <col width="250">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>Question</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: "question", collection: @questions %>
+    </tbody>
+  </table>
+  <div id="outro_box">
+    <ul>
+      <li><small>Patient Monitoring Platform &copy; 2015</small></li>
+    </ul>
+  </div>
+</div>

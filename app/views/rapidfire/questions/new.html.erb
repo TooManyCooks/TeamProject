@@ -1,0 +1,15 @@
+<% content_for :title, "New Question" %>
+
+<% content_for :sideCol do %>
+  <p id="notice"><%= notice %></p>
+<% end %>
+
+
+<% content_for :mainCol do %>
+  <%= render partial: 'form',
+      locals: {
+        form: @question_form,
+        url: question_group_questions_path(@question_group),
+        method: :post,
+        submit_text: 'Create Question' } %>
+<% end %>

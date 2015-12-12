@@ -1,0 +1,39 @@
+<% @page_title = "Patient List" %>
+
+<div class="animated fadeInDown">
+	<div id="intro_box">
+    <p id="notice"><%= notice %></p>
+    <h1>PMP</h1>
+    <h2>Listing Patients</h2>
+  </div>
+  <table id="question_box">
+    <thead>
+      <tr>
+        <th>Doctor</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Content</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @patients.each do |patient| %>
+      <tr>
+        <td><%= Doctor.find(patient.doctor_id).name %></td>
+        <td><%= patient.name %></td>
+        <td><%= patient.email %></td>
+        <td><%= patient.content %></td>
+        <td><%= link_to 'Show', patient %></td>
+        <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
+        <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table><br>
+	<div id="outro_box">
+		<ul>
+			<li><%= link_to 'New Patient', new_patient_path %></li>
+			<li><small>Patient Monitoring Platform &copy; 2015</small></li>
+		</ul>
+  </div>
+</div>

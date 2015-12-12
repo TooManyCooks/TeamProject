@@ -1,0 +1,21 @@
+<% @page_title = "Queston Group Index" %>
+
+<div class="animated fadeInDown">
+  <br><br>
+	<div id="intro_box">
+    <h2>
+      Question Groups
+    </h2>
+  </div>
+  <div>
+    <%= render partial: "question_group", collection: @question_groups %>
+  </div>
+  <% if can_administer? %>
+    <%= link_to "New Group", new_question_group_path, class:"btn btn-white" %>
+  <% end %>
+  <div id="outro_box">
+    <ul>
+      <li><small>Patient Monitoring Platform &copy; 2015</small></li>
+    </ul>
+  </div>
+</div>

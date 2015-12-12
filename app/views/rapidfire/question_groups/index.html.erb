@@ -1,0 +1,16 @@
+<% content_for :title, "Queston Groups" %>
+
+<% content_for :sideCol do %>
+  <p id="notice"><%= notice %></p>
+  <div>
+    <%= render partial: "question_group", collection: @question_groups %>
+    <% if can_administer? %>
+      <%= link_to "New Group", new_question_group_path, class:"btn btn-white" %>
+    <% end %>
+  </div>
+<% end %>
+
+
+<% content_for :mainCol do %>
+
+<% end %>

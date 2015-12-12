@@ -1,0 +1,14 @@
+<% content_for :title, "Edit Patient" %>
+
+<% content_for :sideCol do %>
+  <p id="notice"><%= notice %></p>
+  <% end %>
+
+
+<% content_for :mainCol do %>
+	<div id="center_box">
+  	<%= render 'form' %>
+  		<%= link_to 'Show', @patient %> |
+  	<%= link_to 'Back', patients_path %>
+	</div>
+<% end %>

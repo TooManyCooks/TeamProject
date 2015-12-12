@@ -1,0 +1,25 @@
+<% content_for :title, "Patient Information" %>
+
+<% content_for :sideCol do %>
+  <p id="notice"><%= notice %></p>
+  <div>
+    <p>
+      <strong>Doctor Name:</strong><%= Doctor.find(@patient.doctor_id).name %>
+    </p>
+    <p>
+      <strong>Patient Name:</strong><%= @patient.name %>
+    </p>
+    <p>
+      <strong>Patient Email:</strong><%= @patient.email %>
+    </p>
+    <%= link_to 'Edit', edit_patient_path(@patient) %> |
+    <%= link_to 'Back', patients_path %>
+  </div>
+<% end %>
+
+
+<% content_for :mainCol do %>
+	<div id="center_box">
+    <strong>Content:</strong><%= @patient.content %>
+  </div>
+<% end %>
