@@ -19,14 +19,17 @@ class AccessController < ApplicationController
         authorized_user = found_user.authenticate(params[:password])
 
       end
-    end
-    if authorized_user
-      # mark user as logged in. using super cookie
+      if authorized_user
+        # mark user as logged in. using super cookie
 
-      session[:doctor_id] = authorized_user.id
-      session[:name] = authorized_user.name
-      flash[:notice] = "You are now logged in."
-      redirect_to Doctor.find_by_name(authorized_user.name)
+        session[:doctor_id] = authorized_user.id
+        session[:name] = authorized_user.name
+        flash[:notice] = "You are now logged in."
+        redirect_to Doctor.find_by_name(authorized_user.name)
+      else
+        flash[:notice] = "Invalid username/password combination."
+        redirect_to(:action => 'login')
+      end
     else
       flash[:notice] = "Invalid username/password combination."
       redirect_to(:action => 'login')
