@@ -6,4 +6,7 @@ class QuizMailController < ApplicationController
     redirect_to :controller => 'doctors', :action => 'show', :id => 1
   end
 
+  def index
+  end
+
 end
