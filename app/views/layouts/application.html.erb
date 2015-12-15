@@ -11,36 +11,24 @@
   <body>
     <div class="animated fadeIn">
       <div id="content">
-        <%= if (yield(:title).to_str)===("Log In")
-          then tag("div", id: "sideCol", style: "width: 0; border-width:0;")
-          else tag("div", id: "sideCol")
-        end %>
+        <div id="sideCol">
           <%= image_tag("sideCol.jpg", class:"sideLogo") %>
-          <div id="floating">
+          <div id="floatng" style="border-width: 0;margin-top: -85vh;background-color: initial;">
             <%= yield(:sideCol) %>
           </div>
         </div>
-        <%= if (yield(:title).to_str)===("Log In")
-          then tag("div", id: "mainCol", style: "width: 100%;")
-          else tag("div", id: "mainCol")
-        end %>
-          <%= image_tag("mainCol.jpg", class:"sideLogo") %>
-          <div id="floating">
-          	<div class="animated fadeInDown">
-            	<div id="intro_box">
-            		<%= image_tag("logo.png", class:"logo") %>
-            	  <h2><%= yield(:title) %></h2>
-              </div>
-              <%= yield(:mainCol) %>
-        	   </div>
+        <div id="mainCol">
+        	<div class="animated fadeInDown">
+          	<div id="intro_box">
+          		<%= image_tag("logo.png", class:"logo") %>
+          	  <h2><%= yield(:title) %></h2>
+          	</div>
+            <%= yield(:mainCol) %>
         	</div>
         </div>
       </div>
       <div id="outro_box">
-        <%= image_tag("lowBar.jpg", class:"sideLogo", style:"opacity: 0.3;") %>
-        <div id="floating2">
-      	  <p><small>Patient Monitoring Platform &copy; 2015</small></p>
-        </div>
+    	   <p><small>Patient Monitoring Platform &copy; 2015</small></p>
       </div>
     </div>
   </body>
