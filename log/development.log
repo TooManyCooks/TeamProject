@@ -56834,3 +56834,2056 @@ ActionController::UrlGenerationError (No route matches {:action=>"send_quiz_mail
   Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.7ms)
   Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
   Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (25.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-15 17:17:59 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 1147ms (Views: 1130.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-15 17:18:01 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 205ms (Views: 204.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/quiz_mail.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-15 17:18:02 +0000
+
+
+Started GET "/assets/stylesheet.self-710b33dc9b769912ef7186cec707096385d14b0f8406d924f82a3f07c5972922.css?body=1" for 127.0.0.1 at 2015-12-15 17:18:02 +0000
+
+
+Started GET "/assets/quiz_mail.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-15 17:18:02 +0000
+
+
+Started GET "/doctors/new" for 127.0.0.1 at 2015-12-15 17:18:06 +0000
+Processing by DoctorsController#new as HTML
+  Rendered doctors/_form.html.erb (109.7ms)
+  Rendered doctors/new.html.erb within layouts/application (131.6ms)
+Completed 200 OK in 370ms (Views: 327.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/doctors" for 127.0.0.1 at 2015-12-15 17:18:11 +0000
+Processing by DoctorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TrivPqwMbPR4fYmruD+UAtAZgoGx3t5EfZM5Jy6HdE6eTyCaM864tJVa6KmvQ/dtYW+ItjG1GU0FeSw/sKcYlA==", "doctor"=>{"name"=>"Bob", "password"=>"[FILTERED]"}, "commit"=>"Create Doctor"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "doctors" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Bob"], ["password_digest", "$2a$10$Iub4ZjClp/WU91DdUlWdKOwupwMyrwcRkLgjkGQm2U.NY7Fj224kG"], ["created_at", "2015-12-15 17:18:11.545928"], ["updated_at", "2015-12-15 17:18:11.545928"]]
+  [1m[35m (113.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/doctors/2
+Completed 302 Found in 256ms (ActiveRecord: 114.8ms)
+
+
+Started GET "/doctors/2" for 127.0.0.1 at 2015-12-15 17:18:11 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"2"}
+Redirected to http://localhost:3000/access/login
+Filter chain halted as :confirm_logged_in rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2015-12-15 17:18:11 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 144ms (Views: 143.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-15 17:18:17 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SOZgu1XAY0X0EcGboZ6jGLQVMPxL+JXLjo3Teg4pjQ+YEe8fygK3BRk2oJm24sB3BWM6y8uTUsL2Z8ZikAnh1Q==", "name"=>"Dr Bob", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mDoctor Load (0.5ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1[0m  [["name", "Dr Bob"]]
+Redirected to http://localhost:3000/access/login
+Completed 302 Found in 109ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2015-12-15 17:18:18 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 130ms (Views: 129.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/doctors/new" for 127.0.0.1 at 2015-12-15 17:18:22 +0000
+Processing by DoctorsController#new as HTML
+  Rendered doctors/_form.html.erb (3.6ms)
+  Rendered doctors/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 137ms (Views: 136.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/doctors" for 127.0.0.1 at 2015-12-15 17:18:27 +0000
+Processing by DoctorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mx+76/FN3TS5kzJjCWiGCwSYOUsxKv3/L3kkMxTAKlhL6DRPbo8JdFS0U2EeFOVkte4zfLFBOvZXkzEriuBGgg==", "doctor"=>{"name"=>"jake", "password"=>"[FILTERED]"}, "commit"=>"Create Doctor"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "doctors" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "jake"], ["password_digest", "$2a$10$Zdj9SJI8pvZwc.MXoIBzduohMV.3yAWetwJuHtwAY5qhotEM4iEOq"], ["created_at", "2015-12-15 17:18:27.470466"], ["updated_at", "2015-12-15 17:18:27.470466"]]
+  [1m[35m (207.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/doctors/3
+Completed 302 Found in 342ms (ActiveRecord: 208.1ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-15 17:18:27 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+Redirected to http://localhost:3000/access/login
+Filter chain halted as :confirm_logged_in rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2015-12-15 17:18:27 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 136ms (Views: 134.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-15 17:18:32 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qGGyFJ0S56RVIpmKH91yPFUTvzI/Fv1ZDrP3mgWYM254lj2wAtAz5LgF+IgIoRFT5GW1Bb99OlB2WeKCm7hftA==", "name"=>"jake", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1[0m  [["name", "jake"]]
+  [1m[35mDoctor Load (0.3ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1  [["name", "jake"]]
+Redirected to http://localhost:3000/doctors/3
+Completed 302 Found in 155ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-15 17:18:32 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mDoctor Load (0.4ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mPatient Load (0.3ms)[0m  SELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (99.7ms)
+Completed 200 OK in 236ms (Views: 232.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/defaultImg-527d8a9f71eea414006f1cb939369464b7f6776ce1cb17e7654bde2e655b7f9b.png" for 127.0.0.1 at 2015-12-15 17:18:32 +0000
+
+
+Started GET "/doctors/3/edit" for 127.0.0.1 at 2015-12-15 17:18:39 +0000
+Processing by DoctorsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered doctors/_form.html.erb (4.0ms)
+  Rendered doctors/edit.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 139ms (Views: 137.0ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/doctors/3" for 127.0.0.1 at 2015-12-15 17:18:46 +0000
+Processing by DoctorsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D2y6ehnBgt5aaGzPdLVlw5wDz1GYsxtOVWYqYC6NUhPfmzXehgNWnrdPDc1jyQasLXXFZhjY3EctjD94sK0+yQ==", "doctor"=>{"name"=>"Dr Jake", "password"=>"[FILTERED]"}, "commit"=>"Update Doctor", "id"=>"3"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "doctors" SET "name" = ?, "password_digest" = ?, "updated_at" = ? WHERE "doctors"."id" = ?  [["name", "Dr Jake"], ["password_digest", "$2a$10$qjmBVT53t3HbfQeezEmrRejweS0kd/RVBz3BdXAcAf0pGf.58RHJa"], ["updated_at", "2015-12-15 17:18:46.597279"], ["id", 3]]
+  [1m[36m (99.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/doctors/3
+Completed 302 Found in 236ms (ActiveRecord: 100.7ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-15 17:18:46 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 139ms (Views: 136.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/patients/new?doctor_id=3" for 127.0.0.1 at 2015-12-15 17:18:57 +0000
+Processing by PatientsController#new as HTML
+  Parameters: {"doctor_id"=>"3"}
+  Rendered patients/_form.html.erb (76.4ms)
+  Rendered patients/new.html.erb within layouts/application (88.2ms)
+Completed 200 OK in 251ms (Views: 241.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-15 17:19:13 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S093npXtFbHiKzM1ns/6fkDyuNC9M7DB6VmnrA/JY1ybuPg6Ci/B8Q8MUjeJs5kR8YSy5z1Yd8iRs7K0kekPhg==", "patient"=>{"doctor_id"=>"3", "name"=>"John", "email"=>"jakemc77@yahoo.co.uk", "content"=>"Pretty cool guy. "}, "commit"=>"Create Patient"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["doctor_id", 3], ["name", "John"], ["email", "jakemc77@yahoo.co.uk"], ["content", "Pretty cool guy. "], ["created_at", "2015-12-15 17:19:13.129488"], ["updated_at", "2015-12-15 17:19:13.129488"]]
+  [1m[35m (288.7ms)[0m  commit transaction
+  Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.6ms)
+  Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.4ms)
+
+PatientMailer#welcome_email: processed outbound mail in 375.1ms
+
+Sent mail to jakemc77@yahoo.co.uk (1531.8ms)
+Date: Tue, 15 Dec 2015 17:19:13 +0000
+From: pmpquizlink@gmail.com
+To: jakemc77@yahoo.co.uk
+Message-ID: <56704b91ce066_b278cf988214ac@I-AM-THE-MACHINE.mail>
+Subject: your quiz link.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56704b91ca3be_b278cf98821327";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56704b91ca3be_b278cf98821327
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com,
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_56704b91ca3be_b278cf98821327
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    PatientMailer#QuizMailer
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_56704b91ca3be_b278cf98821327--
+
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+Redirected to http://localhost:3000/doctors/3
+Completed 302 Found in 2244ms (ActiveRecord: 289.5ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-15 17:19:15 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (142.6ms)
+Completed 200 OK in 269ms (Views: 266.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/patients/7" for 127.0.0.1 at 2015-12-15 17:19:17 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPatient Load (0.5ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered patients/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 194ms (Views: 190.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-15 17:19:19 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mPatient Load (0.2ms)[0m  SELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 148ms (Views: 145.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/patients/7/edit" for 127.0.0.1 at 2015-12-15 17:19:21 +0000
+Processing by PatientsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered patients/_form.html.erb (5.2ms)
+  Rendered patients/edit.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 144ms (Views: 142.1ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/patients/7" for 127.0.0.1 at 2015-12-15 17:19:23 +0000
+Processing by PatientsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a5lfqeo4njWnEU7AqebPH1mAA5Y0N2sZMvIBfQv9tl67btANdfpKdUo2L8K+mqxw6PYJobRcrBBKGBRlld3ahA==", "patient"=>{"doctor_id"=>"", "name"=>"John", "email"=>"jakemc77@yahoo.co.uk", "content"=>"Pretty cool guy. "}, "commit"=>"Update Patient", "id"=>"7"}
+  [1m[35mPatient Load (0.2ms)[0m  SELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "patients" SET "doctor_id" = ?, "updated_at" = ? WHERE "patients"."id" = ?  [["doctor_id", nil], ["updated_at", "2015-12-15 17:19:23.136749"], ["id", 7]]
+  [1m[36m (108.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", nil]]
+Completed 404 Not Found in 118ms (ActiveRecord: 109.0ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Doctor with 'id'=):
+  app/controllers/patients_controller.rb:48:in `block (2 levels) in update'
+  app/controllers/patients_controller.rb:46:in `update'
+
+
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (16.1ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (6.7ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.5ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (66.4ms)
+
+
+Started PATCH "/patients/7" for 127.0.0.1 at 2015-12-15 17:19:27 +0000
+Processing by PatientsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"poGXwl9qD91nVrI+wPa33uEA8dcZXRA41b1J5Jj5sNB2dhhmwKjbnYpx0zzXitSxUHb74Jk21zGtV1z8BtncCg==", "patient"=>{"doctor_id"=>"", "name"=>"John", "email"=>"jakemc77@yahoo.co.uk", "content"=>"Pretty cool guy. "}, "commit"=>"Update Patient", "id"=>"7"}
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", nil]]
+Completed 404 Not Found in 6ms (ActiveRecord: 0.6ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Doctor with 'id'=):
+  app/controllers/patients_controller.rb:48:in `block (2 levels) in update'
+  app/controllers/patients_controller.rb:46:in `update'
+
+
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (15.9ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (5.9ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.5ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (55.9ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-15 17:19:32 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mPatient Load (0.2ms)[0m  SELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 135ms (Views: 133.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/quiz_mail/send_quiz_mail/3" for 127.0.0.1 at 2015-12-15 17:19:35 +0000
+Processing by QuizMailController#send_quiz_mail as HTML
+  Parameters: {"id"=>"3"}
+  Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.1ms)
+  Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.1ms)
+
+PatientMailer#welcome_email: processed outbound mail in 19.6ms
+
+Sent mail to jakemc77@yahoo.co.uk (1100.4ms)
+Date: Tue, 15 Dec 2015 17:19:35 +0000
+From: pmpquizlink@gmail.com
+To: jakemc77@yahoo.co.uk
+Message-ID: <56704ba774169_b278cf98821681@I-AM-THE-MACHINE.mail>
+Subject: your quiz link.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56704ba7723ed_b278cf98821595";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56704ba7723ed_b278cf98821595
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com,
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_56704ba7723ed_b278cf98821595
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    PatientMailer#QuizMailer
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_56704ba7723ed_b278cf98821595--
+
+Redirected to http://localhost:3000/doctors/3
+Completed 302 Found in 1126ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-15 17:19:36 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mPatient Load (0.1ms)[0m  SELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 129ms (Views: 127.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/rapidfire" for 127.0.0.1 at 2015-12-15 17:19:39 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.3ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (15.8ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 203ms (Views: 196.1ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/rapidfire/question_groups/7" for 127.0.0.1 at 2015-12-15 17:19:48 +0000
+Processing by Rapidfire::QuestionGroupsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"suLOUPSHV80G/M0wLs2iKge2wiXYSoDrWq9Ix7cqTGBiFUH0a0WDjevbrDI5scFFtsDIElghR+IiRV3fKQogug==", "id"=>"7"}
+  [1m[35mRapidfire::QuestionGroup Load (0.4ms)[0m  SELECT  "rapidfire_question_groups".* FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ?  [["id", 7]]
+  [1m[36m (192.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/rapidfire/question_groups
+Completed 302 Found in 198ms (ActiveRecord: 192.8ms)
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-12-15 17:19:49 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.3ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.0ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 162ms (Views: 160.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rapidfire/question_groups/new" for 127.0.0.1 at 2015-12-15 17:19:50 +0000
+Processing by Rapidfire::QuestionGroupsController#new as HTML
+  Rendered rapidfire/question_groups/_form.html.erb (5.4ms)
+  Rendered rapidfire/question_groups/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 163ms (Views: 161.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/rapidfire/question_groups" for 127.0.0.1 at 2015-12-15 17:19:58 +0000
+Processing by Rapidfire::QuestionGroupsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G/Vp0mkUbTuLj5F30DVqWzNRK+95JsGGaIqBNknKIwjLAuZ29ta5e2ao8HXHSQk0gich2PlNBo8QYJQu1+pP0g==", "question_group"=>{"name"=>"John Week 1"}, "commit"=>"Create Question group"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "rapidfire_question_groups" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "John Week 1"], ["created_at", "2015-12-15 17:19:58.474093"], ["updated_at", "2015-12-15 17:19:58.474093"]]
+  [1m[36m (338.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/rapidfire/question_groups
+Completed 302 Found in 347ms (ActiveRecord: 339.6ms)
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-12-15 17:19:58 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.3ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (3.1ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 177ms (Views: 175.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rapidfire/question_groups/8/questions" for 127.0.0.1 at 2015-12-15 17:20:00 +0000
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"question_group_id"=>"8"}
+  [1m[36mRapidfire::QuestionGroup Load (0.2ms)[0m  [1mSELECT  "rapidfire_question_groups".* FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mRapidfire::Question Load (0.3ms)[0m  SELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."question_group_id" = ?  ORDER BY "rapidfire_questions"."position" ASC  [["question_group_id", 8]]
+  Rendered rapidfire/questions/_question.html.erb (0.0ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (12.7ms)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 0.8ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"send_quiz_mail", :controller=>"rapidfire/quiz_mail", :question_group_id=>"8"}):
+  app/views/rapidfire/questions/index.html.erb:12:in `block in _app_views_rapidfire_questions_index_html_erb___2768776770367219680_46908320'
+  app/views/rapidfire/questions/index.html.erb:8:in `_app_views_rapidfire_questions_index_html_erb___2768776770367219680_46908320'
+
+
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (25.6ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (8.9ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.5ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (68.8ms)
+
+
+Started GET "/rapidfire/question_groups/8/questions" for 127.0.0.1 at 2015-12-15 17:20:01 +0000
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"question_group_id"=>"8"}
+  [1m[36mRapidfire::QuestionGroup Load (0.2ms)[0m  [1mSELECT  "rapidfire_question_groups".* FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mRapidfire::Question Load (0.4ms)[0m  SELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."question_group_id" = ?  ORDER BY "rapidfire_questions"."position" ASC  [["question_group_id", 8]]
+  Rendered rapidfire/questions/_question.html.erb (0.0ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (9.6ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.6ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"send_quiz_mail", :controller=>"rapidfire/quiz_mail", :question_group_id=>"8"}):
+  app/views/rapidfire/questions/index.html.erb:12:in `block in _app_views_rapidfire_questions_index_html_erb___2768776770367219680_78377240'
+  app/views/rapidfire/questions/index.html.erb:8:in `_app_views_rapidfire_questions_index_html_erb___2768776770367219680_78377240'
+
+
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (24.5ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (9.3ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.5ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (68.9ms)
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-12-15 17:23:37 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.2ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (5.3ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 429ms (Views: 404.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-15 17:23:40 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mDoctor Load (0.4ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mPatient Load (0.3ms)[0m  SELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (37.2ms)
+Completed 200 OK in 244ms (Views: 212.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/quiz_mail/send_quiz_mail/3" for 127.0.0.1 at 2015-12-15 17:23:43 +0000
+Processing by QuizMailController#send_quiz_mail as HTML
+  Parameters: {"id"=>"3"}
+  Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.7ms)
+  Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.5ms)
+
+PatientMailer#welcome_email: processed outbound mail in 369.2ms
+
+Sent mail to jakemc77@yahoo.co.uk (1076.7ms)
+Date: Tue, 15 Dec 2015 17:23:43 +0000
+From: pmpquizlink@gmail.com
+To: jakemc77@yahoo.co.uk
+Message-ID: <56704c9fc9e67_da174799442769@I-AM-THE-MACHINE.mail>
+Subject: your quiz link.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56704c9fc6a87_da1747994426a0";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56704c9fc6a87_da1747994426a0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com,
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_56704c9fc6a87_da1747994426a0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    PatientMailer#QuizMailer
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_56704c9fc6a87_da1747994426a0--
+
+Redirected to http://localhost:3000/doctors/3
+Completed 302 Found in 1477ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-15 17:23:44 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mPatient Load (0.2ms)[0m  SELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 129ms (Views: 127.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/quiz_mail/send_quiz_mail/3" for 127.0.0.1 at 2015-12-15 17:24:09 +0000
+Processing by QuizMailController#send_quiz_mail as HTML
+  Parameters: {"id"=>"3"}
+  Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.1ms)
+  Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.1ms)
+
+PatientMailer#welcome_email: processed outbound mail in 18.8ms
+
+Sent mail to jakemc77@yahoo.co.uk (1170.0ms)
+Date: Tue, 15 Dec 2015 17:24:09 +0000
+From: pmpquizlink@gmail.com
+To: jakemc77@yahoo.co.uk
+Message-ID: <56704cb978750_da17479944297f@I-AM-THE-MACHINE.mail>
+Subject: your quiz link.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56704cb97685f_da17479944287b";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56704cb97685f_da17479944287b
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com,
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_56704cb97685f_da17479944287b
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    PatientMailer#QuizMailer
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_56704cb97685f_da17479944287b--
+
+Completed 500 Internal Server Error in 1220ms (ActiveRecord: 0.0ms)
+
+ActionView::MissingTemplate (Missing template quiz_mail/send_quiz_mail, application/send_quiz_mail with {:locale=>[:en], :formats=>[:html, :xml], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates"
+  * "/home/toomanycooks/PMP/app/views"
+  * "/home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/app/views"
+  * "/home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/rapidfire-2.1.0/app/views"
+):
+  actionview (4.2.2) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.2) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.2) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.2) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.2) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.2) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.2) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.2) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.2) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.2) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.2) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.2) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.2) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.2) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.2) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/toomanycooks/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.2) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.2) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.2) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.2) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.2) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.2) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.2) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:776:in `_run_process_action_callbacks'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.2) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.2) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.2) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.2) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.2) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.2) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.2) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.2) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.2) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.2) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.2) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.2) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.2) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.2) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.2) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.2) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.2) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.2) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.2) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.2) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:18:in `middleware_call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.2) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.2) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.2) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.2) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.2) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.2) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.1.3) lib/spring/client/rails.rb:27:in `load'
+  spring (1.1.3) lib/spring/client/rails.rb:27:in `call'
+  spring (1.1.3) lib/spring/client/command.rb:7:in `call'
+  spring (1.1.3) lib/spring/client.rb:26:in `run'
+  spring (1.1.3) bin/spring:48:in `<top (required)>'
+  spring (1.1.3) lib/spring/binstub.rb:11:in `load'
+  spring (1.1.3) lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:13:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/missing_template.html.erb within rescues/layout (0.9ms)
+
+
+Started GET "/quiz_mail/send_quiz_mail/3" for 127.0.0.1 at 2015-12-15 17:24:10 +0000
+Processing by QuizMailController#send_quiz_mail as HTML
+  Parameters: {"id"=>"3"}
+  Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.1ms)
+  Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.1ms)
+
+PatientMailer#welcome_email: processed outbound mail in 40.8ms
+
+Sent mail to jakemc77@yahoo.co.uk (1052.1ms)
+Date: Tue, 15 Dec 2015 17:24:10 +0000
+From: pmpquizlink@gmail.com
+To: jakemc77@yahoo.co.uk
+Message-ID: <56704cbac720d_da1747994431b1@I-AM-THE-MACHINE.mail>
+Subject: your quiz link.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56704cbabfbfb_da17479944305a";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56704cbabfbfb_da17479944305a
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com,
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_56704cbabfbfb_da17479944305a
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    PatientMailer#QuizMailer
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_56704cbabfbfb_da17479944305a--
+
+Completed 500 Internal Server Error in 1102ms (ActiveRecord: 0.0ms)
+
+ActionView::MissingTemplate (Missing template quiz_mail/send_quiz_mail, application/send_quiz_mail with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates"
+  * "/home/toomanycooks/PMP/app/views"
+  * "/home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/app/views"
+  * "/home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/rapidfire-2.1.0/app/views"
+):
+  actionview (4.2.2) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.2) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.2) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.2) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.2) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.2) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.2) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.2) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.2) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.2) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.2) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.2) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.2) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.2) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.2) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/toomanycooks/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.2) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.2) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.2) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.2) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.2) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.2) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.2) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:776:in `_run_process_action_callbacks'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.2) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.2) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.2) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.2) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.2) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.2) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.2) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.2) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.2) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.2) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.2) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.2) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.2) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.2) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.2) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.2) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.2) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.2) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.2) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.2) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:18:in `middleware_call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.2) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.2) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.2) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.2) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.2) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.2) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.1.3) lib/spring/client/rails.rb:27:in `load'
+  spring (1.1.3) lib/spring/client/rails.rb:27:in `call'
+  spring (1.1.3) lib/spring/client/command.rb:7:in `call'
+  spring (1.1.3) lib/spring/client.rb:26:in `run'
+  spring (1.1.3) bin/spring:48:in `<top (required)>'
+  spring (1.1.3) lib/spring/binstub.rb:11:in `load'
+  spring (1.1.3) lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:13:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/missing_template.html.erb within rescues/layout (0.7ms)
+
+
+Started GET "/quiz_mail/send_quiz_mail/3" for 127.0.0.1 at 2015-12-15 17:24:11 +0000
+Processing by QuizMailController#send_quiz_mail as HTML
+  Parameters: {"id"=>"3"}
+  Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.1ms)
+  Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.2ms)
+
+PatientMailer#welcome_email: processed outbound mail in 26.0ms
+
+Sent mail to jakemc77@yahoo.co.uk (1092.5ms)
+Date: Tue, 15 Dec 2015 17:24:11 +0000
+From: pmpquizlink@gmail.com
+To: jakemc77@yahoo.co.uk
+Message-ID: <56704cbbef79c_da1747994433b9@I-AM-THE-MACHINE.mail>
+Subject: your quiz link.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56704cbbec575_da17479944323f";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56704cbbec575_da17479944323f
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com,
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_56704cbbec575_da17479944323f
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    PatientMailer#QuizMailer
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_56704cbbec575_da17479944323f--
+
+Completed 500 Internal Server Error in 1132ms (ActiveRecord: 0.0ms)
+
+ActionView::MissingTemplate (Missing template quiz_mail/send_quiz_mail, application/send_quiz_mail with {:locale=>[:en], :formats=>[:html, :xml], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates"
+  * "/home/toomanycooks/PMP/app/views"
+  * "/home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/app/views"
+  * "/home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/rapidfire-2.1.0/app/views"
+):
+  actionview (4.2.2) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.2) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.2) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.2) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.2) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.2) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.2) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.2) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.2) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.2) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.2) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.2) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.2) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.2) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.2) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/toomanycooks/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.2) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.2) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.2) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.2) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.2) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.2) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.2) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:776:in `_run_process_action_callbacks'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.2) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.2) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.2) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.2) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.2) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.2) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.2) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.2) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.2) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.2) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.2) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.2) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.2) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.2) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.2) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.2) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.2) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.2) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.2) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.2) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:18:in `middleware_call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.2) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.2) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.2) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.2) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.2) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.2) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.1.3) lib/spring/client/rails.rb:27:in `load'
+  spring (1.1.3) lib/spring/client/rails.rb:27:in `call'
+  spring (1.1.3) lib/spring/client/command.rb:7:in `call'
+  spring (1.1.3) lib/spring/client.rb:26:in `run'
+  spring (1.1.3) bin/spring:48:in `<top (required)>'
+  spring (1.1.3) lib/spring/binstub.rb:11:in `load'
+  spring (1.1.3) lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:13:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/missing_template.html.erb within rescues/layout (0.7ms)
+
+
+Started GET "/quiz_mail/send_quiz_mail/3" for 127.0.0.1 at 2015-12-15 17:24:17 +0000
+Processing by QuizMailController#send_quiz_mail as HTML
+  Parameters: {"id"=>"3"}
+  Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.1ms)
+  Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.1ms)
+
+PatientMailer#welcome_email: processed outbound mail in 17.9ms
+
+Sent mail to jakemc77@yahoo.co.uk (1034.0ms)
+Date: Tue, 15 Dec 2015 17:24:17 +0000
+From: pmpquizlink@gmail.com
+To: jakemc77@yahoo.co.uk
+Message-ID: <56704cc1a9c2c_da17479944351e@I-AM-THE-MACHINE.mail>
+Subject: your quiz link.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56704cc1a7efb_da174799443441";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56704cc1a7efb_da174799443441
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com,
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_56704cc1a7efb_da174799443441
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    PatientMailer#QuizMailer
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_56704cc1a7efb_da174799443441--
+
+Completed 500 Internal Server Error in 1062ms (ActiveRecord: 0.0ms)
+
+ActionView::MissingTemplate (Missing template quiz_mail/send_quiz_mail, application/send_quiz_mail with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates"
+  * "/home/toomanycooks/PMP/app/views"
+  * "/home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/app/views"
+  * "/home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/rapidfire-2.1.0/app/views"
+):
+  actionview (4.2.2) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.2) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.2) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.2) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.2) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.2) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.2) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.2) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.2) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.2) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.2) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.2) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.2) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.2) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.2) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/toomanycooks/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.2) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.2) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.2) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.2) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.2) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.2) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.2) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:776:in `_run_process_action_callbacks'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.2) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.2) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.2) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.2) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.2) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.2) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.2) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.2) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.2) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.2) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.2) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.2) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.2) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.2) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.2) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.2) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.2) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.2) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.2) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.2) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:18:in `middleware_call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.2) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.2) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.2) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.2) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.2) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.2) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.1.3) lib/spring/client/rails.rb:27:in `load'
+  spring (1.1.3) lib/spring/client/rails.rb:27:in `call'
+  spring (1.1.3) lib/spring/client/command.rb:7:in `call'
+  spring (1.1.3) lib/spring/client.rb:26:in `run'
+  spring (1.1.3) bin/spring:48:in `<top (required)>'
+  spring (1.1.3) lib/spring/binstub.rb:11:in `load'
+  spring (1.1.3) lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:13:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/missing_template.html.erb within rescues/layout (0.7ms)
+
+
+Started GET "/rapidfire" for 127.0.0.1 at 2015-12-15 17:25:33 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.9ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (2.4ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 139ms (Views: 132.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/rapidfire/question_groups/8/questions" for 127.0.0.1 at 2015-12-15 17:25:35 +0000
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"question_group_id"=>"8"}
+  [1m[35mRapidfire::QuestionGroup Load (0.4ms)[0m  SELECT  "rapidfire_question_groups".* FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mRapidfire::Question Load (0.4ms)[0m  [1mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."question_group_id" = ?  ORDER BY "rapidfire_questions"."position" ASC[0m  [["question_group_id", 8]]
+  Rendered rapidfire/questions/_question.html.erb (0.0ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 144ms (Views: 130.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/quiz_mail/send_quiz_mail/" for 127.0.0.1 at 2015-12-15 17:25:37 +0000
+Processing by QuizMailController#send_quiz_mail as HTML
+  Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.1ms)
+  Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.1ms)
+
+PatientMailer#welcome_email: processed outbound mail in 18.8ms
+
+Sent mail to jakemc77@yahoo.co.uk (1043.7ms)
+Date: Tue, 15 Dec 2015 17:25:37 +0000
+From: pmpquizlink@gmail.com
+To: jakemc77@yahoo.co.uk
+Message-ID: <56704d1154711_da1747994437de@I-AM-THE-MACHINE.mail>
+Subject: your quiz link.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56704d1152784_da174799443672";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56704d1152784_da174799443672
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com,
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_56704d1152784_da174799443672
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    PatientMailer#QuizMailer
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_56704d1152784_da174799443672--
+
+Redirected to http://localhost:3000/doctors/show
+Completed 302 Found in 1085ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/doctors/show" for 127.0.0.1 at 2015-12-15 17:25:38 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[35mDoctor Load (0.3ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 13ms (ActiveRecord: 0.9ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Doctor with 'id'=show):
+  app/controllers/doctors_controller.rb:70:in `set_doctor'
+
+
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (15.0ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (5.8ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.4ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (56.2ms)
+
+
+Started GET "/quiz_mail/send_quiz_mail/" for 127.0.0.1 at 2015-12-15 17:25:38 +0000
+Processing by QuizMailController#send_quiz_mail as HTML
+  Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.1ms)
+  Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.1ms)
+
+PatientMailer#welcome_email: processed outbound mail in 18.4ms
+
+Sent mail to jakemc77@yahoo.co.uk (1096.5ms)
+Date: Tue, 15 Dec 2015 17:25:38 +0000
+From: pmpquizlink@gmail.com
+To: jakemc77@yahoo.co.uk
+Message-ID: <56704d128915b_da1747994439e7@I-AM-THE-MACHINE.mail>
+Subject: your quiz link.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56704d1286f79_da174799443883";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56704d1286f79_da174799443883
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com,
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_56704d1286f79_da174799443883
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    PatientMailer#QuizMailer
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_56704d1286f79_da174799443883--
+
+Redirected to http://localhost:3000/doctors/show
+Completed 302 Found in 1119ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/doctors/show" for 127.0.0.1 at 2015-12-15 17:25:39 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Doctor with 'id'=show):
+  app/controllers/doctors_controller.rb:70:in `set_doctor'
+
+
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (14.8ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (6.3ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.6ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (73.6ms)
+
+
+Started GET "/doctors/show" for 127.0.0.1 at 2015-12-15 17:26:13 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[35mDoctor Load (0.5ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 13ms (ActiveRecord: 1.9ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Doctor with 'id'=show):
+  app/controllers/doctors_controller.rb:70:in `set_doctor'
+
+
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (18.4ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (7.8ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.1ms)
+  Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (65.0ms)
+
+
+Started GET "/quiz_mail/send_quiz_mail/" for 127.0.0.1 at 2015-12-15 17:26:16 +0000
+Processing by QuizMailController#send_quiz_mail as HTML
+  Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.1ms)
+  Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.1ms)
+
+PatientMailer#welcome_email: processed outbound mail in 21.3ms
+
+Sent mail to jakemc77@yahoo.co.uk (1076.1ms)
+Date: Tue, 15 Dec 2015 17:26:16 +0000
+From: pmpquizlink@gmail.com
+To: jakemc77@yahoo.co.uk
+Message-ID: <56704d385f120_da17479944411a@I-AM-THE-MACHINE.mail>
+Subject: your quiz link.
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56704d385ce63_da1747994440e0";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56704d385ce63_da1747994440e0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com,
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_56704d385ce63_da1747994440e0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    PatientMailer#QuizMailer
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_56704d385ce63_da1747994440e0--
+
+Redirected to http://localhost:3000/doctors/1
+Completed 302 Found in 1119ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2015-12-15 17:26:17 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPatient Load (0.3ms)[0m  SELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?  [["doctor_id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (90.3ms)
+Completed 200 OK in 244ms (Views: 234.1ms | ActiveRecord: 0.9ms)
+  [1m[36m (100.8ms)[0m  [1mCREATE TABLE "doctors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar) [0m
+  [1m[35m (98.7ms)[0m  CREATE TABLE "patients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "doctor_id" integer, "name" varchar, "email" varchar, "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (99.2ms)[0m  [1mCREATE TABLE "rapidfire_answer_groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question_group_id" integer, "user_id" integer, "user_type" varchar, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (120.9ms)[0m  [1mCREATE  INDEX "index_rapidfire_answer_groups_on_question_group_id" ON "rapidfire_answer_groups" ("question_group_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_rapidfire_answer_groups_on_question_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_rapidfire_answer_groups_on_question_group_id' AND type='index'
+
+  [1m[36m (111.2ms)[0m  [1mCREATE  INDEX "index_rapidfire_answer_groups_on_user_id_and_user_type" ON "rapidfire_answer_groups" ("user_id", "user_type")[0m
+  [1m[35m (132.9ms)[0m  CREATE TABLE "rapidfire_answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "answer_group_id" integer, "question_id" integer, "answer_text" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (132.3ms)[0m  [1mCREATE  INDEX "index_rapidfire_answers_on_answer_group_id" ON "rapidfire_answers" ("answer_group_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_rapidfire_answers_on_answer_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_rapidfire_answers_on_answer_group_id' AND type='index'
+
+  [1m[36m (120.8ms)[0m  [1mCREATE  INDEX "index_rapidfire_answers_on_question_id" ON "rapidfire_answers" ("question_id")[0m
+  [1m[35m (143.7ms)[0m  CREATE TABLE "rapidfire_question_groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (120.9ms)[0m  [1mCREATE TABLE "rapidfire_questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question_group_id" integer, "type" varchar, "question_text" varchar, "position" integer, "answer_options" text, "validation_rules" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (132.6ms)[0m  CREATE  INDEX "index_rapidfire_questions_on_question_group_id" ON "rapidfire_questions" ("question_group_id")
+  [1m[36m (110.1ms)[0m  [1mCREATE TABLE "survey_answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "attempt_id" integer, "question_id" integer, "option_id" integer, "correct" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (99.4ms)[0m  CREATE TABLE "survey_attempts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "participant_id" integer, "participant_type" varchar, "survey_id" integer, "winner" boolean, "score" integer) 
+  [1m[36m (104.0ms)[0m  [1mCREATE TABLE "survey_options" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question_id" integer, "weight" integer DEFAULT 0, "text" varchar, "correct" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (142.9ms)[0m  CREATE TABLE "survey_questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "survey_id" integer, "text" varchar, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (143.6ms)[0m  [1mCREATE TABLE "survey_surveys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "attempts_number" integer DEFAULT 0, "finished" boolean DEFAULT 'f', "active" boolean DEFAULT 'f', "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (104.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (132.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (156.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151115200637')[0m
+  [1m[35m (233.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151115200634')
+  [1m[36m (200.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151115163535')[0m
+  [1m[35m (111.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151103215503')
+  [1m[36m (111.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151115200635')[0m
+  [1m[35m (111.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151029162020')
+  [1m[36m (111.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151029161848')[0m
+  [1m[35m (133.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151115200636')
+  [1m[36m (111.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151030154614')[0m
+  [1m[35m (93.9ms)[0m  CREATE TABLE "doctors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar) 
+  [1m[36m (99.5ms)[0m  [1mCREATE TABLE "patients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "doctor_id" integer, "name" varchar, "email" varchar, "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (110.2ms)[0m  CREATE TABLE "rapidfire_answer_groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question_group_id" integer, "user_id" integer, "user_type" varchar, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (143.0ms)[0m  CREATE  INDEX "index_rapidfire_answer_groups_on_question_group_id" ON "rapidfire_answer_groups" ("question_group_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_rapidfire_answer_groups_on_question_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_rapidfire_answer_groups_on_question_group_id' AND type='index'
+[0m
+  [1m[35m (145.0ms)[0m  CREATE  INDEX "index_rapidfire_answer_groups_on_user_id_and_user_type" ON "rapidfire_answer_groups" ("user_id", "user_type")
+  [1m[36m (155.1ms)[0m  [1mCREATE TABLE "rapidfire_answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "answer_group_id" integer, "question_id" integer, "answer_text" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (121.3ms)[0m  CREATE  INDEX "index_rapidfire_answers_on_answer_group_id" ON "rapidfire_answers" ("answer_group_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_rapidfire_answers_on_answer_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_rapidfire_answers_on_answer_group_id' AND type='index'
+[0m
+  [1m[35m (121.3ms)[0m  CREATE  INDEX "index_rapidfire_answers_on_question_id" ON "rapidfire_answers" ("question_id")
+  [1m[36m (110.6ms)[0m  [1mCREATE TABLE "rapidfire_question_groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (109.8ms)[0m  CREATE TABLE "rapidfire_questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question_group_id" integer, "type" varchar, "question_text" varchar, "position" integer, "answer_options" text, "validation_rules" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (110.5ms)[0m  [1mCREATE  INDEX "index_rapidfire_questions_on_question_group_id" ON "rapidfire_questions" ("question_group_id")[0m
+  [1m[35m (144.0ms)[0m  CREATE TABLE "survey_answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "attempt_id" integer, "question_id" integer, "option_id" integer, "correct" boolean, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (121.3ms)[0m  [1mCREATE TABLE "survey_attempts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "participant_id" integer, "participant_type" varchar, "survey_id" integer, "winner" boolean, "score" integer) [0m
+  [1m[35m (121.1ms)[0m  CREATE TABLE "survey_options" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question_id" integer, "weight" integer DEFAULT 0, "text" varchar, "correct" boolean, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (154.6ms)[0m  [1mCREATE TABLE "survey_questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "survey_id" integer, "text" varchar, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (154.1ms)[0m  CREATE TABLE "survey_surveys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "attempts_number" integer DEFAULT 0, "finished" boolean DEFAULT 'f', "active" boolean DEFAULT 'f', "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (123.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (110.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (110.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151115200637')
+  [1m[36m (111.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151115200634')[0m
+  [1m[35m (111.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151115163535')
+  [1m[36m (111.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151103215503')[0m
+  [1m[35m (111.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151115200635')
+  [1m[36m (111.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151029162020')[0m
+  [1m[35m (122.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151029161848')
+  [1m[36m (144.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151115200636')[0m
+  [1m[35m (144.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151030154614')
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-15 17:49:00 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 384ms (Views: 366.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-15 17:49:00 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 161ms (Views: 160.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/doctors/new" for 127.0.0.1 at 2015-12-15 17:49:02 +0000
+Processing by DoctorsController#new as HTML
+  Rendered doctors/_form.html.erb (32.0ms)
+  Rendered doctors/new.html.erb within layouts/application (40.2ms)
+Completed 200 OK in 215ms (Views: 190.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/doctors" for 127.0.0.1 at 2015-12-15 17:49:09 +0000
+Processing by DoctorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Wg2XSAI6bZFli8FNVIy6H9+1/gMePFrrK3R7+MvzKFOK+hjsnfi50YisoE9D8NlwbsP0NJ5XneJTnm7gVdNEiQ==", "doctor"=>{"name"=>"Dr Bob", "password"=>"[FILTERED]"}, "commit"=>"Create Doctor"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "doctors" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Dr Bob"], ["password_digest", "$2a$10$ttC2v/BX2IzXtp6FiQ6I7e7NdDGBZCnOrobqszGdRsy3joE0wN96O"], ["created_at", "2015-12-15 17:49:09.863886"], ["updated_at", "2015-12-15 17:49:09.863886"]]
+  [1m[35m (132.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/doctors/1
+Completed 302 Found in 273ms (ActiveRecord: 132.7ms)
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2015-12-15 17:49:10 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (0.4ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPatient Load (0.8ms)[0m  SELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?  [["doctor_id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (48.7ms)
+Completed 200 OK in 246ms (Views: 229.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/rapidfire" for 127.0.0.1 at 2015-12-15 17:50:25 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.2ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (0.0ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 128ms (Views: 122.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/rapidfire/question_groups/new" for 127.0.0.1 at 2015-12-15 17:50:26 +0000
+Processing by Rapidfire::QuestionGroupsController#new as HTML
+  Rendered rapidfire/question_groups/_form.html.erb (4.2ms)
+  Rendered rapidfire/question_groups/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 128ms (Views: 120.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rapidfire/question_groups/new" for 127.0.0.1 at 2015-12-15 17:50:33 +0000
+Processing by Rapidfire::QuestionGroupsController#new as HTML
+  Rendered rapidfire/question_groups/_form.html.erb (2.5ms)
+  Rendered rapidfire/question_groups/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 122ms (Views: 120.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/rapidfire/question_groups" for 127.0.0.1 at 2015-12-15 17:50:38 +0000
+Processing by Rapidfire::QuestionGroupsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rPjejEF1uuFw6EqOnB0Ziu1OWV8HPQGEl5wV+NJ0VeZ8D1Eo3rduoZ3PK4yLYXrlXDhTaIdWxo3vdgDgTFQ5PA==", "question_group"=>{"name"=>"Jake Week 1"}, "commit"=>"Create Question group"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "rapidfire_question_groups" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Jake Week 1"], ["created_at", "2015-12-15 17:50:38.017417"], ["updated_at", "2015-12-15 17:50:38.017417"]]
+  [1m[35m (122.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/rapidfire/question_groups
+Completed 302 Found in 130ms (ActiveRecord: 122.7ms)
+
+
+Started GET "/rapidfire/question_groups" for 127.0.0.1 at 2015-12-15 17:50:38 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[36mRapidfire::QuestionGroup Load (0.3ms)[0m  [1mSELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"[0m
+  Rendered rapidfire/question_groups/_question_group.html.erb (4.5ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 132ms (Views: 129.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rapidfire/question_groups/1/questions" for 127.0.0.1 at 2015-12-15 17:50:41 +0000
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"question_group_id"=>"1"}
+  [1m[35mRapidfire::QuestionGroup Load (0.3ms)[0m  SELECT  "rapidfire_question_groups".* FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRapidfire::Question Load (0.3ms)[0m  [1mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."question_group_id" = ?  ORDER BY "rapidfire_questions"."position" ASC[0m  [["question_group_id", 1]]
+  Rendered rapidfire/questions/_question.html.erb (0.0ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 135ms (Views: 123.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/rapidfire/question_groups/1/questions/new" for 127.0.0.1 at 2015-12-15 17:50:42 +0000
+Processing by Rapidfire::QuestionsController#new as HTML
+  Parameters: {"question_group_id"=>"1"}
+  [1m[35mRapidfire::QuestionGroup Load (0.2ms)[0m  SELECT  "rapidfire_question_groups".* FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered rapidfire/questions/_form.html.erb (31.9ms)
+  Rendered rapidfire/questions/new.html.erb within layouts/application (35.5ms)
+Completed 200 OK in 217ms (Views: 151.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/rapidfire/question_groups/1/questions" for 127.0.0.1 at 2015-12-15 17:50:56 +0000
+Processing by Rapidfire::QuestionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Dpe6O30TPkGniij3b/ZsEBFOYEvh+PqPjVEIZ5kdrdreYDWf4tHqAUqtSfV4ig9/oDhqfGGTPYb1ux1/Bz3BAA==", "question"=>{"type"=>"Rapidfire::Questions::Checkbox", "question_text"=>"Food eaten?", "answer_options"=>"Meat\r\nVeg\r\nSweets", "answer_presence"=>"0", "answer_minimum_length"=>"", "answer_maximum_length"=>"", "answer_greater_than_or_equal_to"=>"", "answer_less_than_or_equal_to"=>""}, "commit"=>"Create Question", "question_group_id"=>"1"}
+  [1m[36mRapidfire::QuestionGroup Load (0.2ms)[0m  [1mSELECT  "rapidfire_question_groups".* FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "rapidfire_questions" ("type", "question_group_id", "question_text", "answer_options", "validation_rules", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["type", "Rapidfire::Questions::Checkbox"], ["question_group_id", 1], ["question_text", "Food eaten?"], ["answer_options", "Meat\r\nVeg\r\nSweets"], ["validation_rules", "---\n:presence: '0'\n:minimum: ''\n:maximum: ''\n:greater_than_or_equal_to: ''\n:less_than_or_equal_to: ''\n"], ["created_at", "2015-12-15 17:50:56.117361"], ["updated_at", "2015-12-15 17:50:56.117361"]]
+  [1m[35m (414.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/rapidfire/question_groups/1/questions
+Completed 302 Found in 445ms (ActiveRecord: 415.4ms)
+
+
+Started GET "/rapidfire/question_groups/1/questions" for 127.0.0.1 at 2015-12-15 17:50:56 +0000
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"question_group_id"=>"1"}
+  [1m[36mRapidfire::QuestionGroup Load (0.2ms)[0m  [1mSELECT  "rapidfire_question_groups".* FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRapidfire::Question Load (0.2ms)[0m  SELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."question_group_id" = ?  ORDER BY "rapidfire_questions"."position" ASC  [["question_group_id", 1]]
+  Rendered rapidfire/questions/_question.html.erb (2.8ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 132ms (Views: 128.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/quiz_mail/send_quiz_mail/" for 127.0.0.1 at 2015-12-15 17:50:58 +0000
+Processing by QuizMailController#send_quiz_mail as HTML
+  Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.6ms)
+  Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.4ms)
+
+PatientMailer#welcome_email: processed outbound mail in 302.5ms
+
+Sent mail to jakemc77@yahoo.co.uk (1448.2ms)
+Date: Tue, 15 Dec 2015 17:50:58 +0000
+From: pmpquizlink@gmail.com
+To: jakemc77@yahoo.co.uk
+Message-ID: <56705302a19d0_fcd7cf998667d7@I-AM-THE-MACHINE.mail>
+Subject: New PMP Quiz
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_567053029e7ca_fcd7cf9986665e";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_567053029e7ca_fcd7cf9986665e
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com,
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_567053029e7ca_fcd7cf9986665e
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    PatientMailer#QuizMailer
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_567053029e7ca_fcd7cf9986665e--
+
+Redirected to http://localhost:3000/doctors/1
+Completed 302 Found in 1792ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2015-12-15 17:51:00 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPatient Load (0.1ms)[0m  SELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?  [["doctor_id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 122ms (Views: 119.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/patients/new?doctor_id=1" for 127.0.0.1 at 2015-12-15 17:51:52 +0000
+Processing by PatientsController#new as HTML
+  Parameters: {"doctor_id"=>"1"}
+  Rendered patients/_form.html.erb (7.6ms)
+  Rendered patients/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 150ms (Views: 142.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2015-12-15 17:52:06 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2OdgbtFJbTB7M5hzJ+DqgXi5UO9+64nc/11Q/J4rbZYIEO/KTou5cJYU+XEwnInuyc9a2P6ATtWHt0XkAAsBTA==", "patient"=>{"doctor_id"=>"1", "name"=>"Fionn", "email"=>"jakemc77@yahoo.co.uk", "content"=>"Cool guy"}, "commit"=>"Create Patient"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "patients" ("doctor_id", "name", "email", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["doctor_id", 1], ["name", "Fionn"], ["email", "jakemc77@yahoo.co.uk"], ["content", "Cool guy"], ["created_at", "2015-12-15 17:52:06.519850"], ["updated_at", "2015-12-15 17:52:06.519850"]]
+  [1m[36m (186.9ms)[0m  [1mcommit transaction[0m
+  Rendered patient_mailer/welcome_email.html.erb within layouts/mailer (0.3ms)
+  Rendered patient_mailer/welcome_email.text.erb within layouts/mailer (0.1ms)
+
+PatientMailer#welcome_email: processed outbound mail in 24.1ms
+
+Sent mail to jakemc77@yahoo.co.uk (1104.4ms)
+Date: Tue, 15 Dec 2015 17:52:06 +0000
+From: pmpquizlink@gmail.com
+To: jakemc77@yahoo.co.uk
+Message-ID: <56705346b4881_fcd7cf99866986@I-AM-THE-MACHINE.mail>
+Subject: New PMP Quiz
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_56705346b274c_fcd7cf9986686d";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_56705346b274c_fcd7cf9986686d
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+PatientMailer#QuizMailer
+
+Welcome to PMP.com,
+===============================================
+
+You have been signed up to PMP.com,
+
+
+To login to the site, just follow this link: http://example.com/login.
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_56705346b274c_fcd7cf9986686d
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    PatientMailer#QuizMailer
+
+<p>
+
+
+
+           You have been signed up to PMP.com,
+
+
+           To login to the site, just follow this link: http://example.com/login.
+
+           Thanks for joining and have a great day!
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_56705346b274c_fcd7cf9986686d--
+
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/doctors/1
+Completed 302 Found in 1328ms (ActiveRecord: 188.0ms)
+
+
+Started GET "/doctors/1" for 127.0.0.1 at 2015-12-15 17:52:07 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (0.5ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPatient Load (0.1ms)[0m  SELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?  [["doctor_id", 1]]
+  Rendered doctors/show.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 156ms (Views: 153.2ms | ActiveRecord: 0.6ms)

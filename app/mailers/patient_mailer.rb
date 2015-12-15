@@ -8,11 +8,10 @@ class PatientMailer < ApplicationMailer
   default from: "pmpquizlink@gmail.com"
 
     def welcome_email(patient)
-@patient = patient
-@url  = 'http://example.com/login'
+        @patient = patient
+        @url  = 'https://patientplatform.herokuapp.com/rapidfire/question_groups/14/answer_groups/new'
 
-mail(to: 'jakemc77@yahoo.co.uk', subject: 'your quiz link.')
-end
+        mail(to: 'jakemc77@yahoo.co.uk', subject: 'New PMP Quiz')
 
-
+    end
 end
