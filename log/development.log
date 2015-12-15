@@ -59834,3 +59834,74 @@ Processing by DoctorsController#show as HTML
   [1m[35mPatient Load (0.2ms)[0m  SELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?  [["doctor_id", 4]]
   Rendered doctors/show.html.erb within layouts/application (23.4ms)
 Completed 200 OK in 195ms (Views: 193.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/doctors/4" for 127.0.0.1 at 2015-12-15 20:23:27 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mDoctor Load (0.4ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mPatient Load (0.3ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 4]]
+  Rendered doctors/show.html.erb within layouts/application (285.3ms)
+Completed 200 OK in 492ms (Views: 444.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/rapidfire" for 127.0.0.1 at 2015-12-15 20:23:30 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.3ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (5.2ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 208ms (Views: 201.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/rapidfire/question_groups/1/questions" for 127.0.0.1 at 2015-12-15 20:23:31 +0000
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"question_group_id"=>"1"}
+  [1m[36mRapidfire::QuestionGroup Load (0.4ms)[0m  [1mSELECT  "rapidfire_question_groups".* FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRapidfire::Question Load (0.4ms)[0m  SELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."question_group_id" = ?  ORDER BY "rapidfire_questions"."position" ASC  [["question_group_id", 1]]
+  Rendered rapidfire/questions/_question.html.erb (3.5ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (39.0ms)
+Completed 200 OK in 272ms (Views: 257.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-15 20:24:22 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 387ms (Views: 370.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-15 20:24:26 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qd36QCVubN4wdXBqm+yp/MDhXcPY6+R8VLsbWozvwL0K2zWeHYnFCFsAJqBwiIsHcLVB9bcC8RE3W7A89747XQ==", "name"=>"bob", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mDoctor Load (0.4ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "bob"]]
+  [1m[36mDoctor Load (0.3ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1[0m  [["name", "bob"]]
+Redirected to http://localhost:3000/doctors/4
+Completed 302 Found in 164ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/doctors/4" for 127.0.0.1 at 2015-12-15 20:24:26 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mDoctor Load (0.3ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mPatient Load (0.3ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 4]]
+  Rendered doctors/show.html.erb within layouts/application (61.7ms)
+Completed 200 OK in 255ms (Views: 250.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/rapidfire" for 127.0.0.1 at 2015-12-15 20:24:28 +0000
+Processing by Rapidfire::QuestionGroupsController#index as HTML
+  [1m[35mRapidfire::QuestionGroup Load (0.3ms)[0m  SELECT "rapidfire_question_groups".* FROM "rapidfire_question_groups"
+  Rendered rapidfire/question_groups/_question_group.html.erb (6.5ms)
+  Rendered rapidfire/question_groups/index.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 249ms (Views: 241.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/rapidfire/question_groups/1/questions" for 127.0.0.1 at 2015-12-15 20:24:30 +0000
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"question_group_id"=>"1"}
+  [1m[36mRapidfire::QuestionGroup Load (0.4ms)[0m  [1mSELECT  "rapidfire_question_groups".* FROM "rapidfire_question_groups" WHERE "rapidfire_question_groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRapidfire::Question Load (0.7ms)[0m  SELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."question_group_id" = ?  ORDER BY "rapidfire_questions"."position" ASC  [["question_group_id", 1]]
+  Rendered rapidfire/questions/_question.html.erb (2.6ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (53.0ms)
+Completed 200 OK in 194ms (Views: 179.5ms | ActiveRecord: 1.5ms)
