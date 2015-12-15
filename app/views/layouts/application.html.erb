@@ -4,6 +4,7 @@
     <title>
       <%= (yield(:title) + " - " unless yield(:title).blank?).to_s + "PMP" %>
     </title>
+    <%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -11,13 +12,25 @@
   <body>
     <div class="animated fadeIn">
       <div id="content">
-        <div id="sideCol">
+        <%= if (yield(:title).to_str)===("Log In") || (yield(:title).to_str)===("New Doctor")
+          then tag("div", id: "sideCol", style: "width: 0; border-width:0;")
+          else tag("div", id: "sideCol")
+        end %>
           <%= image_tag("sideCol.jpg", class:"sideLogo") %>
-          <div id="floatng" style="border-width: 0;margin-top: -85vh;background-color: initial;">
+          <div id="floating">
+            <section>
+              <%= link_to(image_tag("mini_logo.png", class:"mini_logo"), "https://patientplatform.herokuapp.com/doctors/" + session[:doctor_id].to_s, class: "btn btn-white", style: "text-align: center; display: inline-block;") %>
+              <%= link_to('Log Out', "/", class: "btn btn-white", style: "text-align: center; position: absolute; top:0; right: 0; padding: 19px 0px;") %>
+            </section>
             <%= yield(:sideCol) %>
           </div>
         </div>
-        <div id="mainCol">
+        <%= if (yield(:title).to_str)===("Log In") || (yield(:title).to_str)===("New Doctor")
+          then tag("div", id: "mainCol", style: "width: 100%;")
+          else tag("div", id: "mainCol")
+        end %>
+          <%= image_tag("mainCol.jpg", class:"sideLogo") %>
+          <div id="floating">
         	<div class="animated fadeInDown">
           	<div id="intro_box">
           		<%= image_tag("logo.png", class:"logo") %>
@@ -28,7 +41,10 @@
         </div>
       </div>
       <div id="outro_box">
-    	   <p><small>Patient Monitoring Platform &copy; 2015</small></p>
+        <%= image_tag("lowBar.jpg", class:"sideLogo", style:"opacity: 0.3;") %>
+        <div id="floating2">
+      	  <p><small>Patient Monitoring Platform &copy; 2015</small></p>
+        </div>
       </div>
     </div>
   </body>
