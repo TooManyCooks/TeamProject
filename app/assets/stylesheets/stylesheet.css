@@ -31,6 +31,13 @@ img {
 	height: 1em;
 	width: 1em;
 }
+#sideCol div#ugly_hidden_variable{
+	visibility: hidden;
+	height: 0;
+	width: 0;
+	padding: 0;
+	margin: 0;
+}
 #question_box{
 	width: 24em;
 	margin: 0 auto;
@@ -75,6 +82,9 @@ img {
   width: 1050px;
   height: 85vh;
 }
+section{
+	position: relative;
+}
 div#floating{
 	border-width: 0;
 	margin-top: -85vh;
@@ -90,6 +100,10 @@ div#floating2{
 	width: 24em;
 	height: 2em;
 }
+.mini_logo{
+	height: 4em;
+	width: 4em;
+}
 .defaultImg{
 	margin-left: 70px;
 	height: 5em;
@@ -103,7 +117,7 @@ div#floating2{
 }
 .sideLogo{
 	width:100%;
-	height:99.5%;
+	height:99%;
 	margin: 0;
 	padding: 0;
 }

@@ -4,6 +4,7 @@
     <title>
       <%= (yield(:title) + " - " unless yield(:title).blank?).to_s + "PMP" %>
     </title>
+    <%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -11,16 +12,20 @@
   <body>
     <div class="animated fadeIn">
       <div id="content">
-        <%= if (yield(:title).to_str)===("Log In")
+        <%= if (yield(:title).to_str)===("Log In") || (yield(:title).to_str)===("New Doctor")
           then tag("div", id: "sideCol", style: "width: 0; border-width:0;")
           else tag("div", id: "sideCol")
         end %>
           <%= image_tag("sideCol.jpg", class:"sideLogo") %>
           <div id="floating">
+            <section>
+              <%= link_to(image_tag("mini_logo.png", class:"mini_logo"), "https://patientplatform.herokuapp.com/doctors/" + session[:doctor_id].to_s, class: "btn btn-white", style: "text-align: center; display: inline-block;") %>
+              <%= link_to('Log Out', "/", class: "btn btn-white", style: "text-align: center; position: absolute; top:0; right: 0; padding: 19px 0px;") %>
+            </section>
             <%= yield(:sideCol) %>
           </div>
         </div>
-        <%= if (yield(:title).to_str)===("Log In")
+        <%= if (yield(:title).to_str)===("Log In") || (yield(:title).to_str)===("New Doctor")
           then tag("div", id: "mainCol", style: "width: 100%;")
           else tag("div", id: "mainCol")
         end %>
