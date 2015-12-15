@@ -9,6 +9,6 @@
 	<div id="center_box">
 	  <%= render partial: "question", collection: @questions %>
 	  <%= link_to "New Question", new_question_group_question_path(@question_group), class:"btn btn-white" %>
-      <%= link_to 'Submit', :controller => 'quiz_mail', :action => 'send_quiz_mail', class:"btn btn-white"%>
+      <%= link_to 'Submit',"https://patientplatform.herokuapp.com/quiz_mail/", :action => 'send_quiz_mail', class:"btn btn-white"%>
 	</div>
 <% end %>
