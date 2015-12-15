@@ -1,0 +1,2 @@
+module QuizMailHelper
+end
