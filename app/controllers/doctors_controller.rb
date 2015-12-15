@@ -1,6 +1,6 @@
 class DoctorsController < ApplicationController
   #
-  
+
 #allow new and create so we can sign up new docs
   before_action :confirm_logged_in, :except => [:new,:create]
   before_action :set_doctor, only: [:show, :edit, :update, :destroy]
@@ -31,7 +31,9 @@ class DoctorsController < ApplicationController
 
     respond_to do |format|
       if @doctor.save
-        format.html { redirect_to @doctor, notice: 'Doctor was successfully created.' }
+        session[:doctor_id] = @doctor.id
+        session[:name] = @doctor.name
+        format.html { redirect_to @doctor, notice: 'Doctor was successfully created.'}
         format.json { render :show, status: :created, location: @doctor }
       else
         format.html { render :new }

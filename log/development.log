@@ -56836,6 +56836,7 @@ ActionController::UrlGenerationError (No route matches {:action=>"send_quiz_mail
   Rendered /home/lazy-eye/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (25.1ms)
 
 
+<<<<<<< HEAD
 Started GET "/" for 127.0.0.1 at 2015-12-15 17:17:59 +0000
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by AccessController#login as HTML
@@ -56876,10 +56877,61 @@ Completed 302 Found in 256ms (ActiveRecord: 114.8ms)
 
 
 Started GET "/doctors/2" for 127.0.0.1 at 2015-12-15 17:18:11 +0000
+=======
+Started GET "/" for 127.0.0.1 at 2015-12-15 18:11:00 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 4492ms (Views: 4463.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/quiz_mail.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-15 18:11:08 +0000
+
+
+Started GET "/assets/stylesheet.self-7505993c43b0417052628cc854fb9e83de1f2d80c6568471b93ee33ca776973b.css?body=1" for 127.0.0.1 at 2015-12-15 18:11:08 +0000
+
+
+Started GET "/assets/quiz_mail.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-15 18:11:08 +0000
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-15 18:12:19 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XNHVyZWbt9ieFNoDK6TInwsu3JmEmETKakvuOc0vzzNvWrUjP5khxYzo79Y1uECRQhSl6/pY3bPKg5DRCTIxQg==", "name"=>"asd", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mDoctor Load (0.3ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "asd"]]
+Redirected to http://localhost:3000/access/login
+Completed 302 Found in 102ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2015-12-15 18:12:19 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 175ms (Views: 174.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/doctors/new" for 127.0.0.1 at 2015-12-15 18:12:21 +0000
+Processing by DoctorsController#new as HTML
+  Rendered doctors/_form.html.erb (76.5ms)
+  Rendered doctors/new.html.erb within layouts/application (91.9ms)
+Completed 200 OK in 183ms (Views: 178.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/doctors" for 127.0.0.1 at 2015-12-15 18:12:24 +0000
+Processing by DoctorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E53YuzMct5X5KBL5v1pdgO5dtldiGVqHHdKCUZEmgmQgFrhRmR4hiOvUJyyhRtWOp2fPJRzZw/69Gvy5VTt8FQ==", "doctor"=>{"name"=>"asd", "password"=>"[FILTERED]"}, "commit"=>"Create Doctor"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.7ms)[0m  INSERT INTO "doctors" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "asd"], ["password_digest", "$2a$10$3OIIzhclu4bxeFS0zibZs.aTU31ymrfe0L8v4U2MlnKJmeOr7CRAK"], ["created_at", "2015-12-15 18:12:24.697892"], ["updated_at", "2015-12-15 18:12:24.697892"]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/doctors/2
+Completed 302 Found in 150ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/doctors/2" for 127.0.0.1 at 2015-12-15 18:12:24 +0000
+>>>>>>> 67aef2db2577a55e5a67d538f2f926f6af4a76b0
 Processing by DoctorsController#show as HTML
   Parameters: {"id"=>"2"}
 Redirected to http://localhost:3000/access/login
 Filter chain halted as :confirm_logged_in rendered or redirected
+<<<<<<< HEAD
 Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
 
 
@@ -58100,6 +58152,274 @@ ActionView::MissingTemplate (Missing template quiz_mail/send_quiz_mail, applicat
   * "/home/toomanycooks/PMP/app/views"
   * "/home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/app/views"
   * "/home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/rapidfire-2.1.0/app/views"
+=======
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2015-12-15 18:12:24 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 135ms (Views: 134.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-15 18:12:28 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ebHWKuWVMsVodiHLErcRrBa817vJ110mt3Ndlr5ZK3FKOrbAT5ek2HqKFB4Mq5miX4auybcXxF8XuyN+ekTVAA==", "name"=>"asd", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "asd"]]
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1[0m  [["name", "asd"]]
+Redirected to http://localhost:3000/doctors/2
+Completed 302 Found in 145ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/doctors/2" for 127.0.0.1 at 2015-12-15 18:12:29 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mDoctor Load (0.3ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPatient Load (0.3ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 2]]
+  Rendered doctors/show.html.erb within layouts/application (70.7ms)
+Completed 200 OK in 174ms (Views: 170.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/doctors/2" for 127.0.0.1 at 2015-12-15 18:13:45 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPatient Load (0.1ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 2]]
+  Rendered doctors/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 167ms (Views: 165.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-15 18:13:45 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-15 18:13:45 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-15 18:13:45 +0000
+
+
+Started GET "/assets/quiz_mail.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-15 18:13:45 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-12-15 18:13:45 +0000
+
+
+Started GET "/assets/stylesheet.self-7505993c43b0417052628cc854fb9e83de1f2d80c6568471b93ee33ca776973b.css?body=1" for 127.0.0.1 at 2015-12-15 18:13:45 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-15 18:13:45 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-12-15 18:13:45 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-12-15 18:13:45 +0000
+
+
+Started GET "/assets/turbolinks.self-c846e670826600e8c91b1a5ada3e6547110d996cd6ff24cde55024f7a135a1b4.js?body=1" for 127.0.0.1 at 2015-12-15 18:13:45 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-15 18:13:45 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-15 18:13:45 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-15 18:13:45 +0000
+
+
+Started GET "/assets/quiz_mail.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-15 18:13:45 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-15 18:13:45 +0000
+
+
+Started GET "/assets/sideCol-cdf60d307da041b044252846a6d4839af142f6f1e557a7a3534f852275484255.jpg" for 127.0.0.1 at 2015-12-15 18:13:45 +0000
+
+
+Started GET "/assets/mini_logo-f9980073059778fd1fd9d831a099100232bcf7c01a9967d4dc5bd868f46d21b7.png" for 127.0.0.1 at 2015-12-15 18:13:45 +0000
+
+
+Started GET "/assets/defaultImg-527d8a9f71eea414006f1cb939369464b7f6776ce1cb17e7654bde2e655b7f9b.png" for 127.0.0.1 at 2015-12-15 18:13:45 +0000
+
+
+Started GET "/assets/mainCol-1898b386e6d2f4b595c04928d87ec3a23545bc1fc2269f139a6b20e3c4431091.jpg" for 127.0.0.1 at 2015-12-15 18:13:45 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-12-15 18:13:45 +0000
+
+
+Started GET "/assets/lowBar-af4dbe41245c78ae480aa9fa91934f1a79d72645e88eae58fe55aee182c1c68d.jpg" for 127.0.0.1 at 2015-12-15 18:13:45 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-15 18:13:52 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 94ms (Views: 93.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/doctors/new" for 127.0.0.1 at 2015-12-15 18:13:58 +0000
+Processing by DoctorsController#new as HTML
+  Rendered doctors/_form.html.erb (1.6ms)
+  Rendered doctors/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 91ms (Views: 90.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/doctors" for 127.0.0.1 at 2015-12-15 18:14:02 +0000
+Processing by DoctorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zAeJpnm/RIWl5Hvda4Iku42m6ah5/O+MZjltuBLj8gb/jOlM073SmLcYTgh1nqy1xJyQ2gc8dvXG8RNQ1v4Mdw==", "doctor"=>{"name"=>"fwefwfd", "password"=>"[FILTERED]"}, "commit"=>"Create Doctor"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (6.1ms)[0m  [1mINSERT INTO "doctors" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "fwefwfd"], ["password_digest", "$2a$10$zwCtpJSGRmMHCoAbo3P9aeC5I17lZiC9vXx7B4YhEHUgQUTEmdTgi"], ["created_at", "2015-12-15 18:14:02.391650"], ["updated_at", "2015-12-15 18:14:02.391650"]]
+  [1m[35m (6.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/doctors/3
+Completed 302 Found in 177ms (ActiveRecord: 12.5ms)
+
+
+Started GET "/doctors/3" for 127.0.0.1 at 2015-12-15 18:14:02 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mPatient Load (0.1ms)[0m  SELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?  [["doctor_id", 3]]
+  Rendered doctors/show.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 178ms (Views: 177.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/doctors" for 127.0.0.1 at 2015-12-15 18:14:24 +0000
+Processing by DoctorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zAeJpnm/RIWl5Hvda4Iku42m6ah5/O+MZjltuBLj8gb/jOlM073SmLcYTgh1nqy1xJyQ2gc8dvXG8RNQ1v4Mdw==", "doctor"=>{"name"=>"asd", "password"=>"[FILTERED]"}, "commit"=>"Create Doctor"}
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "doctors" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "asd"], ["password_digest", "$2a$10$ugh3d28Zq.I3o.vB2exP1uRSCQbbOkGZfE9X1EbBvQHcWlBEdpioK"], ["created_at", "2015-12-15 18:14:25.003783"], ["updated_at", "2015-12-15 18:14:25.003783"]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/doctors/4
+Completed 302 Found in 178ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/doctors/4" for 127.0.0.1 at 2015-12-15 18:14:25 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mPatient Load (0.3ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 4]]
+  Rendered doctors/show.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 182ms (Views: 180.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-15 18:18:54 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 101ms (Views: 100.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/doctors/new" for 127.0.0.1 at 2015-12-15 18:19:01 +0000
+
+SyntaxError (/home/sclarke/Desktop/git/app/controllers/doctors_controller.rb:34: syntax error, unexpected ',', expecting '}'
+...', :action => 'attempt_login'), notice: 'Doctor was successf...
+...                               ^):
+  app/controllers/doctors_controller.rb:34: syntax error, unexpected ',', expecting '}'
+
+
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (7.4ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.1ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (52.5ms)
+
+
+Started GET "/doctors/new" for 127.0.0.1 at 2015-12-15 18:19:01 +0000
+
+SyntaxError (/home/sclarke/Desktop/git/app/controllers/doctors_controller.rb:34: syntax error, unexpected ',', expecting '}'
+...', :action => 'attempt_login'), notice: 'Doctor was successf...
+...                               ^):
+  app/controllers/doctors_controller.rb:34: syntax error, unexpected ',', expecting '}'
+
+
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (11.7ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (3.7ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (54.3ms)
+
+
+Started GET "/doctors/new" for 127.0.0.1 at 2015-12-15 18:20:13 +0000
+Processing by DoctorsController#new as HTML
+  Rendered doctors/_form.html.erb (8.6ms)
+  Rendered doctors/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 128ms (Views: 110.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/access.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-15 18:20:13 +0000
+
+
+Started GET "/assets/doctors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-15 18:20:13 +0000
+
+
+Started GET "/assets/patients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-15 18:20:13 +0000
+
+
+Started GET "/assets/quiz_mail.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-15 18:20:13 +0000
+
+
+Started GET "/assets/scaffolds.self-7111ee9d2b6d5b0a1e8642a5941f5b67b4a8ab10f6c8a0ab8586919d5bd18114.css?body=1" for 127.0.0.1 at 2015-12-15 18:20:13 +0000
+
+
+Started GET "/assets/stylesheet.self-7505993c43b0417052628cc854fb9e83de1f2d80c6568471b93ee33ca776973b.css?body=1" for 127.0.0.1 at 2015-12-15 18:20:13 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-15 18:20:13 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-12-15 18:20:13 +0000
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-12-15 18:20:13 +0000
+
+
+Started GET "/assets/turbolinks.self-c846e670826600e8c91b1a5ada3e6547110d996cd6ff24cde55024f7a135a1b4.js?body=1" for 127.0.0.1 at 2015-12-15 18:20:13 +0000
+
+
+Started GET "/assets/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-15 18:20:13 +0000
+
+
+Started GET "/assets/doctors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-15 18:20:14 +0000
+
+
+Started GET "/assets/patients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-15 18:20:14 +0000
+
+
+Started GET "/assets/quiz_mail.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-15 18:20:14 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-15 18:20:14 +0000
+
+
+Started GET "/assets/sideCol-cdf60d307da041b044252846a6d4839af142f6f1e557a7a3534f852275484255.jpg" for 127.0.0.1 at 2015-12-15 18:20:14 +0000
+
+
+Started GET "/assets/mini_logo-f9980073059778fd1fd9d831a099100232bcf7c01a9967d4dc5bd868f46d21b7.png" for 127.0.0.1 at 2015-12-15 18:20:14 +0000
+
+
+Started GET "/assets/mainCol-1898b386e6d2f4b595c04928d87ec3a23545bc1fc2269f139a6b20e3c4431091.jpg" for 127.0.0.1 at 2015-12-15 18:20:14 +0000
+
+
+Started GET "/assets/logo-be49b7a9e3a15bb11dc45225bc992503eff57e26f169ea60ae3d8b608cbf81cb.png" for 127.0.0.1 at 2015-12-15 18:20:14 +0000
+
+
+Started GET "/assets/lowBar-af4dbe41245c78ae480aa9fa91934f1a79d72645e88eae58fe55aee182c1c68d.jpg" for 127.0.0.1 at 2015-12-15 18:20:14 +0000
+
+
+Started POST "/doctors" for 127.0.0.1 at 2015-12-15 18:20:18 +0000
+Processing by DoctorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J7XFOqxt/alTfL43x540LcoFis3i5h1m0isTGL3bCQ8UPqXQBm9rtEGAi+LZgrwjgz/zv5wmhB9y423wecb3fg==", "doctor"=>{"name"=>"asdw", "password"=>"[FILTERED]"}, "commit"=>"Create Doctor"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (4.5ms)[0m  [1mINSERT INTO "doctors" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "asdw"], ["password_digest", "$2a$10$GPYtFmQeDRcWS11j9fnos.qe5UgdD0GpCrAOaWov7hDJ.yNB7puF6"], ["created_at", "2015-12-15 18:20:18.843295"], ["updated_at", "2015-12-15 18:20:18.843295"]]
+  [1m[35m (12.9ms)[0m  commit transaction
+Completed 500 Internal Server Error in 218ms (ActiveRecord: 17.5ms)
+
+ActionView::MissingTemplate (Missing template doctors/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates"
+  * "/home/sclarke/Desktop/git/app/views"
+  * "/home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/app/views"
+  * "/home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rapidfire-2.1.0/app/views"
+>>>>>>> 67aef2db2577a55e5a67d538f2f926f6af4a76b0
 ):
   actionview (4.2.2) lib/action_view/path_set.rb:46:in `find'
   actionview (4.2.2) lib/action_view/lookup_context.rb:121:in `find'
@@ -58117,7 +58437,11 @@ ActionView::MissingTemplate (Missing template quiz_mail/send_quiz_mail, applicat
   actionpack (4.2.2) lib/action_controller/metal/rendering.rb:16:in `render'
   actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
   activesupport (4.2.2) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+<<<<<<< HEAD
   /home/toomanycooks/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+=======
+  /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+>>>>>>> 67aef2db2577a55e5a67d538f2f926f6af4a76b0
   activesupport (4.2.2) lib/active_support/core_ext/benchmark.rb:12:in `ms'
   actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
   actionpack (4.2.2) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
@@ -58158,7 +58482,11 @@ ActionView::MissingTemplate (Missing template quiz_mail/send_quiz_mail, applicat
   actionpack (4.2.2) lib/action_dispatch/journey/router.rb:30:in `serve'
   actionpack (4.2.2) lib/action_dispatch/routing/route_set.rb:819:in `call'
   rack (1.6.4) lib/rack/etag.rb:24:in `call'
+<<<<<<< HEAD
   rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+=======
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+>>>>>>> 67aef2db2577a55e5a67d538f2f926f6af4a76b0
   rack (1.6.4) lib/rack/head.rb:13:in `call'
   actionpack (4.2.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
   actionpack (4.2.2) lib/action_dispatch/middleware/flash.rb:260:in `call'
@@ -58221,12 +58549,18 @@ ActionView::MissingTemplate (Missing template quiz_mail/send_quiz_mail, applicat
   spring (1.1.3) bin/spring:48:in `<top (required)>'
   spring (1.1.3) lib/spring/binstub.rb:11:in `load'
   spring (1.1.3) lib/spring/binstub.rb:11:in `<top (required)>'
+<<<<<<< HEAD
   bin/spring:13:in `require'
+=======
+  /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+>>>>>>> 67aef2db2577a55e5a67d538f2f926f6af4a76b0
   bin/spring:13:in `<top (required)>'
   bin/rails:3:in `load'
   bin/rails:3:in `<main>'
 
 
+<<<<<<< HEAD
   Rendered /home/toomanycooks/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/missing_template.html.erb within rescues/layout (0.7ms)
 
 
@@ -58887,3 +59221,64 @@ Processing by DoctorsController#show as HTML
   [1m[35mPatient Load (0.1ms)[0m  SELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?  [["doctor_id", 1]]
   Rendered doctors/show.html.erb within layouts/application (24.8ms)
 Completed 200 OK in 156ms (Views: 153.2ms | ActiveRecord: 0.6ms)
+=======
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/missing_template.html.erb within rescues/layout (0.4ms)
+
+
+Started POST "/doctors" for 127.0.0.1 at 2015-12-15 18:22:00 +0000
+
+SyntaxError (/home/sclarke/Desktop/git/app/controllers/doctors_controller.rb:34: syntax error, unexpected ',', expecting =>
+...ssion[:doctor_id] = @doctor.id, session[:name] = @doctor.nam...
+...                               ^):
+  app/controllers/doctors_controller.rb:34: syntax error, unexpected ',', expecting =>
+
+
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (13.3ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (6.4ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /home/sclarke/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (59.5ms)
+
+
+Started POST "/doctors" for 127.0.0.1 at 2015-12-15 18:24:09 +0000
+Processing by DoctorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J7XFOqxt/alTfL43x540LcoFis3i5h1m0isTGL3bCQ8UPqXQBm9rtEGAi+LZgrwjgz/zv5wmhB9y423wecb3fg==", "doctor"=>{"name"=>"asdw", "password"=>"[FILTERED]"}, "commit"=>"Create Doctor"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (5.7ms)[0m  INSERT INTO "doctors" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "asdw"], ["password_digest", "$2a$10$SyOjdyvdA2MxsH1mewF9/O4guZdhDjxXKmzEcmfoPOi4kfkewRgCC"], ["created_at", "2015-12-15 18:24:09.483962"], ["updated_at", "2015-12-15 18:24:09.483962"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/doctors/6
+Completed 302 Found in 152ms (ActiveRecord: 11.4ms)
+
+
+Started GET "/doctors/6" for 127.0.0.1 at 2015-12-15 18:24:09 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mPatient Load (0.2ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 6]]
+  Rendered doctors/show.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 140ms (Views: 138.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-15 18:24:21 +0000
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 104ms (Views: 102.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2015-12-15 18:24:29 +0000
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/Z2jj3sVI23bvHHvCw5mnaU0AkgpqQwUwvaCowg+XhzOFsNl0Re1cMlARDoVEu6T7A57OldplW1iPvxLzCOgbQ==", "name"=>"asd", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mDoctor Load (0.2ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ?  ORDER BY "doctors"."id" ASC LIMIT 1  [["name", "asd"]]
+  [1m[36mDoctor Load (0.2ms)[0m  [1mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."name" = ? LIMIT 1[0m  [["name", "asd"]]
+Redirected to http://localhost:3000/doctors/2
+Completed 302 Found in 173ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/doctors/2" for 127.0.0.1 at 2015-12-15 18:24:29 +0000
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mDoctor Load (0.1ms)[0m  SELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPatient Load (0.4ms)[0m  [1mSELECT "patients".* FROM "patients" WHERE "patients"."doctor_id" = ?[0m  [["doctor_id", 2]]
+  Rendered doctors/show.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 107ms (Views: 105.9ms | ActiveRecord: 0.5ms)
+>>>>>>> 67aef2db2577a55e5a67d538f2f926f6af4a76b0

@@ -26,10 +26,10 @@
             <%= yield(:mainCol) %>
         	</div>
         </div>
-        <div id="outro_box">
-    			<p><small>Patient Monitoring Platform &copy; 2015</small></p>
-    		</div>
-    	</div>
+      </div>
+      <div id="outro_box">
+    	   <p><small>Patient Monitoring Platform &copy; 2015</small></p>
+      </div>
     </div>
   </body>
 </html>
