@@ -1,5 +1,9 @@
 == README
 
+Test it out! 
+
+https://patientplatform.herokuapp.com/
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
@@ -27,4 +31,4 @@ Things you may want to cover:
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
 
-[![Build Status](https://semaphoreci.com/api/v1/projects/2304b719-0481-4d71-8e2b-9148389ab33c/644559/badge.svg)](https://semaphoreci.com/jake-mcdermott/teamproject)
+[[Build Status](https://semaphoreci.com/api/v1/projects/2304b719-0481-4d71-8e2b-9148389ab33c/644559/badge.svg)](https://semaphoreci.com/jake-mcdermott/teamproject)
